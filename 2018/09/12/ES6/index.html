@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Mr.桃&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      ES6 | Mr.Tao&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/asset/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <div id="main_body">
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Mr.Tao's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>ES6</h2>
+  <p class="post-date">2018-09-12</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<script>
+  $('#article-banner').geopattern();
+</script>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="数组拓展"><a href="#数组拓展" class="headerlink" title="数组拓展"></a>数组拓展</h1><ul>
+<li><p>类数组对象转换为数组</p>
+<ul>
+<li><p>通过拓展运算符<code>[...arguments]</code>实现，但是该方法仅对有遍历器(<br>iterator)的对象有效果，对于{a:1, b:2}的object对象是不行的</p>
+</li>
+<li><p>使用数组原型的<code>slice</code>方式转换，对于object也有效果<code>[].slice.call()</code></p>
+</li>
+<li><p>使用<code>Array.from</code>方法(第一个参数是类数组对象，第二个参数是map函数，第三个参数即this参数(map函数内部this))</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arrayLike = &#123;</span><br><span class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</span><br><span class="line">    <span class="string">'1'</span>: <span class="string">'b'</span>,</span><br><span class="line">    <span class="string">'2'</span>: <span class="string">'c'</span>,</span><br><span class="line">    length: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// length为2则转换的时候数组只有两个元素</span></span><br><span class="line"><span class="comment">// ES5的写法</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [].slice.call(arrayLike); <span class="comment">// ['a', 'b']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6的写法</span></span><br><span class="line"><span class="keyword">let</span> arr2 = <span class="built_in">Array</span>.from(arrayLike); <span class="comment">// ['a', 'b']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对于空对象</span></span><br><span class="line"><span class="keyword">let</span> tmp = &#123;<span class="attr">length</span>:<span class="number">3</span>&#125;</span><br><span class="line">arr1 = [].slice.call(tmp); <span class="comment">//[empty x 3]</span></span><br><span class="line">arr2 = <span class="built_in">Array</span>.from(tmp); <span class="comment">//[undefined, undefined, undefined]</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Array.of()</code> 将一组值转换为数组,弥补Array构造函数的差异行为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Array.of(3, 11, 8) // [3,11,8]</span><br><span class="line">Array.of(3) // [3]</span><br><span class="line">Array.of(3).length // 1</span><br><span class="line">Array() // []</span><br><span class="line">Array(3) // [empty x 3]</span><br><span class="line">Array(3, 11, 8) // [3, 11, 8]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>copyWithin()</code><br>Array.prototype.copyWithin(target, start = 0, end = this.length)<br>它接受三个参数。</p>
+</li>
+</ul>
+<p>target（必需）：从该位置开始<strong>替换</strong>数据。如果为负值，表示倒数。<br>start（可选）：从该位置开始<strong>读取</strong>数据，默认为 0。如果为负值，表示倒数。<br>end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 将3号位复制到0号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, 3, 4)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// -2相当于3号位，-1相当于4号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, -2, -1)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// 将3号位复制到0号位</span><br><span class="line">[].copyWithin.call(&#123;length: 5, 3: 1&#125;, 0, 3)</span><br><span class="line">// &#123;0: 1, 3: 1, length: 5&#125;</span><br><span class="line"></span><br><span class="line">// 将2号位到数组结束，复制到0号位</span><br><span class="line">let i32a = new Int32Array([1, 2, 3, 4, 5]);</span><br><span class="line">i32a.copyWithin(0, 2);</span><br><span class="line">// Int32Array [3, 4, 5, 4, 5]</span><br><span class="line"></span><br><span class="line">// 对于没有部署 TypedArray 的 copyWithin 方法的平台</span><br><span class="line">// 需要采用下面的写法</span><br><span class="line">[].copyWithin.call(new Int32Array([1, 2, 3, 4, 5]), 0, 3, 4);</span><br><span class="line">// Int32Array [4, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p><code>find</code> 与<code>findIndex()</code><br>数组实例的find方法，用于找出第一个符合条件的数组成员。(参数有)它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。<br>数组实例的findIndex方法的用法与find方法非常类似，返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。</p>
+</li>
+<li><p><code>fill()</code> fill方法使用给定值，填充一个数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;].fill(7)</span><br><span class="line">// [7, 7, 7]</span><br><span class="line"></span><br><span class="line">new Array(3).fill(7)</span><br><span class="line">// [7, 7, 7]  参数只有一个则是声明长度  Array(&#123;length:3&#125;)和Array.of(&#123;length:3&#125;)的长度声明是无效的，结果都是[&#123;length:3&#125;]这样的一个数组</span><br></pre></td></tr></table></figure>
+<p>fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;].fill(7, 1, 2)</span><br><span class="line">// [&apos;a&apos;, 7, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于数组原型，有entries(),keys(),values()方法返回遍历器(通过<code>for...of...</code>调用或者手动通过迭代器的<code>next()</code>函数调用)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for (let [index, elem] of [&apos;a&apos;, &apos;b&apos;].entries()) &#123;</span><br><span class="line">  console.log(index, elem);</span><br><span class="line">&#125;</span><br><span class="line">// 0 &quot;a&quot;</span><br><span class="line">// 1 &quot;b&quot;</span><br><span class="line">let letter = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</span><br><span class="line">let entries = letter.entries();</span><br><span class="line">console.log(entries.next().value); // [0, &apos;a&apos;]</span><br><span class="line">console.log(entries.next().value); // [1, &apos;b&apos;]</span><br><span class="line">console.log(entries.next().value); // [2, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
+<p>注意和Object.entries(obj), Object.keys(obj), Object.values(obj)区别开来，Object的方法返回的是数组</p>
+<img src="/2018/09/12/ES6/entries.png">
+</li>
+<li><p>数组引入了和字符串类似的<code>includes()</code>方法，相比<code>indexOf</code>(内部基于<code>===</code>判断)语义化更好，同时也能支持对于NaN的查找(<code>[NaN].indexOf(NaN) 返回-1</code> <code>[NaN].includes(NaN) 返回true</code>) (注意与Map的<code>has</code>(查找键名) 与Set的<code>has</code>(查找值)区别开来)</p>
+<img src="/2018/09/12/ES6/NAN.png">
+</li>
+<li><p>数组实例的<code>拉平</code><br>(在Chrome环境下不支持flat，flatMap函数)</p>
+<ul>
+<li><p><code>flat()</code>默认只会“拉平”一层，如果想要“拉平”多层的嵌套数组，可以将flat()方法的参数写成一个整数，表示想要拉平的层数，默认为1。会自动跳过空位</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>]]].flat()</span><br><span class="line"><span class="comment">// [1, 2, 3, [4, 5]]</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>]]].flat(<span class="number">2</span>)</span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line">[<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>]]].flat(<span class="literal">Infinity</span>)</span><br><span class="line"><span class="comment">// [1, 2, 3] 拉平所有层</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>flatMap()</code>方法对原数组的每个成员执行一个函数（相当于执行Array.prototype.map()），然后对返回值组成的数组执行flat()方法。该方法返回一个新数组，不改变原数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 相当于 [[2, 4], [3, 6], [4, 8]].flat()</span></span><br><span class="line">[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].flatMap(<span class="function">(<span class="params">x</span>) =&gt;</span> [x, x * <span class="number">2</span>])</span><br><span class="line"><span class="comment">// [2, 4, 3, 6, 4, 8]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>数组空位</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="keyword">in</span> [<span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>] <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">in</span> [, , ,] <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>注意通过<code>Array.from({length:3})</code>和<code>[...[&#39;a&#39;, , &#39;b&#39;]]</code>构造的数组是将空位处理为undefined,<code>Array(3)</code>则是含有3个空位的数组</p>
+<ul>
+<li>forEach(), filter(), reduce(), every() 和some()都会跳过空位。</li>
+<li>map()会跳过空位，但会保留这个值</li>
+<li>join()和toString()会将空位视为undefined，而undefined和null会被处理成空字符串。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// forEach方法</span></span><br><span class="line">[,<span class="string">'a'</span>].forEach(<span class="function">(<span class="params">x,i</span>) =&gt;</span> <span class="built_in">console</span>.log(i)); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// filter方法</span></span><br><span class="line">[<span class="string">'a'</span>,,<span class="string">'b'</span>].filter(<span class="function"><span class="params">x</span> =&gt;</span> <span class="literal">true</span>) <span class="comment">// ['a','b']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// every方法</span></span><br><span class="line">[,<span class="string">'a'</span>].every(<span class="function"><span class="params">x</span> =&gt;</span> x===<span class="string">'a'</span>) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// reduce方法</span></span><br><span class="line">[<span class="number">1</span>,,<span class="number">2</span>].reduce(<span class="function">(<span class="params">x,y</span>) =&gt;</span> x+y) <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// some方法</span></span><br><span class="line">[,<span class="string">'a'</span>].some(<span class="function"><span class="params">x</span> =&gt;</span> x !== <span class="string">'a'</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map方法</span></span><br><span class="line">[,<span class="string">'a'</span>].map(<span class="function"><span class="params">x</span> =&gt;</span> <span class="number">1</span>) <span class="comment">// [,1]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// join方法</span></span><br><span class="line">[,<span class="string">'a'</span>,<span class="literal">undefined</span>,<span class="literal">null</span>].join(<span class="string">'#'</span>) <span class="comment">// "#a##"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// toString方法</span></span><br><span class="line">[,<span class="string">'a'</span>,<span class="literal">undefined</span>,<span class="literal">null</span>].toString() <span class="comment">// ",a,,"</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
+<li>copyWithin()会连空位一起拷贝。<code>[,&#39;a&#39;,&#39;b&#39;,,].copyWithin(2,0) // [,&quot;a&quot;,,&quot;a&quot;]</code></li>
+<li>fill()会将空位视为正常的数组位置。<code>new Array(3).fill(&#39;a&#39;) // [&quot;a&quot;,&quot;a&quot;,&quot;a&quot;]</code></li>
+<li>for…of循环也会遍历空位。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [, ,];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> arr) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+如果改成map方法遍历，空位是会跳过的。</li>
+<li>entries()、keys()、values()、find()和findIndex()会将空位处理成undefined。</li>
+<li>由于空位的处理规则非常不统一，所以建议避免出现空位。</li>
+</ul>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/08/27/SSH代理/">
+        <span class="nav-arrow">← </span>
+        
+          SSH代理
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/28/VsCode配置/">
+        
+          VsCode配置
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#数组拓展"><span class="toc-nav-text">数组拓展</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    //var url = 'localhost:4000/2018/09/12/ES6/';
+    //var banner = ''
+    //console.log(banner)
+    // if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+    //   $('#article-banner').css({
+    //     'background-image': 'url(' + banner + ')'
+    //   })
+    // } else {
+    //   $('#article-banner').geopattern(url)
+    // }
+    //let test= window.btoa('hellp');
+    //console.log(test)
+
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    // var qr = new QRious({
+    //   element: document.getElementById('share-qrcode'),
+    //   value: document.location.href
+    // });
+
+    // gitment
+    // var gitmentConfig = "yanm1ng";
+    // if (gitmentConfig !== 'undefined') {
+    //   var gitment = new Gitment({
+    //     id: "ES6",
+    //     owner: "yanm1ng",
+    //     repo: "yanm1ng.github.io",
+    //     oauth: {
+    //       client_id: "0f87e490e00ee3fd87ef",
+    //       client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+    //     },
+    //     theme: {
+    //       render(state, instance) {
+    //         const container = document.createElement('div')
+    //         container.lang = "en-US"
+    //         container.className = 'gitment-container gitment-root-container'
+    //         container.appendChild(instance.renderHeader(state, instance))
+    //         container.appendChild(instance.renderEditor(state, instance))
+    //         container.appendChild(instance.renderComments(state, instance))
+    //         container.appendChild(instance.renderFooter(state, instance))
+    //         return container;
+    //       }
+    //     }
+    //   })
+    //   gitment.render(document.getElementById('comments'))
+    // }
+  })();
+</script>
+
+    <canvas></canvas>
+    </div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    
+<div class="sidebar" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/第三方库使用记录/" class="archive-title">第三方库使用记录</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“杂项笔记”/" class="archive-title">杂项笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“drupal笔记”/" class="archive-title">drupal随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/Vue-js随记/" class="archive-title">Vue.js随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/POSTMAN测试开发/" class="archive-title">POSTMAN测试开发</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/JS精粹/" class="archive-title">JS精粹</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/HTML-CSS基础笔记/" class="archive-title">HTML/CSS基础笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS动画/" class="archive-title">CSS动画</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS世界-笔记/" class="archive-title">CSS世界-笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/11/28/VsCode配置/" class="archive-title">VsCode配置</a>
+        <p class="archive-date">11-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/12/ES6/" class="archive-title">ES6</a>
+        <p class="archive-date">09-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/08/27/SSH代理/" class="archive-title">SSH代理</a>
+        <p class="archive-date">08-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/30/hexo随记/" class="archive-title">hexo随记</a>
+        <p class="archive-date">07-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/系统使用随记/" class="archive-title">Deepin系统使用随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/symfony随记/" class="archive-title">symfony随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/sublime环境配置/" class="archive-title">sublime环境配置</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“node-js笔记”/" class="archive-title">“node.js实战”随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“编码规范”/" class="archive-title">编码规范</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+  <a id="sidebar-arrows">
+    <div class="sidebar-arrow-outer"></div>
+    <div class="sidebar-arrow-inner"></div>
+  </a>
+</div>
+
+<div id="animate_background" style="position: absolute; top: 0; left: 0; z-index: 2;">
+  <canvas id=></canvas>
+</div>
+<div id="animate_mouse_cursor">
+  <div class="animate_mouse_rect-1">
+    <div class="animate_mouse_rect-2"></div>
+  </div>
+</div>
+
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank">yanm1ng</a><br>
+    Patched by <a href="https://github.com/xuxiantao" target="_blank">XXT</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+<script src="/js/animate_mouse.js"></script>
+
+
+  </body>
+  
+</html>

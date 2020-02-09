@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Mr.桃&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      JS精粹 | Mr.Tao&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/asset/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <div id="main_body">
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Mr.Tao's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>JS精粹</h2>
+  <p class="post-date">2020-02-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<script>
+  $('#article-banner').geopattern();
+</script>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><ul>
+<li><code>Undefined</code> <code>Null</code> <code>Boolean</code> <code>String</code> <code>Number</code></li>
+<li>而<code>Object</code>则是复杂数据类型</li>
+</ul>
+<blockquote>
+<p><code>typeof</code> 返回的数据类型在基本数据类型的基础(<code>undefined</code> <code>object</code> <code>boolean</code> <code>number</code> <code>string</code> <code>symbol</code><strong>注意没有null</strong>)上还有<code>function</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//null无法通过typeof来获取，这是js的设计错误</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> === <span class="string">'object'</span>  <span class="comment">//true</span></span><br><span class="line"><span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//false</span></span><br><span class="line"><span class="comment">//所以为了判断变量是否为null可以通过全等号实现</span></span><br><span class="line"><span class="keyword">if</span> (v === <span class="literal">null</span>) &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
+<li>避免使用<code>/**/</code> 这种区块注释，容易与正则表达式混杂后失去效果</li>
+</ul>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><ul>
+<li>字母开头，然后用字符、数字、下划线<code>_</code>拼凑</li>
+<li>被用于语句、变量、参数、属性名、运算符和标记(位置)</li>
+</ul>
+<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><ul>
+<li><code>100 === 1e2</code></li>
+<li>内部无论整型还是浮点数都表示为64为的浮点数<code>1 === 1.0</code></li>
+<li><code>typeof NaN === &#39;number&#39;</code></li>
+<li>Infinity表示所有大于1.79769313486231570e+308的值</li>
+<li><code>Math.floor(213.213)</code> 结果为 <code>213</code>转化整型</li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li>用<code>\u</code> 约定指定数字字符编码，比如<code>&quot;A&quot; === &quot;\u0041&quot;</code></li>
+</ul>
+<h2 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h2><ul>
+<li>三元运算符是排在最后才运算的，所以如果需要讲三元运算符结果与其他字符串拼凑应该用括号括起来<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">''</span></span><br><span class="line"><span class="keyword">var</span> result = <span class="string">'hello'</span> + str ? <span class="string">'world!'</span> : <span class="string">'Goodbye'</span>; <span class="comment">// 输出world!</span></span><br><span class="line"><span class="keyword">var</span> result2 = <span class="string">'hello'</span> + (str ? <span class="string">'world!'</span> : <span class="string">'Goodbye'</span>); <span class="comment">// 输出 hello Goodbye</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><ul>
+<li><p>对象通过引用来传递，永远不会被复制</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stooge = &#123;</span><br><span class="line">    <span class="string">"first-name"</span>: <span class="string">"Jerome"</span>,</span><br><span class="line">    <span class="string">"last-name"</span>: <span class="string">"Howard"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> x = stooge</span><br><span class="line">x.nickname = <span class="string">'curly'</span></span><br><span class="line"><span class="built_in">console</span>.log(stooge.nickname) <span class="comment">// curly</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = &#123;&#125;, b = &#123;&#125;, c = &#123;&#125; <span class="comment">// a,b,c引用不同的对象</span></span><br><span class="line">a = b = c = &#123;&#125; <span class="comment">//引用同一个对象</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>基本类型是存放在栈内存中的简单数据<br>引用类型(object array)是存放在堆内存中的对象，被变量申明的时候是将一个引用放入栈内存中</p>
+</blockquote>
+</li>
+<li><p>对象的修改不涉及其原型，修改继承对象的属性会覆盖原型的属性，属性的寻找是从对象开始然后往原型链上去找</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> F(); <span class="comment">// 意味着s.__proto__指向了F.prototype,所以只有F.prototype的修改会影响继承对象的内容</span></span><br><span class="line">F.a = <span class="number">2</span>;</span><br><span class="line">s.a <span class="comment">//undefined</span></span><br><span class="line">F.prototype.a = <span class="number">2</span>;</span><br><span class="line">s.a <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>反射-<em>过滤通过原型链索引的属性</em>,枚举<code>for in</code><br>一种通过<code>typeof  flgight.number=== &#39;funtion&#39;</code> 的方式判断属性是否是需要的数据<br>一种通过<code>flight.hasOwnProperty(&#39;number&#39;)</code> 的方式判断是否是对象独有属性</p>
+</li>
+<li><p>删除<br>不会涉及到原型属性</p>
+</li>
+<li><p>减少全局变量污染<br>将所有全局变量都放入一个命名空间下，声明唯一的全局变量来存放<br>还可以通过闭包来进行信息隐藏，减少全局变量污染</p>
+</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ul>
+<li>函数在创建时传递隐藏属性-函数的上下文和实现函数行为的代码</li>
+<li><p>每个函数在创建时候也配有一个prototype属性，其值为拥有constructor属性且其值即为该函数的对象，函数与其他object的不同之处在于可以被调用</p>
+</li>
+<li><p>函数可以访问自己的参数变量，同时也能自由访问把它嵌套在其中的父函数的参数与变量，通过函数字面量创建的函数对象包含一个连接到外部上下文的连接，这就是闭包</p>
+</li>
+<li><p>除了声明时候定义的形式参数，函数还接受两个附加的参数<code>this</code> <code>arguments</code>，<code>this</code>取决于函数的调用方式</p>
+<blockquote>
+<ul>
+<li><p>调用模式</p>
+<ul>
+<li><p>方法调用模式：函数被保存为一个对象的属性时被称为方法。方法被调用(obj.fun | obj[‘fun’])的时候<code>this</code>绑定到该对象。通过this可取得他们所属对象上下文的方法被成为公共方法</p>
+</li>
+<li><p>函数调用模式：当一个函数并非一个对象的属性时，他就是被当做一个函数来调用的。使用函数调用的时候this对象被绑定到全局对象而不是外部的this变量(js的设计错误)，所以一个函数内部定义的函数调用时候，可以通过定义一个that变量赋值this，这样内部函数就可以通过这个变量访问外部this了</p>
+</li>
+<li><p>构造器调用模式：通过new的方式去继承一个函数，这样的方式会创建一个连接到该函数的prototype成员的新对象，this会绑定到该新对象上，注意的是被new的函数本身的代码会作为构造器函数，可用来构造属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造器函数</span></span><br><span class="line"><span class="keyword">var</span> Quo = <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line"><span class="keyword">this</span>.status = str;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 为实例提供公共方法</span></span><br><span class="line">Quo.prototype.get_status = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.status;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 构造实例</span></span><br><span class="line"><span class="keyword">var</span> myQuo = <span class="keyword">new</span> Quo(<span class="string">'confused'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(myQuo.get_status())<span class="comment">//显示confused</span></span><br></pre></td></tr></table></figure>
+<p>但是本方法不是书中推荐的，在之后有更好的替代方法</p>
+</li>
+<li>Apply调用模式：通过apply方法</li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>调用运算符-<code>([,arguments])</code>,实际参数<code>arguments</code>个数比形式参数<code>paramenters</code>过多时多余参数会被忽略，过少时缺失值会被替换成undefined，参数值不会进行类型检查</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JS" >
+    <span class="tag-code">JS</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2020/02/09/POSTMAN测试开发/">
+        <span class="nav-arrow">← </span>
+        
+          POSTMAN测试开发
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2020/02/09/第三方库使用记录/">
+        
+          第三方库使用记录
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#基本数据类型"><span class="toc-nav-text">基本数据类型</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#注释"><span class="toc-nav-text">注释</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#标识符"><span class="toc-nav-text">标识符</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数字"><span class="toc-nav-text">数字</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#字符串"><span class="toc-nav-text">字符串</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#运算优先级"><span class="toc-nav-text">运算优先级</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Object"><span class="toc-nav-text">Object</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#函数"><span class="toc-nav-text">函数</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    //var url = 'localhost:4000/2020/02/09/JS精粹/';
+    //var banner = ''
+    //console.log(banner)
+    // if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+    //   $('#article-banner').css({
+    //     'background-image': 'url(' + banner + ')'
+    //   })
+    // } else {
+    //   $('#article-banner').geopattern(url)
+    // }
+    //let test= window.btoa('hellp');
+    //console.log(test)
+
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    // var qr = new QRious({
+    //   element: document.getElementById('share-qrcode'),
+    //   value: document.location.href
+    // });
+
+    // gitment
+    // var gitmentConfig = "yanm1ng";
+    // if (gitmentConfig !== 'undefined') {
+    //   var gitment = new Gitment({
+    //     id: "JS精粹",
+    //     owner: "yanm1ng",
+    //     repo: "yanm1ng.github.io",
+    //     oauth: {
+    //       client_id: "0f87e490e00ee3fd87ef",
+    //       client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+    //     },
+    //     theme: {
+    //       render(state, instance) {
+    //         const container = document.createElement('div')
+    //         container.lang = "en-US"
+    //         container.className = 'gitment-container gitment-root-container'
+    //         container.appendChild(instance.renderHeader(state, instance))
+    //         container.appendChild(instance.renderEditor(state, instance))
+    //         container.appendChild(instance.renderComments(state, instance))
+    //         container.appendChild(instance.renderFooter(state, instance))
+    //         return container;
+    //       }
+    //     }
+    //   })
+    //   gitment.render(document.getElementById('comments'))
+    // }
+  })();
+</script>
+
+    <canvas></canvas>
+    </div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    
+<div class="sidebar" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/第三方库使用记录/" class="archive-title">第三方库使用记录</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“杂项笔记”/" class="archive-title">杂项笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“drupal笔记”/" class="archive-title">drupal随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/Vue-js随记/" class="archive-title">Vue.js随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/POSTMAN测试开发/" class="archive-title">POSTMAN测试开发</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/JS精粹/" class="archive-title">JS精粹</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/HTML-CSS基础笔记/" class="archive-title">HTML/CSS基础笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS动画/" class="archive-title">CSS动画</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS世界-笔记/" class="archive-title">CSS世界-笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/11/28/VsCode配置/" class="archive-title">VsCode配置</a>
+        <p class="archive-date">11-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/12/ES6/" class="archive-title">ES6</a>
+        <p class="archive-date">09-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/08/27/SSH代理/" class="archive-title">SSH代理</a>
+        <p class="archive-date">08-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/30/hexo随记/" class="archive-title">hexo随记</a>
+        <p class="archive-date">07-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/系统使用随记/" class="archive-title">Deepin系统使用随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/symfony随记/" class="archive-title">symfony随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/sublime环境配置/" class="archive-title">sublime环境配置</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“node-js笔记”/" class="archive-title">“node.js实战”随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“编码规范”/" class="archive-title">编码规范</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+  <a id="sidebar-arrows">
+    <div class="sidebar-arrow-outer"></div>
+    <div class="sidebar-arrow-inner"></div>
+  </a>
+</div>
+
+<div id="animate_background" style="position: absolute; top: 0; left: 0; z-index: 2;">
+  <canvas id=></canvas>
+</div>
+<div id="animate_mouse_cursor">
+  <div class="animate_mouse_rect-1">
+    <div class="animate_mouse_rect-2"></div>
+  </div>
+</div>
+
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank">yanm1ng</a><br>
+    Patched by <a href="https://github.com/xuxiantao" target="_blank">XXT</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+<script src="/js/animate_mouse.js"></script>
+
+
+  </body>
+  
+</html>

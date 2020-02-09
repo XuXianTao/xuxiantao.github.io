@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Mr.桃&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      杂项笔记 | Mr.Tao&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/asset/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <div id="main_body">
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Mr.Tao's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>杂项笔记</h2>
+  <p class="post-date">2020-02-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<script>
+  $('#article-banner').geopattern();
+</script>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h4 id="php"><a href="#php" class="headerlink" title="php"></a>php</h4><ul>
+<li><code>strpos($url, &#39;api/&#39;)</code>注意如果要使用strpos来作为if的判断条件的话，可能会子串刚好在被索引串的开头位置，也就是返回结果为数值0，所以<code>if(strpos($url, &#39;api/&#39;))</code>是会出现逻辑问题的，应该使用<code>if(strpos($url, &#39;api/&#39;)!==false)</code></li>
+<li>array_push($a, $b)，如果$b是数组则会把整个$b当最后的键的值，如果要拼接，还是使用array_merge比较好，也可以直接在数组后面通过+=实现拼凑</li>
+<li>Guzzle php控制器请求的Cookie无法正常提交（每次的访问都是一次新的连接sessionid不断变换），可以直接用浏览器访问（会自动添加sessionid,访问的连接不断）</li>
+<li><code>$_POST</code>能够处理的是表单的数据类型（即有明显的键值对）,如果发现<code>$_POST</code>无法正常获取post数据，可以使用<code>strval(file_get_contents(&quot;php://input&quot;))</code>获取原生字符串再处理, 或者<code>$GLOBALS[&#39;HTTP_RAW_POST_DATA&#39;]</code>，</li>
+<li>相同域名下的url访问才会自动发送phpsessid</li>
+<li><code>ORM</code> 即对象关系映射，（数据表又叫关系表，这里的关系指数据表）php用Doctrine(ORM),通过php对象轻松访问数据库信息</li>
+<li><code>notice</code>级别的错误可以通过<code>error_reporting(E_ALL&amp;~E_NOTICE);</code>来取消提示</li>
+<li><code>array_values(array_unique($group_ids))</code>去重并重排键值</li>
+<li>如果要将某个具体的键值对插入某个数组中，可以通过splice+array_merge实现，如下<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$header_last = array_splice($form[<span class="string">'terms'</span>][<span class="string">'#header'</span>],<span class="number">1</span>);</span><br><span class="line">$header_last = array_merge($tmp_header, $header_last);</span><br><span class="line">$form[<span class="string">'terms'</span>][<span class="string">'#header'</span>] = array_merge($form[<span class="string">'terms'</span>][<span class="string">'#header'</span>], $header_last);</span><br></pre></td></tr></table></figure></li>
+<li><code>list($a, $b) = array($aa, $bb);</code> 同时赋值$a,$b</li>
+<li><code>session_id</code> 获取当前会话id</li>
+<li><code>mixed call_user_func_array ( callable $callback , array $param_arr )</code> 将第二个数组参数作为回调函数的参数调用，返回回调函数的结果</li>
+<li><p>图片的输出</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Allocate image resource.</span></span><br><span class="line">$image = imagecreatetruecolor($width, $height);</span><br><span class="line"><span class="keyword">if</span> (!$image) &#123;</span><br><span class="line">  <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// White background and black foreground.</span></span><br><span class="line">$background_color = imagecolorallocate($image, <span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>);</span><br><span class="line">$color = imagecolorallocate($image, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">imagefilledrectangle($image, <span class="number">0</span>, <span class="number">0</span>, $width, $height, $background_color);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Draw preview text.</span></span><br><span class="line"><span class="keyword">if</span> ($font == <span class="string">'BUILTIN'</span>) &#123;</span><br><span class="line">  imagestring($image, <span class="number">5</span>, <span class="number">1</span>, <span class="number">.5</span> * $height - <span class="number">10</span>, $text, $color);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  imagettftext($image, $font_size, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1.5</span> * $font_size, $color, realpath($font), $text);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Set content type.</span></span><br><span class="line"><span class="keyword">$this</span>-&gt;headers-&gt;set(<span class="string">'Content-Type'</span>, <span class="string">'image/png'</span>);</span><br><span class="line"><span class="comment">// Dump image data to client.</span></span><br><span class="line">imagepng($image);</span><br><span class="line"><span class="comment">// Release image memory.</span></span><br><span class="line">imagedestroy($image);</span><br><span class="line"><span class="comment">// Close connection.</span></span><br><span class="line"><span class="keyword">exit</span>();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组之间相加，相当于<code>array_push()</code></p>
+<img src="/2020/02/09/“杂项笔记”/php_array_add.png">
+</li>
+<li><p>关于批量删除指定前缀的文件，可以使用glob函数进行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$files = glob(DIR_IMAGE.&apos;/&apos;.$id.&apos;_*&apos;);</span><br><span class="line">foreach ($files as $f) &#123;</span><br><span class="line">    unlink($f);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关于<a href="https://blog.csdn.net/xhanguomzhu/article/details/75043512" target="_blank" rel="noopener">请求发起</a>，有3种方式<code>curl</code> <code>stream_context_create</code> <code>fsockopen</code></p>
+</li>
+</ul>
+<h4 id=""><a href="#" class="headerlink" title=""></a><a href="http://php.net/manual/zh/book.pcre.php" target="_blank" rel="noopener">PCRE Perl语言兼容正则表达式</a></h4><ul>
+<li>分隔符： <code>/</code> <code>#</code> <code>~</code> <code>{</code> <code>}</code>, 可以使用preg_quote()进行转义</li>
+<li>元字符： <ul>
+<li><code>\</code> 转义或者编码控制</li>
+<li><code>^</code> 目标开始位置/多行模式下的行首</li>
+<li><code>$</code> 目标结束位置/多行模式下的行尾</li>
+<li><code>.</code> 匹配换行符外的任何字符</li>
+<li><code>[</code> <code>]</code> 字符类定义,在其下的第一个<code>^</code>表示字符类取反</li>
+<li><code>-</code> 表示字符范围</li>
+<li><code>|</code> 可选分支</li>
+<li><code>(</code> <code>)</code> 子组定义</li>
+<li><code>?</code> 量词，表示0次或1次匹配 等价{0,1},加在其他量词后面可以改变<a href="http://php.net/manual/zh/regexp.reference.repetition.php" target="_blank" rel="noopener">贪婪特性</a>,量词都是默认贪婪-尽可能多得匹配</li>
+<li><code>*</code> 量词，表示0次或多次匹配 等价{0,}</li>
+<li><code>+</code> 量词，表示1次或多次匹配 等价{1,}</li>
+<li><code>{</code> <code>}</code> 自定义量词标记</li>
+</ul>
+</li>
+<li>转义序列：（模式使用PCRE_EXTENDED编译则空白字符(除了字符类中的)和未转义的<code>#</code>到行末的所有字符都会被忽略，这种时候如果要使用空白字符或#需要转义）<ul>
+<li><code>\cx</code> “contorl-x”, x是任意字符</li>
+<li><code>\f</code> 换页(0x0C)</li>
+<li><code>\n</code> 换行(0x0A)</li>
+<li><code>\p{xx}</code> 符合xx属性的字符,属性<a href="http://php.net/manual/zh/regexp.reference.unicode.php" target="_blank" rel="noopener">参考</a></li>
+<li><code>\P(xx)</code> 不符合xx属性的字符 (使用属性匹配需要搜索，速度不快)</li>
+<li><code>\r</code> 回车(0x0D)</li>
+<li><code>\t</code> 水平制表符(0x09)<br>(描述特定字符类)</li>
+<li><code>\d</code> 任意十进制数字 <code>\D</code> 任意非十进制数字</li>
+<li><code>\h</code> 任意水平空白字符 <code>\H</code> 任意非水平空白字符</li>
+<li><code>\s</code> 任意空白字符 <code>\S</code>任意非空白字符</li>
+<li><code>\v</code> 任意垂直空白字符 <code>\V</code> 任意非垂直空白字符</li>
+<li><code>\w</code> 任意单词字符 <code>\W</code> 任意非单词字符<br>(转义作简单断言，注意不能出现在字符类中)</li>
+<li><code>\b</code> 单词边界 <code>\B</code> 非单词边界 (字符类中<code>\b</code>表示退格符)</li>
+<li><code>\A</code> 目标开始位置(独立于多行模式)</li>
+<li><code>\Z</code> 目标结束位置或结束处的换行符(独立于多行模式)</li>
+<li><code>\z</code> 目标结束位置(独立于多行模式)</li>
+<li><code>\G</code> 在目标中首次匹配位置</li>
+</ul>
+</li>
+</ul>
+<h4 id="thinkphp"><a href="#thinkphp" class="headerlink" title="thinkphp"></a>thinkphp</h4><ul>
+<li>目录说明：<ul>
+<li><code>./</code>表示当前文件所在目录的绝对路径，相比前面没有这段的路径(直接看URL的)来说更严谨，注意理清tp5.0的入口文件位置和模块位置</li>
+<li><code>/</code>表示根路径</li>
+</ul>
+</li>
+<li>插件安装使用<code>composer.phar</code>，正常的TP项目里面没有TP模板文件，而是使用<code>php composer.phar install</code>安装</li>
+<li>关于模型的关联删除，在数据表指定了约束的情况下会无效，所以还是通过自定义删除操作等其他方式自己实现比较好</li>
+</ul>
+<h4 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h4><ul>
+<li>col-md-*是992以上的样式</li>
+<li>让导航栏固定在页面的顶部，请向  .navbar class  添加 class  .navbar-fixed-top ;让导航栏固定在页面的底部，请向  .navbar class  添加 class  .navbar-fixed-bottom 。<br>  使用实用工具 class  .navbar-left  或  .navbar-right  向左或向右对齐导航栏中的导航链接、按钮或者文本  这些组件。<br>基本的表单结构是 Bootstrap 自带的，个别的表单控件自动接收一些全局样式。<br>向父form元素添加role=”form“<br>响应式导航需要当前版本bootstrap的collapse插件。     </li>
+<li>导航栏指向要显示的内容，要有属性href 或者data-target</li>
+</ul>
+<h4 id="jade"><a href="#jade" class="headerlink" title="jade"></a>jade</h4><ul>
+<li>缩进注意同一行内只能使用tab或空格，不能二者混合</li>
+<li><p>以下头文件为例，注意缩进位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">  head</span><br><span class="line">    title MongoDB example</span><br><span class="line">  body</span><br><span class="line">    h1 Myfirst MongoDB app</span><br><span class="line">    hr</span><br><span class="line">    block content</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<strong>extends block</strong>的时候要考虑当前代码的缩进与父jade文件的<strong>缩进关系</strong>，是将父jade文件插入当前页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">extends layoutincludes</span><br><span class="line">block content</span><br><span class="line">  form(action=&quot;/signup&quot;, method=&quot;POST&quot;)</span><br><span class="line">    fieldset</span><br><span class="line">      legend Sign up</span><br><span class="line">      p</span><br><span class="line">        label First</span><br><span class="line">        input(name=&quot;user[first]&quot;, type=&quot;text&quot;)</span><br><span class="line">      p</span><br><span class="line">        label Last</span><br><span class="line">        input(name=&quot;user[last]&quot;, type=&quot;text&quot;)</span><br><span class="line">      p</span><br><span class="line">        label Email</span><br><span class="line">        input(name=&quot;user[email]&quot;, type=&quot;text&quot;)</span><br><span class="line">      p</span><br><span class="line">        label Password</span><br><span class="line">        input(name=&quot;user[pw]&quot;, type=&quot;password&quot;)</span><br><span class="line">      p</span><br><span class="line">        button Submit</span><br><span class="line">      p</span><br><span class="line">        a(href=&quot;/&quot;) Go back</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<strong>include</strong>则是直接插入当前代码页面到父jade中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">include layout</span><br><span class="line">form(action=&quot;/login&quot;, method=&quot;POST&quot;)</span><br><span class="line">  fieldset</span><br><span class="line">    legend Log in</span><br><span class="line">    p</span><br><span class="line">      label Email</span><br><span class="line">      input(name=&quot;user[email]&quot;, type=&quot;text&quot;)</span><br><span class="line">    p</span><br><span class="line">      label Password</span><br><span class="line">      input(name=&quot;user[pw]&quot;, type=&quot;password&quot;)</span><br><span class="line">    p</span><br><span class="line">      button Submit</span><br><span class="line">    p</span><br><span class="line">      a(href=&quot;/&quot;) Go back</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用冒号可以单行表示层级关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">li</span><br><span class="line">  a(href=&quot;/login&quot;) Login</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面的代码与下面效果相同(注意li:<strong>冒号后面留个空格</strong>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li: a(href=&quot;/login&quot;) Login</span><br></pre></td></tr></table></figure></p>
+<h4 id="mongoDB"><a href="#mongoDB" class="headerlink" title="mongoDB"></a>mongoDB</h4><ul>
+<li>注意JS中的连接地址要有mongo前缀，比如<code>mongodb://localhost:27017/</code></li>
+</ul>
+<h4 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h4><ul>
+<li>gulp dev时对于错误 <code>WATCH ENOSPC</code>,可以运行如下代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf &amp;&amp; sudo sysctl -pins</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><ul>
+<li>对于某些项目执行<code>npm install</code> 可能会有SHA-1不一致的ERROR，可以尝试删除package-lock.json文件</li>
+</ul>
+<h4 id="composer"><a href="#composer" class="headerlink" title="composer"></a>composer</h4><ul>
+<li>requrie -dev 表示开发/测试中依赖的包</li>
+<li>install -no-dev 跳过require-dev中的字段</li>
+</ul>
+<h4 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h4><ul>
+<li>选择事件的触发对象的时候记得要用<code>$(this)</code>的美元符号，不要忘了，直接this是错误的</li>
+</ul>
+<h4 id="SMTP协议、POP3协议"><a href="#SMTP协议、POP3协议" class="headerlink" title="SMTP协议、POP3协议"></a>SMTP协议、POP3协议</h4><ul>
+<li>站点配置相应的SMTP协议[Simple Mail Transfer Protocol]以使用对应SMTP服务器的验证功能</li>
+<li>POP3协议[Post Office Protocol 3]则是对应服务器的接受邮件功能，用来查看邮件信息</li>
+<li>现在的服务器的SMTP协议有验证功能，如果发送的FROM字段信息和真实账号信息不一致会拒绝发送(变成垃圾邮件)</li>
+<li>IMAP协议[Internet Mail Access Protocol]交互式邮件存取，在POP3基础上的操作可以反馈到邮件服务器上</li>
+</ul>
+<h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4><ul>
+<li>对于比较靠后的origin/master远程分支，可以通过直接<code>git push origin master</code>将远程的master提前到当前本地所在分支<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo "# hexoSource" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin https://github.com/XuXianTao/hexoSource.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h4><ul>
+<li>有效的查询条件能够正确调用数据表的索引字段(B+树)，没有深思熟虑的查询条件将会造成全表扫描，降低速度</li>
+<li>如何建立索引可以参考网上一些博客,要注意过多的索引会增加空间的负载</li>
+<li>为了利用索引加快查询速度，在使用大于、小于符号的时候最好有相应的最大值、最小值来形成一个范围</li>
+<li>为了有效利用索引，对于索引列在使用<code>like</code>查询的时候遵循最左前缀<code>where ss like &#39;abc%&#39;</code></li>
+<li>将<code>where</code>语句下的 <code>or</code> 拆分为两组查询语句之后在简单合并速度会快点</li>
+<li>…</li>
+</ul>
+<h4 id="网站高并发的处理"><a href="#网站高并发的处理" class="headerlink" title="网站高并发的处理"></a>网站高并发的处理</h4><ul>
+<li>反向代理，利用一个代理服务器来处理外部的请求，分发给多台服务器，降低单个服务器压力</li>
+<li>CDN找离客户端最近的服务器站点</li>
+<li>资源、应用分离，页面请求的静态资源单独存放在一个资源服务器与数据请求的服务器分离，降低服务器负载</li>
+<li>缓存框架redis\memcache</li>
+</ul>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p><a href="https://blog.csdn.net/yushiyi6453/article/details/76407640" target="_blank" rel="noopener">强推</a></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#php" >
+    <span class="tag-code">php</span>
+  </a>
+
+  <a href="/tags#npm" >
+    <span class="tag-code">npm</span>
+  </a>
+
+  <a href="/tags#PCRE" >
+    <span class="tag-code">PCRE</span>
+  </a>
+
+  <a href="/tags#thinkphp" >
+    <span class="tag-code">thinkphp</span>
+  </a>
+
+  <a href="/tags#bootstrap" >
+    <span class="tag-code">bootstrap</span>
+  </a>
+
+  <a href="/tags#jade" >
+    <span class="tag-code">jade</span>
+  </a>
+
+  <a href="/tags#gulp" >
+    <span class="tag-code">gulp</span>
+  </a>
+
+  <a href="/tags#composer" >
+    <span class="tag-code">composer</span>
+  </a>
+
+  <a href="/tags#jQuery" >
+    <span class="tag-code">jQuery</span>
+  </a>
+
+  <a href="/tags#git" >
+    <span class="tag-code">git</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2020/02/09/第三方库使用记录/">
+        <span class="nav-arrow">← </span>
+        
+          第三方库使用记录
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2020/02/09/“drupal笔记”/">
+        
+          drupal随记
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#php"><span class="toc-nav-text">php</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">PCRE Perl语言兼容正则表达式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thinkphp"><span class="toc-nav-text">thinkphp</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#bootstrap"><span class="toc-nav-text">bootstrap</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#jade"><span class="toc-nav-text">jade</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#mongoDB"><span class="toc-nav-text">mongoDB</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#gulp"><span class="toc-nav-text">gulp</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#npm"><span class="toc-nav-text">npm</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#composer"><span class="toc-nav-text">composer</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#jQuery"><span class="toc-nav-text">jQuery</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SMTP协议、POP3协议"><span class="toc-nav-text">SMTP协议、POP3协议</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git"><span class="toc-nav-text">git</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#mysql"><span class="toc-nav-text">mysql</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#网站高并发的处理"><span class="toc-nav-text">网站高并发的处理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#排序"><span class="toc-nav-text">排序</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    //var url = 'localhost:4000/2020/02/09/“杂项笔记”/';
+    //var banner = ''
+    //console.log(banner)
+    // if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+    //   $('#article-banner').css({
+    //     'background-image': 'url(' + banner + ')'
+    //   })
+    // } else {
+    //   $('#article-banner').geopattern(url)
+    // }
+    //let test= window.btoa('hellp');
+    //console.log(test)
+
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    // var qr = new QRious({
+    //   element: document.getElementById('share-qrcode'),
+    //   value: document.location.href
+    // });
+
+    // gitment
+    // var gitmentConfig = "yanm1ng";
+    // if (gitmentConfig !== 'undefined') {
+    //   var gitment = new Gitment({
+    //     id: "杂项笔记",
+    //     owner: "yanm1ng",
+    //     repo: "yanm1ng.github.io",
+    //     oauth: {
+    //       client_id: "0f87e490e00ee3fd87ef",
+    //       client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+    //     },
+    //     theme: {
+    //       render(state, instance) {
+    //         const container = document.createElement('div')
+    //         container.lang = "en-US"
+    //         container.className = 'gitment-container gitment-root-container'
+    //         container.appendChild(instance.renderHeader(state, instance))
+    //         container.appendChild(instance.renderEditor(state, instance))
+    //         container.appendChild(instance.renderComments(state, instance))
+    //         container.appendChild(instance.renderFooter(state, instance))
+    //         return container;
+    //       }
+    //     }
+    //   })
+    //   gitment.render(document.getElementById('comments'))
+    // }
+  })();
+</script>
+
+    <canvas></canvas>
+    </div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    
+<div class="sidebar" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/第三方库使用记录/" class="archive-title">第三方库使用记录</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“杂项笔记”/" class="archive-title">杂项笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“drupal笔记”/" class="archive-title">drupal随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/Vue-js随记/" class="archive-title">Vue.js随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/POSTMAN测试开发/" class="archive-title">POSTMAN测试开发</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/JS精粹/" class="archive-title">JS精粹</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/HTML-CSS基础笔记/" class="archive-title">HTML/CSS基础笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS动画/" class="archive-title">CSS动画</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS世界-笔记/" class="archive-title">CSS世界-笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/11/28/VsCode配置/" class="archive-title">VsCode配置</a>
+        <p class="archive-date">11-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/12/ES6/" class="archive-title">ES6</a>
+        <p class="archive-date">09-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/08/27/SSH代理/" class="archive-title">SSH代理</a>
+        <p class="archive-date">08-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/30/hexo随记/" class="archive-title">hexo随记</a>
+        <p class="archive-date">07-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/系统使用随记/" class="archive-title">Deepin系统使用随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/symfony随记/" class="archive-title">symfony随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/sublime环境配置/" class="archive-title">sublime环境配置</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“node-js笔记”/" class="archive-title">“node.js实战”随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“编码规范”/" class="archive-title">编码规范</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+  <a id="sidebar-arrows">
+    <div class="sidebar-arrow-outer"></div>
+    <div class="sidebar-arrow-inner"></div>
+  </a>
+</div>
+
+<div id="animate_background" style="position: absolute; top: 0; left: 0; z-index: 2;">
+  <canvas id=></canvas>
+</div>
+<div id="animate_mouse_cursor">
+  <div class="animate_mouse_rect-1">
+    <div class="animate_mouse_rect-2"></div>
+  </div>
+</div>
+
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank">yanm1ng</a><br>
+    Patched by <a href="https://github.com/xuxiantao" target="_blank">XXT</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+<script src="/js/animate_mouse.js"></script>
+
+
+  </body>
+  
+</html>

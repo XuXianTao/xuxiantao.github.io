@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Mr.桃&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      HTML/CSS基础笔记 | Mr.Tao&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/asset/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <div id="main_body">
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Mr.Tao's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>HTML/CSS基础笔记</h2>
+  <p class="post-date">2020-02-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<script>
+  $('#article-banner').geopattern();
+</script>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><a href="https://www.cnblogs.com/Jfh389987366/p/7051239.html" target="_blank" rel="noopener">BOM</a><br><a href="https://blog.csdn.net/u011277123/article/details/70889429" target="_blank" rel="noopener">DOM</a></p>
+<ul>
+<li>Element.insertBefore(a,b)要求调用的Element必须是b的父亲节点</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP" target="_blank" rel="noopener">CSP</a>安全策略<br><code>&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#39;self&#39;; img-src https://*; child-src &#39;none&#39;;&quot;&gt;</code></p>
+<ul>
+<li>指定能够运行和请求的白名单，禁止其他来源的脚本或资源，还可以杜绝<code>eval()</code>的使用</li>
+<li>有效减少和报告XSS攻击(阻止大部分通过XSS插入的脚本的运行)</li>
+<li>没有设置的就是禁止加载</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/User-Agent" target="_blank" rel="noopener">User-agent</a></p>
+<p><a href="https://baike.baidu.com/item/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/10602413?fr=aladdin" target="_blank" rel="noopener">浏览器内核</a><br>各类内核以及hack方式(尽量通过css结构修改来实现效果不要通过hack的方式实现)</p>
+<ul>
+<li><p>TRident IE内核 属性值后加<code>\9</code>或<code>\0</code></p>
+</li>
+<li><p>Gecko Firfox内核 <code>@-moz-</code></p>
+</li>
+<li><p>Webkit Safari内核，chrome内核原型，开源 <code>-webkit-</code></p>
+</li>
+<li><p>Blink 谷歌转向的研发内核</p>
+</li>
+<li><p>Presto Opera前内核，已废弃</p>
+</li>
+</ul>
+<p>IE的兼容模式<br>从 8.0 版开始， Internet Explorer 提供了一项名为“兼容模式”的功能， 其在渲染页面时会模拟 8.0 以前版本的行为。 这个特性可以通过三种方法控制：</p>
+<ul>
+<li>浏览器中的本地设置</li>
+<li>页面中的 DOCTYPE 声明</li>
+<li><p>网站在 HTTP 头或页面 <code>&lt;meta&gt;</code> 标签中使用 “X-UA-Compatible”。 此方法会覆盖前两种</p>
+<ul>
+<li><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;</code> 强制浏览器的渲染模式，强制通过<code>Chrome Frame</code>(如果已经安装)在不改变IE外壳的情况下使用chrome内核，强制IE使用当前版本的最新版本渲染(否则可能会采用低版本的兼容模式渲染)</li>
+</ul>
+</li>
+<li><p>可以通过<code>&lt;!--[if lte IE 8]&gt;</code> <code>&lt;![endif]--&gt;</code>进行IE的版本的匹配(低于IE8版本的)<br><code>&lt;!--[if lte IE 8]&gt;&lt;script&gt;window.location.href=&#39;http://support.dmeng.net/upgrade-your-browser.html?referrer=&#39;+encodeURIComponent(window.location.href);&lt;/script&gt;&lt;![endif]--&gt;</code> 如果IE版本低于IE8直接跳转升级提示页面</p>
+</li>
+<li><p>也可以通过只有老版本的IE(IE10及以下)<code>/*@cc_on</code> <code>@*/</code>实现IE版本判断<a href="https://jingyan.baidu.com/article/bea41d43a40910b4c51be60a.html" target="_blank" rel="noopener">参考</a></p>
+</li>
+</ul>
+<p>link的<code>rel</code></p>
+<ul>
+<li><p>常用的有<code>stylesheet</code> 配合href指定资源，type指定资源MIME类型<br><code>&lt;link href=&quot;reset.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></p>
+</li>
+<li><p>单页面多样式的实现(目前在firefox支持，在ie8以上支持，在chrome中需要插件支持)，可以<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets" target="_blank" rel="noopener">参考</a>,在<code>rel</code>中添加<code>alternate</code>即为备选样式(如果指定<code>title</code>则未启用，如果没指定<code>title</code>则一直启用，如果在<code>rel</code>中只指定了<code>alternate</code>则默认启用且可以被替换，由于只能有一个启用的样式，所以多个启用的默认样式会有一些被忽略)，添加<code>title</code>即为可替换的样式，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;reset.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; title=&quot;Default Style&quot;&gt;</span><br><span class="line">&lt;link href=&quot;fancy.css&quot; rel=&quot;alternate stylesheet&quot; type=&quot;text/css&quot; title=&quot;Fancy&quot;&gt;</span><br><span class="line">&lt;link href=&quot;basic.css&quot; rel=&quot;alternate stylesheet&quot; type=&quot;text/css&quot; title=&quot;Basic&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content" target="_blank" rel="noopener">link内容的预加载</a></p>
+<ul>
+<li>通过将<code>rel</code>属性设置为<code>preload</code>可以实现资源预加载，除了原本就由link加载的css样式文件，还可以加载js文件,使用as指定要加载的内容类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;preload&quot; href=&quot;style.css&quot; as=&quot;style&quot;&gt;</span><br><span class="line">&lt;link rel=&quot;preload&quot; href=&quot;main.js&quot; as=&quot;script&quot;&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</span><br></pre></td></tr></table></figure></li>
+<li>脚本化的预加载js文件附加到dom上是不会执行的(请求好资源)，可以在后续需要的时候再添加script(使用请求好的资源)</li>
+</ul>
+</li>
+<li><p><code>link</code>标签的href是引用资源，并行下载资源(就算下载好也不执行，在需要的时候才被使用)不会停止对当前文档的处理，而js文件一般都是需要立即执行的，所以需要使用script标签同步引用阻塞执行，对于css的@import方式(css2.1提出，低版本浏览器不支持)会在网页完全载入以后才加载，不能在渲染DOM的同时同步渲染渲染树</p>
+</li>
+<li><p><a href="https://www.cnblogs.com/henuyuxiang/p/6215706.html" target="_blank" rel="noopener">动态加载css/js文件</a></p>
+</li>
+</ul>
+<p>[js屏幕媒体查询]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">   var mediaQueryList = window.matchMedia(&quot;(max-width: 600px)&quot;);</span><br><span class="line">   var header = document.querySelector(&apos;header&apos;);</span><br><span class="line"></span><br><span class="line">   if(mediaQueryList.matches) &#123;</span><br><span class="line">     header.style.backgroundImage = &apos;url(bg-image-narrow.png)&apos;;</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">     header.style.backgroundImage = &apos;url(bg-image-wide.png)&apos;;</span><br><span class="line">   &#125;</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://www.cnblogs.com/andashu/p/6441271.html" target="_blank" rel="noopener">HTTP协议</a><br><strong>注意：本地调试域名如果和请求地址域名不同(就是是子域名也会跨域)，浏览器是不会自动带上cookies的(也就是说会话状态没有保存，在服务端的session内容每次访问都会不同)，同源策略</strong></p>
+<blockquote>
+<p>解决方式</p>
+<ul>
+<li>修改js脚本的document.domain使其与目标地址相同(但是一些浏览器不能随意修改domain)<ul>
+<li>对于站点<code>api.a.work</code>只能修改为<code>a.work</code>,但是不能修改成<code>work</code>这样的顶级域名</li>
+<li>修改domain为统一域名之后，可以父级通过<code>document.getElementById(&quot;iframe&quot;).contentWindow.document.getElementByI d(&quot;message&quot;).value</code>来访问对象，<br>在子iframe中可以通过<code>parent.document.getElementByI d(&quot;message&quot;).value</code>来访问父级节点</li>
+<li>(两个页面的模数 Document.domain设置为相同的值) 时，这两个脚本才能相互通信。</li>
+<li>也可以通过<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage" target="_blank" rel="noopener">otherWindow.postMessage(message, targetOrigin, [transfer]);</a>实现通信</li>
+<li>如果两个页面主域名不同，</li>
+</ul>
+</li>
+<li>CORS(Cross-Origin Resource Sharing)跨域资源共享 浏览器的同源策略<ul>
+<li>服务器端新增返回的头部字段<code>Access-Control-Allow-Origin: http://foo.example</code> 配置允许访问的域名</li>
+<li>浏览器的请求会先发送一个<code>OPTIONS</code>方法询问服务器允许的操作访问的时候携带头部<code>Access-Control-Request-Method</code>表明之后实际请求的HTTP方法 <code>Access-Control-Request-Headers</code> 告知服务器请求将要携带的头部字段，服务器收到后判断是否接受之后的实际请求，返回<code>Access-Control-Allow-Methods</code>头部字段表示服务器允许的所有HTTP方法(如果没有CORS则是<code>Allow</code>头部字段，但前者只能用于CORS场景中)</li>
+</ul>
+</li>
+<li>JSONP</li>
+</ul>
+</blockquote>
+<h2 id="HTTP-关于缓存的头部信息"><a href="#HTTP-关于缓存的头部信息" class="headerlink" title="HTTP 关于缓存的头部信息"></a><a href="https://www.cnblogs.com/guojiao1600/p/5110971.html" target="_blank" rel="noopener">HTTP 关于缓存的头部信息</a></h2><h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><blockquote>
+<p>http/1.0中定义的header(GMT格式)，是最基础的浏览器缓存处理，表示资源在一定时间内从浏览器的缓存中获取资源，不需要请求服务器获取资源，从而达到快速获取资源，缓解服务器压力的目的。<br>应用：<br>　　1、可以在html页面中添加<code>&lt;meta http-equiv=&quot;Expires&quot; content=&quot;Thu, 01 Dec 1994 16:00:00&quot;/&gt;</code> 来给页面设置缓存时间。<br>　　2、对于图片、css等文件则需要在IIS或者apache等运行容器中进行规则配置来让容器在请求资源的时候添加在responese的header中。</p>
+</blockquote>
+<h3 id="Last-modified"><a href="#Last-modified" class="headerlink" title="Last-modified"></a>Last-modified</h3><blockquote>
+<p>　　1、在浏览器首次请求某个资源时，服务器端返回的状态码是200 （ok），内容是你请求的资源，同时有一个Last-Modified的属性标记(Reponse Header)，标识此文件在服务期端最后被修改的时间，格式：Last-Modified:Tue, 24 Feb 2009 08:01:04 GMT<br>　　2、浏览器第二次请求该资源时，根据HTTP协议的规定，浏览器会向服务器传送If-Modified-Since报头(Request Header)，询问该文件是否在指定时间之后有被修改过，格式为：If-Modified-Since:Tue, 24 Feb 2009 08:01:04 GMT<br>　　3、如果服务器端的资源没有变化，则服务器返回304状态码（Not Modified），内容为空，这样就节省了传输数据量。当服务器端代码发生改变，则服务器返回200状态码（ok），内容为请求的资源，和第一次请求资源时类似。从而保证在资源没有修改时不向客户端重复发出资源，也保证当服务器有变化时，客户端能够及时得到最新的资源。<br><em>注：如果If-Modified-Since的时间比服务器当前时间(当前的请求时间request_time)还晚，会认为是个非法请求</em><br><strong>　　使用<code>Last-Modified</code>标识由于在资源未修改时返回的response内容为空，可以节省一点带宽，但是还是逃不掉发一个HTTP请求出去，需要浏览器连接一次服务器端。<br>而<code>Expires</code>标识却使得浏览器干脆连HTTP请求都不用发，但是当用户使用F5或者点击Refresh按钮的时候，就算URI设置了<code>Expires</code>，浏览器一样也会发一个HTTP请求给服务器端，所以，Last-Modified还是要用的，而且要和Expires一起用。</strong></p>
+</blockquote>
+<h3 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h3><blockquote>
+<p>　　http/1.1 中增加的header，HTTP协议规格说明定义ETag为“被请求变量的实体值” 。另一种说法是，ETag是一个可以与Web资源关联的记号（token）。典型的Web资源可以一个Web页，但也可能是JSON或XML文档。服务器单独负责判断记号是什么及其含义，并在HTTP响应头中将其传送到客户端。<br>ETag的格式<br>    不同类型的Web服务器生成ETag的策略以及生成的格式是不同的：<br>        1、apache1.3和2.x的Etag格式是：inode-size-timestamp。<br>        2、IIS5.0和6.0的Etag格式为Filetimestamp:Changenumber。</p>
+</blockquote>
+<h3 id="cache-control"><a href="#cache-control" class="headerlink" title="cache-control"></a><a href="https://baike.baidu.com/item/Cache-control/1885913?fr=aladdin" target="_blank" rel="noopener">cache-control</a></h3><blockquote>
+<p><code>public</code>  所有内容都将被缓存(客户端和代理服务器都可缓存)<br><code>private</code> 内容只缓存到私有缓存中(仅客户端可以缓存，代理服务器不可缓存)<br><code>no-cache</code>  必须先与服务器确认返回的响应是否被更改，然后才能使用该响应来满足后续对同一个网址的请求。因此，如果存在合适的验证令牌 (ETag)，no-cache 会发起往返通信来验证缓存的响应，如果资源未被更改，可以避免下载。<br><code>no-store</code>  所有内容都不会被缓存到缓存或 Internet 临时文件中<br><code>must-revalidation/proxy-revalidation</code>  如果缓存的内容失效，请求必须发送到服务器/代理以进行重新验证<br><code>max-age=xxx</code> (xxx is numeric)  缓存的内容将在 xxx 秒后失效, 这个选项只在HTTP 1.1可用, 并如果和Last-Modified一起使用时, 优先级较高<br> <strong>注： 如果max-age和头部<code>Expires</code>同时存在，则被<code>Cache-Control</code>的max-age覆盖。</strong><br> <strong>Cache-Control覆盖其他设置，比如 Expires 和 Last-Modified</strong><br> <strong>对于不同浏览器LAST-MODIFIED\ETAGS会导致不同的处理结果，使用Cache-Control则可以跨浏览器进行配置(行为一致)</strong><br><strong>结论</strong>：</p>
+<style>table th:first-child{min-width:100px;}</style>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">打开新窗口</td>
+<td style="text-align:left">如果指定cache-control的值为private、no-cache、must-revalidate,那么打开新窗口访问时都会重新访问服务器。而如果指定了max-age值,那么在此值内的时间里就不会重新访问服务器,例如：Cache-control: max-age=5 表示当访问此网页后的5秒内不会去再次访问服务器.</td>
+</tr>
+<tr>
+<td style="text-align:center">在地址栏回车</td>
+<td style="text-align:left">如果值为private或must-revalidate,则只有第一次访问时会访问服务器,以后就不再访问。如果值为no-cache,那么每次都会访问。如果值为max-age,则在过期之前不会重复访问。</td>
+</tr>
+<tr>
+<td style="text-align:center">按后退按扭</td>
+<td style="text-align:left">如果值为private、must-revalidate、max-age,则不会重访问,而如果为no-cache,则每次都重复访问.</td>
+</tr>
+<tr>
+<td style="text-align:center">按刷新按扭</td>
+<td style="text-align:left">无论为何值,都会重复访问.</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h1 id="前端知识点整理"><a href="#前端知识点整理" class="headerlink" title="前端知识点整理"></a>前端知识点整理</h1><h2 id="H5C3新特性"><a href="#H5C3新特性" class="headerlink" title="H5C3新特性"></a><a href="http://www.cnblogs.com/star91/p/5659134.html" target="_blank" rel="noopener">H5C3新特性</a></h2><ul>
+<li>语义化标签 <code>&lt;header&gt;</code> <code>&lt;footer&gt;</code> <code>&lt;nav&gt;</code> <code>&lt;section&gt;</code> <code>&lt;article&gt;</code> <code>&lt;aside&gt;</code></li>
+<li>多种input类型(<code>color</code> <code>date</code> <code>number</code> <code>range</code> <code>progress</code> <code>search</code>…)和新的表单标签<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;input list=&quot;browsers&quot; /&gt;</span><br><span class="line">&lt;datalist id=&quot;browsers&quot;&gt;</span><br><span class="line">  &lt;options value=&quot;IE&quot;&gt;&lt;/options&gt;</span><br><span class="line">  &lt;options value=&quot;FireFox&quot;&gt;FireFox&lt;/options&gt;</span><br><span class="line">  &lt;options value=&quot;Chrome&quot;&gt;&lt;/options&gt;</span><br><span class="line">  &lt;options value=&quot;Opera&quot;&gt;&lt;/options&gt;</span><br><span class="line">  &lt;options value=&quot;Safari&quot;&gt;&lt;/options&gt;</span><br><span class="line">&lt;/datalist&gt;</span><br></pre></td></tr></table></figure>
+<img src="/2020/02/09/HTML-CSS基础笔记/datalist.png"></li>
+<li>多种input属性 <code>autocomplete</code> <code>autofocus</code> <code>required</code> <code>Pattern=&quot;\d{1,5}&quot;</code> <code>height</code> <code>width</code> <code>min</code> <code>max</code> …</li>
+<li>媒体标签<code>&lt;video&gt;</code> <code>&lt;audio&gt;</code> <code>&lt;canvas&gt;</code></li>
+<li>拖放特性<code>dragglable=&quot;true&quot;</code> <code>ondragstart</code> <code>ondragover</code> <code>ondrop</code></li>
+<li>地理定位API</li>
+<li>Web存储 <code>session Storage</code> <code>localStorage</code></li>
+<li><p>离线Web应用(缓存) <code>manifest</code> 文件(一般以<code>.appcache</code>作为后缀,内容分为<code>CACHE MANIFEST</code> <code>NETWORK</code> <code>FALLBACK</code> 三个部分)告知浏览器被缓存的内容 (浏览器缓存有一定上限，比如5M)</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Worker/Worker" target="_blank" rel="noopener">Web Workers</a> , JS 脚本后台执行不影响页面文档性能，避免js阻塞，在主线程的基础上通过引入一个js文件(必须同源)创建子线程不影响主线程运行，执行完毕之后再回到主线程上，详细实例<a href="https://segmentfault.com/a/1190000012528806" target="_blank" rel="noopener">参考</a>,浏览器有三种worker:<code>dedicated worker</code>(本例使用的就是dedicated worker) 、<code>shared worker</code> 、<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener"><code>service worker</code></a></p>
+<blockquote><p>除了专用 worker 之外，还有一些其他种类的 worker ：</p>
+<ul>
+<li><p><code>Shared Workers</code> 可被对多个脚本运行在不同的窗体，例如IFrames等， 只要这些workers处于同一域名。共享worker 比专用 worker 稍微复杂一点 — 脚本必须通过活动端口进行通讯。详情请见SharedWorker。</p>
+</li>
+<li><p><code>Service Workers</code> 一般作为web应用程序、浏览器和网络（如果可用）之前的代理服务器。他们旨在（除开其他方面）创建有效的离线体验，拦截网络请求，以及根据网络是否可用采取合适的行动并更新驻留在服务器上的资源。他们还将允许访问推送通知和后台同步API。</p>
+</li>
+<li><p><code>Chrome Workers</code> 是一种仅适用于firefox的worker。如果您正在开发附加组件，希望在扩展程序中使用worker且有在你的worker中访问 js-ctypes 的权限，你可以使用Chrome Workers。详情请见ChromeWorker</p>
+</li>
+<li><p><code>音频 Workers</code>可以在网络worker上下文中直接完成脚本化音频处理.</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>webWorker<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> worker = <span class="keyword">new</span> Worker(<span class="string">"worker.js"</span>);</span></span><br><span class="line"><span class="javascript">        worker.postMessage(<span class="string">"123456"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        worker.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(e.data)</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>worker.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.data);</span><br><span class="line">    postMessage(<span class="string">"2222"</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>输出<code>123456</code> <code>2222</code></p>
+</li>
+<li><p><code>HTML5 SSE</code>  Server-Sent 事件指的是网页自动获取来自服务器的更新。<br>以前也可能做到这一点，前提是网页不得不询问是否有可用的更新。通过服务器发送事件，更新能够自动到达。</p>
+</li>
+<li><p><code>HTML5 WebSocket</code></p>
+</li>
+</ul>
+<h2 id="CSS3新特性"><a href="#CSS3新特性" class="headerlink" title="CSS3新特性"></a><a href="https://segmentfault.com/a/1190000010780991" target="_blank" rel="noopener">CSS3新特性</a></h2><ul>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame" target="_blank" rel="noopener">动画优化</a><code>requestAnimationFrame</code>,相比setTimeout和setInterval(都是执行完队列中其他任务再判断是否达到预设的时间再决定是否运行任务，而requestAnimationFrame利用刷新率进行动画同步，在浏览器重绘之前调用函数更新动画，但是因为是在主线程执行，任务比较多的时候效果不好)，动画效果更流畅</p>
+</li>
+<li><p>文档片段：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createDocumentFragment" target="_blank" rel="noopener">createdocumentfragment()</a>方法创建了一虚拟的节点对象，节点对象包含所有属性和方法。<br>当你想提取文档的一部分，改变，增加，或删除某些内容及插入到文档末尾可以使用createDocumentFragment() 方法。<br>你也可以使用文档的文档对象来执行这些变化，但要防止文件结构被破坏，createDocumentFragment() 方法可以更安全改变文档的结构及节点。</p>
+</li>
+<li><p>shadowDOM 封装</p>
+</li>
+</ul>
+<hr>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="标签与属性"><a href="#标签与属性" class="headerlink" title="标签与属性"></a>标签与属性</h3><ul>
+<li><p><code>&lt;canvas&gt;</code><br><br>定义图形，比如图表和其他图像。<code>&lt;canvas&gt;</code>标签只是图形容器，您必须使用脚本来绘制图形。<br>mark</p>
+</li>
+<li><p><code>&lt;article&gt;</code><br><br>定义外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。</p>
+</li>
+<li><p><code>&lt;command&gt;</code><br><br>command 元素表示用户能够调用的命令。<code>&lt;command&gt;</code> 标签可以定义命令按钮，比如单选按钮、复选框或按钮。只有当 command 元素位于 menu 元素内时，该元素才是可见的。否则不会显示这个元素，但是可以用它规定键盘快捷键。<br>只有 Internet Explorer 9 （更早或更晚的版本都不支持）支持 <command> 标签。</p>
+</li>
+<li><p><code>&lt;sup&gt;</code><br><br>标签，表示上标<font color="red">[看圆圈的上下位置来助记]</font></p>
+</li>
+<li><p><code>&lt;sub&gt;</code><br><br>标签，表示下标</p>
+</li>
+<li><p><code>&lt;mark&gt;</code><br><br>突出显示，背景黄色</p>
+</li>
+<li><p><code>&lt;ins&gt;</code><br><br>下划线 (属性不可用) 常与<code>&lt;del&gt;</code>一起表示修正</p>
+</li>
+<li><p><code>&lt;label&gt;</code><br><br>标签属性只有for（规定 label 绑定到哪个表单元素。索引是id ）和form（规定 label 字段所属的一个或多个表单）属性(html5规范)</p>
+</li>
+<li><p><code>&lt;input&gt;</code><br><br>标签type可以是<strong>image</strong>/reset/submit/text,注意的是对于type的属性值<strong>date</strong>只有在H5下才有效果，考虑兼容则无法使用,select是单独标签<br><code>&lt;select&gt;&lt;option&gt;&lt;/option&gt;&lt;/select&gt;</code></p>
+</li>
+<li><p><code>&lt;table&gt;</code><br><br>表格的边框线的粗细，是看属性<code>border</code>，<br><code>cellspacing</code>表示单元格之间的间隔；<br><code>cellpadding</code>表示单元格内边距。</p>
+</li>
+<li><p><code>&lt;object&gt;</code><br><br>定义一个嵌入的对象。请使用此元素向您的 XHTML 页面添加多媒体。此元素允许您规定插入 HTML 文档中的对象的数据和参数，以及可用来显示和操作数据的代码。</p>
+</li>
+<li><p><code>&lt;dl&gt;</code><br><br><code>&lt;dl&gt;</code>标记定义了一个定义列表，定义列表中的条目是通过使用<code>&lt;dt&gt;</code>标记(“definition title”，定义标题)和<code>&lt;dd&gt;</code>标记(“definition description”，定义描述)创建的。<code>&lt;dt&gt;</code>给出了术语名，<code>&lt;dd&gt;</code>标记给出了术语的定义。</p>
+</li>
+<li><p>title 属性，表示鼠标移动到对应元素上方的时候出现的文字</p>
+</li>
+<li><p>HTML元素的显示优先级（显示层次问题，哪个在上哪个在下！总是显示在最前面）</p>
+<ul>
+<li>帧元素<code>frameset嵌入网页</code>&gt;HTML元素优先，表单元素<code>form之下的</code>总&gt;非表单元素优先</li>
+<li>z-index属性值只有在同一类元素(窗口元素or非窗口元素)之间才起决定作用<ul>
+<li>有窗口的元素包括：SELECT元素，OBJECT元素，插件，IE5.01以主更早版本中的IFRAME元素。</li>
+<li>无窗口的元素包括：大多数的普通HTML元素，如链接和TABLE标记，除了SELECT元素之外的大多数表单元素。</li>
+<li><strong>有窗口元素总是显示在无窗口元素的前面</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>em集成父级元素的字体大小 pt绝对长度单位，不随浏览器分辨率变化</p>
+</li>
+<li><p>html5规范不允许加id，但是浏览器厂商却实现了这个功能</p>
+</li>
+<li><p>在<strong>css3</strong>中，img<strong>图像自适应</strong>填充可以使用</p>
+<ul>
+<li>object-position与background-position相似</li>
+<li>object-fit适用于替换元素比如<code>&lt;video&gt;</code>、<code>&lt;object&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;input type=&quot;image&quot;&gt;</code>、<code>&lt;svg&gt;</code>、<code>&lt;svg:image&gt;</code>和<code>&lt;svg:video&gt;</code>等。(默认fill、contain、cover、none\scale-down)</li>
+<li>object-fit/object-position在IE下<strong>不兼容</strong></li>
+</ul>
+<ul>
+<li>listc当然，如果最好还是只定义长度或者宽度的百分比，或者通过行内式的background实现相同效果</li>
+</ul>
+</li>
+<li><p>div可以作为分隔标签(定义文档的分区、节)</p>
+</li>
+<li><p>关于盒模型在W3C标准盒模型和 IE盒模型中的表现是不一样的，总宽度是包括了margin的</p>
+<img src="/2020/02/09/HTML-CSS基础笔记/box.png" title="[盒模型]">
+</li>
+<li><p><strong>图片懒加载</strong>：利用JS动态判断图片是否进入浏览器用户界面，没进入之前统一用一张loading图，这样请求就只用一次，进入浏览器用户界面后将自定义的data-src属性值赋值给src,参考<a href="https://www.cnblogs.com/moxiaowohuwei/p/7908877.html" target="_blank">链接</a><br><code>&lt;img src=&quot;img/loading.png&quot; data-src=&quot;img/photo3.jpeg&quot;&gt;</code></p>
+</li>
+<li><p><strong>图片请求</strong></p>
+<ul>
+<li>同个图片只产生一次请求</li>
+<li>只写在style中的图片url是不会发生请求的</li>
+<li>挂载到节点上后即使display:none也会产生请求(实际不同浏览器效果不同)</li>
+<li>对于hover事件的background图片修改请求，只有在出发hover的时候才发出请求</li>
+<li>只有添加到JS上才有图片请求</li>
+</ul>
+</li>
+<li><p>.tif图像(是一种位图格式，用于不同应用和平台的图像交换)不能嵌入html文档流,<br>.gif.bmp.png则可以嵌入HTML文档</p>
+</li>
+<li><p>鼠标移动到按钮上点击的事件触发link-&gt;visited  hover-&gt;<u><strong>focus</strong></u>-&gt;active</p>
+</li>
+<li><p>cookie(&lt;=4K)会被http请求携带但<a href="https://www.cnblogs.com/st-leslie/p/5617130.html" target="_blank">localstorage</a>不会(≈5M,本地存储，只支持string存储)</p>
+</li>
+<li><p>sessionstorage与localstorage不用在服务器获取数据，仅在客户端中保存，所以更节省流量、速度更快。</p>
+</li>
+<li><p>一个小三角的实现<img src="/2020/02/09/HTML-CSS基础笔记/little-tri.png" title="小三角"></p>
+<figure class="highlight less"><figcaption><span>小三角的实现</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.video-room</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">10px</span> solid <span class="number">#D9D9D9</span>;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">10px</span> solid transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: -<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于x与y轴一边显示一边隐藏的实现方式[<a href="https://stackoverflow.com/questions/15970937/css-overflow-x-hidden-and-overflow-y-visible]" target="_blank" rel="noopener">https://stackoverflow.com/questions/15970937/css-overflow-x-hidden-and-overflow-y-visible]</a><br>  需要在内部多加一层wrapper，在wrapper设置overflow属性</p>
+</li>
+<li><p>使用line-height继承的时候需要注意，如果父级的line-height和子级的line-height一样的时候，有可能会错位而导致父级上方少了1px，替代方案就是直接修改子元素line-height而父元素不要设置</p>
+</li>
+<li><p>图片居中，使用text-align:center+ display:inline-block</p>
+</li>
+<li><p>注意两个div水平方向对齐可能会因为<code>overflow: hidden</code>的设置而不齐（内部的箭头是通过before设置的）；</p>
+<img src="/2020/02/09/HTML-CSS基础笔记/css_overflow-hidden-1.png" title="[overflow1]"> <img src="/2020/02/09/HTML-CSS基础笔记/css_overflow-hidden-2.png" title="[overflow2]">
+</li>
+<li><p>line-height最好设置到底层文字不要继承，不然最外层的margin布局会受到line-height影响，记得设置同一个vertical:middle即可</p>
+</li>
+<li><p>对于<code>display:inline-block</code>属性的div，如果彼此中间存在换行可能会导致中间有空格，最好是<code>&lt;div&gt;&lt;/div&gt;&lt;div&gt;</code>紧跟着连接不要换行</p>
+</li>
+<li><p>穿透点击效果通过<code>pointer-events</code>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//穿透该层</span><br><span class="line">pointer-events:none;</span><br><span class="line">//恢复点击处理</span><br><span class="line">pointer-events:auto;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置两个方块居中嵌套，可以通过div嵌套+[top|left:50%]+[transform:translate(-50%,-50%)]实现(不过要注意IE兼容性)</p>
+<img src="/2020/02/09/HTML-CSS基础笔记/div_embed_center.png"></li>
+<li><p><code>background: linear-gradient(to right, white 0%, color-primary 30%)</code>注意渐变值对应的属性不是background-color,其中的百分比是颜色所占的相对位置</p>
+</li>
+<li><p>将 position 设为 relative (相对定位), absolute (绝对定位) 或者 fixed (固定定位)这样的节点会覆盖没有设置 position 属性或者属性值为 static 的节点, 说明前者比后者的默认层级高.如果将 position 设为 static, 位于文档流后面的节点依然会遮盖前面的节点浮动, 所以 position:static 不会影响节点的遮盖关系.</p>
+</li>
+<li><p><code>#</code>指定标识符有两种方法，一是使用锚点，比如<code>&lt;a name=&quot;print&quot;&gt;&lt;/a&gt;</code>，二是使用id属性，比如<code>&lt;div id=&quot;print&quot; &gt;</code>。<code>#</code>是用来指导浏览器操作的，对服务器端没有作用，HTTP请求没有<code>#</code></p>
+</li>
+<li><p>对于<code>display:inline-block</code>的标签，如果彼此在不同的行，则会存在间距，可以通过设置父级元素的<code>font-size: 0</code>来解决</p>
+</li>
+<li><p>对于<code>display: inline-block</code> 使用<code>margin-top: -50px</code> 可能会出现问题，修改display就行</p>
+</li>
+<li><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width= device-width; initial-scale=1.0&quot;&gt;</code> 是针对移动端的显示窗口<code>viewport</code>(一个用来装载浏览页面的窗口)(等于或大于移动端的显示像素尺寸)的适配标签，比如，对于一个宽度为360px的移动终端，我们要给viewport的width设置为小于或等于<code>360</code>/或者说<code>device-width</code>(在<code>viewport</code>的<code>content</code>中的width赋值的时候不能带单位)的时候，显示的时候刚好填充满；<br>如果设置为大于<code>device-width</code>的数值，则会变成放大的局部图像(这是因为原本装页面的视图窗口宽度大于现在的设备宽度)</p>
+</li>
+<li><p>原生的css也有变量可以使用</p>
+<ul>
+<li>声明<code>--a: 10px</code></li>
+<li>使用<code>width: var(--a)</code></li>
+</ul>
+</li>
+<li><p>原生的css计算函数</p>
+<ul>
+<li><code>width: calc(100vw - 200px)</code> 运算符左右必须空格(这里vw指viewport所占百分比，100vw即当前视图窗口的宽度100%viewport)</li>
+</ul>
+</li>
+<li><p>关于行内的嵌入式浮动，<a href="https://blog.csdn.net/a153375250/article/details/51638232" target="_blank" rel="noopener">参考</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="一些接触到的CSS-标签的使用"><a href="#一些接触到的CSS-标签的使用" class="headerlink" title="一些接触到的CSS @标签的使用"></a>一些接触到的CSS @标签的使用</h2><ul>
+<li><p><code>@import xxx.css</code> 引入其他css文件</p>
+</li>
+<li><p><code>@media screen and (max-width:992px)</code> 屏幕适配</p>
+</li>
+<li><p><code>@media print</code> 打印预览</p>
+</li>
+<li><p><code>@media speech</code> 阅读器等发声设备<br>具体媒体功能可以<a href="http://www.runoob.com/cssref/css3-pr-mediaquery.html" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li><p><code>@font-face</code> css3字体，防止用户没有指定字体，将字体文件放在服务器端供下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt; </span><br><span class="line">@font-face</span><br><span class="line">&#123;</span><br><span class="line">font-family: myFirstFont;</span><br><span class="line">src: url(&apos;Sansation_Light.ttf&apos;),</span><br><span class="line">     url(&apos;Sansation_Light.eot&apos;); /* IE9+ */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div</span><br><span class="line">&#123;</span><br><span class="line">font-family:myFirstFont;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">//粗体字的单独定义</span><br><span class="line">@font-face</span><br><span class="line">&#123;</span><br><span class="line">font-family: myFirstFont;</span><br><span class="line">src: url(&apos;Sansation_Bold.ttf&apos;),</span><br><span class="line">     url(&apos;Sansation_Bold.eot&apos;); /* IE9+ */</span><br><span class="line">font-weight:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>@keyframes</code> 制作动画</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt; </span><br><span class="line">div</span><br><span class="line">&#123;</span><br><span class="line">width:100px;</span><br><span class="line">height:100px;</span><br><span class="line">background:red;</span><br><span class="line">position:relative;</span><br><span class="line">animation:mymove 5s infinite;</span><br><span class="line">-moz-animation:mymove 5s infinite; /* Firefox */</span><br><span class="line">-webkit-animation:mymove 5s infinite; /* Safari and Chrome */</span><br><span class="line">-o-animation:mymove 5s infinite; /* Opera */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes mymove</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">75%  &#123;top:50px&#125;</span><br><span class="line">100% &#123;top:100px;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-moz-keyframes mymove /* Firefox */</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">75%  &#123;top:50px&#125;</span><br><span class="line">100% &#123;top:100px;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-webkit-keyframes mymove /* Safari and Chrome */</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">75%  &#123;top:50px&#125;</span><br><span class="line">100% &#123;top:100px;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-o-keyframes mymove /* Opera */</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">75%  &#123;top:50px&#125;</span><br><span class="line">100% &#123;top:100px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>@charset &quot;utf-8&quot;;</code> 指定样式文件的编码格式，分号必须加上</p>
+</li>
+</ul>
+<h3 id="回流与重绘"><a href="#回流与重绘" class="headerlink" title="回流与重绘"></a>回流与重绘</h3><img src="/2020/02/09/HTML-CSS基础笔记/tree.jpg" title="html页面渲染流程">
+<a href="http://www.css88.com/archives/4996" target="_blank" rel="noopener">图片来源</a>
+<ul>
+<li><p>当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。</p>
+<blockquote>
+<p>每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘。</p>
+</blockquote>
+</li>
+<li><p>当页面元素样式改变不影响元素在文档流中的位置时（如background-color，border-color，visibility），浏览器只会将新样式赋予元素并进行重新绘制操作。</p>
+</li>
+<li><p>display：none指的是元素完全不陈列出来，不占据空间，涉及到了DOM结构，故产生reflow与repaint<br></p>
+</li>
+<li><p>visibility：hidden指的是元素不可见但存在，保留空间，不影响结构，故只产生repaint</p>
+</li>
+</ul>
+<h2 id="理论知识"><a href="#理论知识" class="headerlink" title="理论知识 "></a>理论知识 </h2><ul>
+<li><p>只要 协议 、 域名 、 端口 有任何一个 不同, 都被当作是 不同 的域。</p>
+</li>
+<li><p>Doctype不存在或错误，浏览器默认 混杂模式(另一种是标准模式\严格模式)</p>
+<blockquote>
+<p>混杂模式不是什么值得推荐的做法，因为不同浏览器在这种模式下的行为差异非常大，如果不使用某些hack技术，跨浏览器的行为根本就没有一致性可言。</p>
+</blockquote>
+</li>
+<li><p>hack技术主要是为了  某些浏览器特定设置的，写在css中，里面可以嵌套style和html代码，不可以写在style中。</p>
+</li>
+<li><p>HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）</p>
+</li>
+<li><p>对于 HTML 4.01 文档，</p>
+<blockquote>
+<p>包含严格 DTD 的 DOCTYPE 常常导致页面以标准模式呈现。<br>包含过度 DTD 和 URI 的 DOCTYPE 也导致页面以标准模式呈现。<br>但是有过度 DTD 而没有 URI 会导致页面以混杂模式呈现。<br>DOCTYPE 不存在或形式不正确会导致 HTML 和 XHTML 文档以混杂模式呈现。<br>&lt; !– HTML 4.01 严格型 –&gt;<br>&lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “<a href="http://www.w3.org/TR/html4/strict.dtd&quot;&gt;" target="_blank" rel="noopener">http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</a><br>&lt; !– XHTML 1.0 严格型 –&gt;<br>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;" target="_blank" rel="noopener">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</a></p>
+</blockquote>
+</li>
+<li><p>自闭和是XHTML要求，HTML5不要求自闭</p>
+</li>
+<li><p>3种WEB服务交互方案<a href="https://segmentfault.com/q/1010000003064904?_ea=298208" target="_blank">转载来源</a></p>
+<blockquote>
+<p>1、REST（英文：Representational State Transfer，简称REST）描述了一个架构样式的网络系统，比如 web 应用程序。它首次出现在 2000 年 Roy Fielding 的博士论文中，他是 HTTP 规范的主要编写者之一。在目前主流的三种Web服务交互方案中，REST相比于SOAP（Simple Object Access protocol，简单对象访问协议）以及XML-RPC更加简单明了，无论是对URL的处理还是对Payload的编码，REST都倾向于用更加简单轻量的方法设计和实现。值得注意的是REST并没有一个明确的标准，而更像是一种设计的风格。<br>Web 应用程序最重要的 REST 原则是，客户端和服务器之间的交互在请求之间是无状态的，无状态请求可以由任何可用服务器回答，这十分适合云计算之类的环境，客户端可以缓存数据以改进性能<br>另一个重要的 REST 原则是分层系统，这表示组件无法了解它与之交互的中间层以外的组件。通过将系统知识限制在单个层，可以限制整个系统的复杂性，促进了底层的独立性。<br><br>2、SOAP 简单对象访问协议是交换数据的一种协议规范，是一种轻量的、简单的、基于XML（标准通用标记语言下的一个子集）的协议，它被设计成在WEB上交换结构化的和固化的信息。<br><br>3、RPC（Remote Procedure Call Protocol）——远程过程调用协议，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</p>
+</blockquote>
+</li>
+<li><p>谷歌内核的浏览器在中文语言下最小字体只能是12px</p>
+</li>
+<li><p>MIME (Multipurpose Internet Mail Extensions) 是描述消息内容类型的因特网标准    application/xxxx</p>
+</li>
+<li><p>Blob对象可以看做是存放二进制数据的容器，此外还可以通过Blob设置二进制数据的MIME类型。</p>
+</li>
+</ul>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript "></a>JavaScript </h2><h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><ul>
+<li>DOM中的事件对象：（符合W3C标准）<blockquote>
+<p>preventDefault()取消事件默认行为<br>stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。<br>stopPropagation()取消事件冒泡，对当前节点无影响。</p>
+</blockquote>
+</li>
+<li><p>IE中的事件对象：</p>
+<blockquote>
+<p>cancelBubble()  取消事件冒泡<br>returnValue()     取消事件默认行为</p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cnblogs.com/xxcanghai/p/4998076.html" target="_blank" rel="noopener">连等符号</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;;</span><br><span class="line">console.log(a.x); // undefined</span><br><span class="line">console.log(a===b.x); //true</span><br><span class="line">// 先申明在赋值，所以a.x是指向原来的&#123;n:1&#125;的地址扩充为&#123;n:1, x:undefined&#125;; 然后开始赋值操作，先进行a = &#123;n:2&#125; 修改了a变量指向新的对象&#123;n:2&#125;， 而后面的a.x = a注意a.x此时仍然指向旧对象，也就是说&#123;n:1, x:&#123;n:2&#125;&#125;, 而b对象保留指向旧对象，所以b.x输出就是&#123;n:2&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5种<strong>基本类型(原始类型-原始值)</strong>:<code>string</code> <code>number</code> <code>boolean</code> <code>null(typeof下是Object)</code> <code>undefined</code>,ES6新增<code>Symbol(根据key值创建独一无二的全局值)</code></p>
+</li>
+<li><p><code>NaN</code> 是一个特殊的全局属性,是number类型,只能通过Number.isNaN判断<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN" target="_blank" rel="noopener">参考</a></p>
+<div class="col-half"><img src="/2020/02/09/HTML-CSS基础笔记/NaN.png"></div><div class="col-half"><img src="/2020/02/09/HTML-CSS基础笔记/NaN2.png"></div>
+</li>
+<li><p>1种<strong>复杂类型(引用类型)</strong>:<code>object(可以是数组、类对象)</code></p>
+</li>
+<li><p>常见内置对象还有<code>Array</code> <code>Date</code> <code>Function</code> <code>Math</code> <code>....</code></p>
+</li>
+<li><p>typeof 的返回结果可以是：<code>symbol</code> <code>boolean</code> <code>undefineed</code> <code>string</code> <code>function</code> <code>object</code></p>
+</li>
+<li><p>强制转换为Number,使用<code>Number(str)</code>或者与一个数字进行<code>*</code> <code>/</code> <code>-</code>操作</p>
+</li>
+<li><p>关于Number的取整，<code>Math.floor()</code> 不同与 <code>Math.trunc()</code>，后者只是简单去掉小数部分，考虑到负数的情况，<code>floor</code>的逻辑会稍微复杂一点，不能用<code>Number.parseInt()</code>来代替<code>trunc</code>取整(虽然二者对于小数都是一样直接去掉小数部分)，但是在<code>parseInt(string, radix)</code> 的第一参数会自动转换为string，同时有第二个参数radix决定了第一个参数的基数，也就是以多少进制来解读第一个string<strong>永远要明确给出radix的定义</strong>(否则0x会自动转十六进制解读，0开头会自动转八进制解读，且不同浏览器没有统一规范)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(10,2)</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTML5提供两种新对象存储本地数据——<code>localStorage</code>(永久)和<code>sessionStorage</code>(临时)</p>
+</li>
+<li><p>java是强类型语言，javascript是弱类型语言(不同类型数据的运算)</p>
+</li>
+<li><p>js可以行内引用 <code>onclick=&quot;javascript:return void(null)&quot;</code></p>
+</li>
+<li><p>注意delete数组之后，数组仍保留原位置(数组长度不变)</p>
+<img src="/2020/02/09/HTML-CSS基础笔记/js_delete.png"></li>
+<li><p>对于hover属性，使用jQ的trigger函数的时候<code>trigger(&#39;hover&#39;)</code>是无效的，因为hover包含了<code>mouseenter</code> 和 <code>mouseleave</code>事件，应该用<code>trigger(&#39;mouseenter&#39;)</code>或者mouseleave都可以</p>
+</li>
+<li><p><code>if (&#39;serviceWorker&#39; in navigator)</code> 使用<code>in</code> 可以判断在某个对象上是否有某个属性</p>
+</li>
+<li><p>多对象绑定事件的时候可以通过托管的方式提高性能</p>
+</li>
+<li><p><a href="https://www.cnblogs.com/liaojie970/p/7154144.html" target="_blank" rel="noopener">严格模式</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/THEANARKH/article/details/78129441" target="_blank" rel="noopener">迭代例子</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/TomXu/archive/2012/01/18/2312463.html" target="_blank" rel="noopener">作用域链</a></p>
+<ul>
+<li>AO活动对象(激活了正在运行的对象[函数])，VO变量对象(声明的object对象) 都指内部定义的变量</li>
+<li>[[Scope]]指上级的作用域</li>
+<li>一个对象完整的作用域是AO|VO+[[Scope]]</li>
+<li>一个对象的作用域在创建的时候就已经定义好了，即使后面改动也不会修改对应数值，这样引用了上下文的函数就可以称之为闭包<blockquote><p>闭包是函数代码和其[[scope]]的结合</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var x = 10;</span><br><span class="line"> </span><br><span class="line">function foo() &#123;</span><br><span class="line">  alert(x);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">(function () &#123;</span><br><span class="line">  var x = 20;</span><br><span class="line">  foo(); // 10, but not 20</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></li>
+<li>作用域没有的变量会从原型链中去找，这就是二维链查找</li>
+<li>with声明和catch语句能够在作用域链前端添加vo变量对象，结束后原来的作用域链恢复</li>
+</ul>
+</li>
+<li><p><a href="https://blog.csdn.net/gis_swb/article/details/52297343" target="_blank" rel="noopener">数组遍历</a><br>对应方法<code>map</code> <code>filter</code> <code>some</code> <code>every</code> <code>forEach</code> 的函数参数有<code>callback(d, i, array)[ ,thisArg]</code>分别表示数组item值和键值,被调用的函数以及紧跟着callback函数的this参数作为函数内使用的this值</p>
+<ul>
+<li>map 有返回值，返回一个新的数组，每个元素为调用func(d,i)的结果。</li>
+<li>filter 有返回值，由原来的数组返回一个符合func(d,i)条件的元素数组</li>
+<li>some 返回一个boolean，判断是否有元素符合func条件，如果有一个元素符合func条件，则循环会终止。</li>
+<li>every 返回一个boolean，判断每个元素是否符合func条件，有一个元素不满足func条件，则循环终止，返回false。</li>
+<li><p>forEach<br>没有返回值，只针对每个元素调用func。<br>优点：代码简洁。<br>缺点：无法使用break，return等终止循环。</p>
+</li>
+<li><p>for in<br>for-in循环实际是为循环”enumerable“对象而设计的，for in也可以循环数组，但是不推荐这样使用，for–in是用来循环带有字符串key的对象的方法。<br>缺点：只能获得对象的键名，不能直接获取键值。</p>
+</li>
+<li><p>for of<br>for of为ES6提供，具有<em>iterator接口</em>，就可以用for of循环遍历它的成员。也就是说，for of循环内部调用的是数据结构的Symbol.iterator方法。<br>for of循环可以使用的范围包括数组、Set和Map结构、某些类似数组的对象（比如arguments对象、DOM NodeList对象）、后文的Generator对象，以及字符串。<br>有些数据结构是在现有数据结构的基础上，计算生成的。比如，ES6的数组、Set、Map都部署了以下三个方法，调用后都返回遍历器对象。<br>entries<br>entries() 返回一个遍历器对象，用来遍历[键名, 键值]组成的数组。对于数组，键名就是索引值；对于Set，键名与键值相同。Map结构的iterator接口，默认就是调用entries方法。</p>
+<p>keys<br>keys() 返回一个遍历器对象，用来遍历所有的键名。</p>
+<p>values<br>values() 返回一个遍历器对象，用来遍历所有的键值。<br>这三个方法调用后生成的遍历器对象，所遍历的都是计算生成的数据结构。</p>
+</li>
+</ul>
+</li>
+<li><p><a href="https://blog.csdn.net/kkkkkxiaofei/article/details/52608394" target="_blank" rel="noopener">Element 与 Node</a></p>
+<ul>
+<li>Node是基类，Element是继承Node的子类(Element，Text和Comment-注释，都是继承Node的)，通过节点的nodeType()方法得到节点类型编号<ul>
+<li>getElementById()方法得到的是一个Element,所以instanof Node和instanceof Element都是true</li>
+<li>querySelector()方法得到的是</li>
+</ul>
+</li>
+<li>HTMLCollection 和 NodeList都是实时变动的，所以循环时候要注意长度变化，都是类数组对象，可以使用length属性，都有共同方法item访问子元素，不同的是NodeList可以包含任何节点类型，HTMLCollection只有元素节点，HTMLCollection比NodeList多一个namedItme方法用于查找具有指定id或name值的节点<ul>
+<li>childNodes() querySelectorAll() getElementsByName()得到的是NodeList</li>
+<li>children() getElementsByTagName() getElementsByClassName得到的是HTMLCollection(相比Nodelist多了一个namedItem通过id或者name值查找节点的方法)(与NodeList无继承关系)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>js内部字符采用 UTF16 编码(<code>str.charCodeAt()</code>获取字符在某个位置的utf16值，可通过length遍历)，比如部分多字节汉字(\u0000\u0000)如果unicode的码点记得先进行转化，对于字符串逆转就用es6的<code>Array.from(string).reverse().join(&#39;&#39;)</code></p>
+</li>
+<li><p>注意length是作为属性而不是方法使用的,无论是对于<code>String</code>(16-bit Unicode characters为单位) 还是<code>Array</code>,注意object没有length属性，只能通过<code>for...in...</code>实现键值的遍历</p>
+</li>
+</ul>
+<h3 id="一些函数"><a href="#一些函数" class="headerlink" title="一些函数"></a>一些函数</h3><ul>
+<li><p><code>String.prototype.slice(beginIndex, [, endIndex])</code> 返回一个新的子串不修改原字符串，如果下标是负数则按照str.length+index来处理该位下标，（注意最后一位不在子串内）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//                    10 12 14 16 18</span></span><br><span class="line"><span class="keyword">var</span> str1 = <span class="string">'The morning is upon us.'</span>, <span class="comment">// the length of str1 is 23.</span></span><br><span class="line"><span class="comment">//          0123456789  11 13 15 17</span></span><br><span class="line">    str2 = str1.slice(<span class="number">1</span>, <span class="number">8</span>),</span><br><span class="line">    str3 = str1.slice(<span class="number">4</span>, <span class="number">-2</span>),</span><br><span class="line">    str4 = str1.slice(<span class="number">12</span>),</span><br><span class="line">    str5 = str1.slice(<span class="number">30</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">// OUTPUT: he morn</span></span><br><span class="line"><span class="built_in">console</span>.log(str3); <span class="comment">// OUTPUT: morning is upon u</span></span><br><span class="line"><span class="built_in">console</span>.log(str4); <span class="comment">// OUTPUT: is upon us.</span></span><br><span class="line"><span class="built_in">console</span>.log(str5); <span class="comment">// OUTPUT: ""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'The morning is upon us.'</span>;</span><br><span class="line">str.slice(<span class="number">-3</span>);     <span class="comment">// returns 'us.'</span></span><br><span class="line">str.slice(<span class="number">-3</span>, <span class="number">-1</span>); <span class="comment">// returns 'us'</span></span><br><span class="line">str.slice(<span class="number">0</span>, <span class="number">-1</span>);  <span class="comment">// returns 'The morning is upon us'</span></span><br><span class="line"><span class="comment">//实际取指定长度的子串的时候可以直接通过startIndex+length作为endIndex来实现，这在substring也是一样的</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意在String中只有slice取子串的方法，没有splice,因为在字符串中的length属性是只读的，而splice方法会修改长度，所以即便是借用<code>Array.prototype.splice.call</code>也不能正常执行</strong></p>
+<img src="/2020/02/09/HTML-CSS基础笔记/string_splice.png">
+</li>
+<li><p><code>String.prototype.split(seperator, [, limit])</code> 将字符串根据分隔符分割成一个数组返回</p>
+<ul>
+<li>seperator分隔符可以是字符串也可以是正则，若结果没有匹配的子串或没有定义seperator则返回含有整个字符串的数组，如果seperator是空字符串，则返回字符数组</li>
+<li>limit 定义了返回的数组长度上限</li>
+<li><em>值得注意的是对于多字节字符最好使用es6的正则\u进行匹配</em><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'résumé'</span>;</span><br><span class="line"><span class="keyword">var</span> strReverse = str.split(<span class="regexp">/(?:)/u</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line"><span class="comment">// =&gt; "́emuśer"</span></span><br><span class="line"></span><br><span class="line">&gt; <span class="string">'𝟘𝟙𝟚𝟛'</span>.split(<span class="regexp">/(?=[\s\S])/u</span>)</span><br><span class="line">[ <span class="string">'𝟘'</span>, <span class="string">'𝟙'</span>, <span class="string">'𝟚'</span>, <span class="string">'𝟛'</span> ]</span><br><span class="line">&gt; [...<span class="string">'𝟘𝟙𝟚𝟛'</span>]</span><br><span class="line">[ <span class="string">'𝟘'</span>, <span class="string">'𝟙'</span>, <span class="string">'𝟚'</span>, <span class="string">'𝟛'</span> ]</span><br><span class="line">&gt; <span class="string">'𝟘𝟙𝟚𝟛'</span>.split(<span class="regexp">/(?=[\s\S])/u</span>)</span><br><span class="line">[ <span class="string">'𝟘'</span>, <span class="string">'𝟙'</span>, <span class="string">'𝟚'</span>, <span class="string">'𝟛'</span> ]</span><br><span class="line"></span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>String.prototype.padEnd(targetLength [, padString])</code>在原字符串末尾填充指定的填充字符串直到目标长度所形成的新字符串。<strong>注意，该方法并不会修改原字符串，只是返回一个新字符串</strong></p>
+<ul>
+<li><code>targetLength</code><br>当前字符串需要填充到的目标长度。如果这个数值小于当前字符串的长度，则返回当前字符串本身。</li>
+<li><code>padString</code> 可选<br>填充字符串。如果字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。此参数的缺省值为 “ “（U+0020）。</li>
+</ul>
+</li>
+<li><p><code>String.prototype.padStart(targetLength [, padString])</code></p>
+</li>
+<li><p><code>Array.prototype.slice()</code> 创建一个新的浅拷贝数组或迭代器</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruits = [<span class="string">'Banana'</span>, <span class="string">'Orange'</span>, <span class="string">'Lemon'</span>, <span class="string">'Apple'</span>, <span class="string">'Mango'</span>];</span><br><span class="line"><span class="keyword">var</span> citrus = fruits.slice(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// fruits contains ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']</span></span><br><span class="line"><span class="comment">// citrus contains ['Orange','Lemon']</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Array.prototype.splice(start[, deleteCount[, item1[, item2[, ...]]]])</code> 可以用来插入和删除数组元素,<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li><p><code>Array.from(arrayLike[, mapFn[, thisArg]])</code> 创建一个新的浅拷贝的数组实例<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li><p><code>Array.prototype.reduce(callback(accumulator, currentValue， currentIndex, array)[, initialValue])</code> 左到右顺序回调<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li><p><code>Array.prototype.reduceRight(callback(previousValue, currentValue, index, array)[, initialValue])</code> 右到左回调<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li><p><code>String.prototype.substr(start, [, length])</code> (不建议使用，以后会被移除)返回一个新的子串，如果length为0或者负数或者NaN都当做0来处理，如果length没有输入参数则子串会一直取到字符串的结尾，如果start为负数或者NaN都当做0处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aString = <span class="string">'Mozilla'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(aString.substr(<span class="number">0</span>, <span class="number">1</span>));   <span class="comment">// 'M'</span></span><br><span class="line"><span class="built_in">console</span>.log(aString.substr(<span class="number">1</span>, <span class="number">0</span>));   <span class="comment">// ''</span></span><br><span class="line"><span class="built_in">console</span>.log(aString.substr(<span class="number">-1</span>, <span class="number">1</span>));  <span class="comment">// 'a'</span></span><br><span class="line"><span class="built_in">console</span>.log(aString.substr(<span class="number">1</span>, <span class="number">-1</span>));  <span class="comment">// ''</span></span><br><span class="line"><span class="built_in">console</span>.log(aString.substr(<span class="number">-3</span>));     <span class="comment">// 'lla'</span></span><br><span class="line"><span class="built_in">console</span>.log(aString.substr(<span class="number">1</span>));      <span class="comment">// 'ozilla'</span></span><br><span class="line"><span class="built_in">console</span>.log(aString.substr(<span class="number">-20</span>, <span class="number">2</span>)); <span class="comment">// 'Mo'</span></span><br><span class="line"><span class="built_in">console</span>.log(aString.substr(<span class="number">20</span>, <span class="number">2</span>));  <span class="comment">// ''</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>String.prototype.substring(indexStart, [, indexEnd])</code> 注意不取结束下标位置的字符；返回一个新的子串,如果起始下标超出范围，会与结束下标交换位置直接取两个下标间的子串；如果起始等于结束下标则返回空串；如果起始，所有NaN都当做0处理;<strong>与<code>String.prototype.slice</code>不同的是对于负数的处理，都当做0来处理</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> anyString = <span class="string">'Mozilla'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Displays 'M'</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">0</span>, <span class="number">1</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Displays 'Mozill'</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">0</span>, <span class="number">6</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Displays 'lla'</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">4</span>, <span class="number">7</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">7</span>, <span class="number">4</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Displays 'Mozilla'</span></span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">0</span>, <span class="number">7</span>));</span><br><span class="line"><span class="built_in">console</span>.log(anyString.substring(<span class="number">0</span>, <span class="number">10</span>));</span><br><span class="line"><span class="comment">// 结合length使用比较好</span></span><br><span class="line"><span class="comment">// Displays 'illa' the last 4 characters</span></span><br><span class="line"><span class="keyword">var</span> anyString = <span class="string">'Mozilla'</span>;</span><br><span class="line"><span class="keyword">var</span> anyString4 = anyString.substring(anyString.length - <span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(anyString4);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Displays 'zilla' the last 5 characters</span></span><br><span class="line"><span class="keyword">var</span> anyString = <span class="string">'Mozilla'</span>;</span><br><span class="line"><span class="keyword">var</span> anyString5 = anyString.substring(anyString.length - <span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(anyString5);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>String.prototype.replace(regexp|substr, newSubStr|function(re))</code> 替换字符串，可以使用函数传入匹配的字符串来进行逻辑运算再获取结果，也可以使用特殊的占位符获取匹配的内容</p>
+<ul>
+<li><p><code>$$</code>  插入一个 “$”。</p>
+</li>
+<li><p><code>$&amp;</code>  插入匹配的子串。</p>
+</li>
+<li><p><code>$`</code>  插入当前匹配的子串左边的内容。</p>
+</li>
+<li><p><code>$&#39;</code>  插入当前匹配的子串右边的内容。</p>
+</li>
+<li><p><code>$n</code>  假如第一个参数是 RegExp对象，并且 n 是个小于100的非负整数，那么插入第 n 个括号匹配的字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="regexp">/(\w+)\s(\w+)/</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"John Smith"</span>;</span><br><span class="line"><span class="keyword">var</span> newstr = str.replace(re, <span class="string">"$2, $1"</span>);</span><br><span class="line"><span class="comment">// Smith, John</span></span><br><span class="line"><span class="built_in">console</span>.log(newstr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意对于占位符使用字符串函数是无效的，因为函数会先进行，之后才进行占位符的匹配</span></span><br><span class="line"><span class="keyword">var</span> newString = propertyName.replace(<span class="regexp">/[A-Z]/g</span>, <span class="string">'-'</span> + <span class="string">'$&amp;'</span>.toLowerCase());  <span class="comment">// won't work</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>正则表达式：如果在子组<code>()</code>内最后加了?则采用非贪婪模式，即尽可能少的匹配，不加则默认贪婪模式，即尽可能多的进行匹配</p>
+<ul>
+<li>str.match(Reg)如果正则Reg采用了全局模式，则输出结果为匹配出来的数组</li>
+<li>str.match(Reg)没有采用全局和Reg.exec(str)全局或非全局的输出结果结果相似(group)</li>
+<li>Reg.exec(str)通过<code>\g</code>(从剩余的所有子串中匹配) <code>\y</code>(es6,从剩余子串的第一位开始匹配，即隐含了<code>^</code> 开始断言)可以多次执行,每次都从之前匹配的剩余子串中继续进行匹配，而匹配完的下一次进行匹配的下标属性<code>.lastIndex</code>存储在Reg对象中，</li>
+</ul>
+</li>
+<li><p>遍历器转为数组是非常简单的，使用…运算符和Array.from方法就可以了。</p>
+</li>
+<li><p>获取随机数Math.random() 获取一个[0, 1)之间的伪随机浮点数，不适合安全加密</p>
+</li>
+<li><p>使用window.crypto.getRandomValues(typedArray)获取符合密码学要求的随机值</p>
+<ul>
+<li>参数可以是 Int8Array、Uint8Array、 Int16Array、 Uint16Array、 Int32Array 或者 Uint32Array。</li>
+<li>在数组上的元素会被随机重写</li>
+</ul>
+</li>
+<li><p>关于小数的进位，可以通过巧用<code>toFixed()</code>(返回字符串,同时自动四舍五入)，实现<code>(3.167.toFixed(1)-0).toFixed(2)</code></p>
+</li>
+</ul>
+<h3 id="一些Ajax"><a href="#一些Ajax" class="headerlink" title="一些Ajax"></a>一些<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest" target="_blank" rel="noopener">Ajax</a></h3><ul>
+<li><p><strong>注意： 你需要在请求调用 open() 之前添加事件监听。否则 progress 事件将不会被触发。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var oReq = new XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">oReq.onload = function(e) &#123;</span><br><span class="line">  var arraybuffer = xhr.response; // not responseText</span><br><span class="line">  /* ... */</span><br><span class="line">&#125;</span><br><span class="line">oReq.open(&quot;GET&quot;, url, true);</span><br><span class="line">oReq.responseType = &quot;arraybuffer&quot;; //二进制数据</span><br><span class="line">oReq.send();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>responseType</code> 数据类型<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/responseType" target="_blank" rel="noopener">参考</a></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> req = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">req.addEventListener(<span class="string">"progress"</span>, updateProgress, <span class="literal">false</span>);</span><br><span class="line">req.addEventListener(<span class="string">"load"</span>, transferComplete, <span class="literal">false</span>);</span><br><span class="line">req.addEventListener(<span class="string">"error"</span>, transferFailed, <span class="literal">false</span>);</span><br><span class="line">req.addEventListener(<span class="string">"abort"</span>, transferCanceled, <span class="literal">false</span>);</span><br><span class="line">req.addEventListener(<span class="string">"loadend"</span>, loadEnd, <span class="literal">false</span>); <span class="comment">//无论请求失败成功(abort,load,error)都执行该函数，但是无法判断是成功还是失败</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">req.open();</span><br><span class="line"><span class="comment">// progress on transfers from the server to the client (downloads)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateProgress</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (evt.lengthComputable) &#123;</span><br><span class="line">    <span class="keyword">var</span> percentComplete = evt.loaded / evt.total;</span><br><span class="line">    ...</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// Unable to compute progress information since the total size is unknown</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以在progress的事件对象(ProgressEvent中得到数据的传输情况)</li>
+</ul>
+<hr>
+<ul>
+<li><p>(JQ)</p>
+<ul>
+<li><p>jQuery.prev()，返回上一个兄弟节点，不是所有的兄弟节点</p>
+</li>
+<li><p>jQuery.prevAll()，返回所有之前的兄弟节点</p>
+</li>
+<li><p>jQuery.next(),返回下一个兄弟节点，不是所有的兄弟节点</p>
+</li>
+<li><p>jQuery.nextAll()，返回所有之后的兄弟节点</p>
+</li>
+<li><p>jQuery.siblings(),返回兄弟姐妹节点，不分前后</p>
+</li>
+<li><p>使用<code>.on(&#39;mouseenter mouseover&#39;, function(e){})</code>可以同时绑定多个事件</p>
+</li>
+</ul>
+</li>
+<li><p>页面顶部回滚<code>$(window).scrollTop(0);</code></p>
+</li>
+<li><p>location是javascript里边管理地址栏的内置对象，比如location.href就管理页面的url，用location.href=url就可以直接将页面重定向url。而location.hash则可以用来获取或设置页面的标签值。比如<a href="http://domain/#admin的location.hash=&quot;#admin&quot;。[参考](https://www.cnblogs.com/nifengs/p/5104763.html)" target="_blank" rel="noopener">http://domain/#admin的location.hash=&quot;#admin&quot;。[参考](https://www.cnblogs.com/nifengs/p/5104763.html)</a></p>
+</li>
+<li><p>jq的时间绑定，比如<code>.click()</code> <code>.mouseenter()</code> <code>.on(&#39;&#39;, function(){})</code> 等多次绑定之后会同时触发多个函数，而使用部分原生的js事件绑定，比如<code>.onclick()</code>会将之前绑定的事件覆盖，但是<code>addEventListener(`</code>, function(){})`也会和jq事件一样重复绑定多个事件</p>
+</li>
+</ul>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><ul>
+<li><p>webp图像格式是一种新型的图像格式，但兼容性有问题，只有谷歌支持</p>
+<img src="/2020/02/09/HTML-CSS基础笔记/compatibility-webp.png" class="webp兼容问题">
+</li>
+<li><p>在苹果下的float:right的标签与正常文档流元素同时设置line-height可能因为默认vertical-align:center的原因无法对齐，设置为vertical-align:top就可以对齐了</p>
+</li>
+</ul>
+<h2 id="适配性"><a href="#适配性" class="headerlink" title="适配性"></a>适配性</h2><ul>
+<li>5种屏幕，参考<a href="http://wiki.jikexueyuan.com/project/bootstrap4/layout/grid/#section-2" target="_blank" rel="noopener">bootstrap网格</a></li>
+<li><table class="table table-bordered table-striped"><thead><tr><th></th><th>  特小屏<small>&lt;34em / 480px</small></th><th>小屏<small>≥34em / 480px</small></th><th>中屏<small>≥45em / 720px</small></th> <th>大屏<small>≥62em / 992px</small></th><th>特大屏<small>≥75em / 1200px</small></th></tr></thead><tbody><tr><th class="text-nowrap" scope="row">网格行为</th><td>始终横向排布</td> <td colspan="4">开始瓦解，在断点之上保持横向排布。</td></tr> <tr><th class="text-nowrap" scope="row">Container width</th><td>无 (自动)</td><td>34rem / 480px</td><td>45rem / 720px</td><td>60rem / 960px</td><td>72.25rem / 1156px</td></tr><tr><th class="text-nowrap" scope="row">类前缀</th><td><code>.col-xs-</code></td><td><code>.col-sm-</code></td><td><code>.col-md-</code></td><td><code>.col-lg-</code></td><td><code>.col-xl-</code></td></tr><tr><th class="text-nowrap" scope="row"># 列格</th><td colspan="5">12</td></tr><tr><th class="text-nowrap" scope="row">列间隙宽度</th><td colspan="5">30px (每列两侧各15px)</td></tr><tr><th class="text-nowrap" scope="row">可嵌套性</th><td colspan="5">可以</td></tr><tr><th class="text-nowrap" scope="row">可偏移性</th><td colspan="5">可以</td></tr><tr><th class="text-nowrap" scope="row">列排序</th><td colspan="5">可以</td></tr></tbody></table>
+
+
+</li>
+</ul>
+<h2 id="一些需要注意的坑"><a href="#一些需要注意的坑" class="headerlink" title="一些需要注意的坑"></a>一些需要注意的坑</h2><ul>
+<li><code>new Date().getMonth()</code> 获取的月份是0-11，所以结果需要手动+1</li>
+<li>字符串不可以单独修改某个位置的字符，只能拆成数组后处理在拼接</li>
+<li>ASCII字符的转换处理<code>String.fromCodePoint(&#39;A&#39;.charCodeAt())</code> (<code>fromCodePoint</code> 相比 <code>fromCharCode</code>可以识别)，不可以直接字符+1会变成’a1’这样的字符串</li>
+<li>对于多个元素的事件绑定，可以通过<a href="https://www.cnblogs.com/liugang-vip/p/5616484.html" target="_blank" rel="noopener">事件委托</a>实现</li>
+<li>event在标准浏览器的目标元素是通过<code>event.target</code>获取的，在IE下通过<code>event.srcElement</code>获取</li>
+<li>获取元素的标签名可以通过<code>el.nodeName</code> 或者<code>el.tagName</code>获得，但是结果是大写的，需要手动转换大小写<code>.toLowerCase()</code></li>
+<li>css定义font-face字体的时候引用文件可以不带后缀，然后额外添加format(truetype)，这样才不会浏览器报错<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">  font-family: Times New Roman;</span><br><span class="line">  src: url(&apos;../asset/TimesNewRomanPSMT24163565&apos;) format(truetype);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>防抖debounce是通过反复setTimeout和clearTimeout实现的，是针对人为操作只会触发一次的事件，避免因为手抖而反复触发</li>
+<li>节流throttle是通过延时来限制事件的触发，是针对人为操作会触发多次的事件</li>
+<li>清除浮动的时候，注意给<code>::after</code>添加<code>content: &#39;.&#39;</code> 以及<code>visibility: hidden</code> <code>display: block</code>否则会失效</li>
+<li>为了实现铺满屏幕高度，可以通过<code>100vh</code>设置高度(100%的viewport高度)<code>100vw</code>设置宽度(100%viewport宽度),如果有其他元素，可以通过(<code>height: calc(100vh - 80px)</code>)实现，注意运算符左右必须留空</li>
+<li>在https下无法请求http的接口内容</li>
+<li><p>animation: mymove 5s infinite; -webkit-animation:mymove 5s infinite;</p>
+</li>
+<li><p><code>margin-top</code>/<code>margin-right</code>/<code>margin-bottom</code>/<code>margin-left</code>的百分比都是相对于父级元素的<strong>宽度</strong>计算的</p>
+</li>
+<li><p><code>top</code>/<code>bottom</code>的百分比会根据父元素的高度来计算(无论是否<code>position:relative</code>, 但是要求该父级元素是<code>display:非inline/unset</code>,否则会在往上层寻找块级元素)，<code>left</code>/<code>right</code>的百分比是根据宽度计算</p>
+</li>
+<li><p>在<code>select</code>下的分组可以通过<code>&lt;optgroup label=&quot;Africa&quot;&gt;&lt;option&gt;&lt;/option&gt;&lt;/optgroup&gt;</code>实现</p>
+</li>
+<li><p>如果js中同时声明了同名的函数与变量，那么在访问这个名字的时候访问到的是变量而不是函数(无论申明顺序)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 10; function a() &#123;console.log(a)&#125;; typeof a;</span><br><span class="line">&quot;number&quot;</span><br><span class="line">function a() &#123;console.log(a)&#125;; var a = 10; typeof a;</span><br><span class="line">&quot;number&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在使用drag拖拽属性的时候，记得document.ondragover需要设置e.preventDefault(); 而且事件发生目标的ondragover也要防止默认事件触发</p>
+</li>
+<li><p>string的<code>replace</code>函数如果没有使用正则的global则只会替换第一个发现的子串</p>
+
+</li>
+<li><p><code>replace(reg, function(matched, p1...pn, index, string_ori))</code> </p>
+<ul>
+<li>其中参数函数的<code>p1...pn</code> 只有在正则表达式有子组括号的时候才会有</li>
+<li>如果正则表达式带有全局属性\g，则表示会多次匹配修改，也就是函数会多次调用</li>
+</ul>
+</li>
+<li><p>对于<code>h1</code>等已定义字体属性的标签，<code>font-weight: bold</code>无法通过继承得到</p>
+</li>
+<li><p>HTML是大小写不敏感的，所以任何在标签内的内容全部都会自动转化为小写</p>
+</li>
+<li><p>动态插入<code>javascript</code>节点<code>&lt;script&gt;&lt;/script&gt;</code>的时候，如果使用innerHTML直接字符串的赋值是不会自动执行的，只有通过<code>document.createElement(&#39;script&#39;)</code>然后修改属性执行再<code>appendChild</code>插入文档才会执行(是规范<a href="https://stackoverflow.com/questions/13390588/script-tag-create-with-innerhtml-of-a-div-doesnt-work" target="_blank" rel="noopener">参考</a>)</p>
+<ul>
+<li>对于已经插入了dom的script节点，再次引用并插入是不会再次执行的(如果引用了原dom中的对象并<code>appendChild</code>到其他节点上，那么原来的位置的节点会被直接移动而不是拷贝)</li>
+<li>对于需要拷贝的节点对象，通过<code>newNode = OldNode.cloneNode(true)</code>实现拷贝(其中函数的参数表示是否进行深度拷贝)</li>
+</ul>
+</li>
+<li><p><code>append(string|Node)</code>插入的string会自动转义(有兼容性问题不要用) <code>appendChild(Node)</code>两种插入子元素的方式</p>
+</li>
+<li><p><code>Element</code> 转换成 <code>String</code> 可以通过<code>var str = Element.outerHTML</code>获取，<code>String</code> 转化为<code>Element</code> 可以通过类似<code>$0.insertAdjacentHTML(&#39;afterend&#39;,&#39;&lt;h1&gt;2222&lt;/h1&gt;&#39;)</code>实现将字符串作为element插入(第一个参数可以为<code>beforebegin</code> <code>afterbegin</code> <code>beforeend</code> <code>afterend</code>)<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/insertAdjacentHTML" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li><p>关于<code>script</code>脚本的异步执行，<a href="https://www.cnblogs.com/jiasm/p/7683930.html" target="_blank" rel="noopener">参考</a>注意对于内联的js代码<code>async</code>和<code>defer</code>都是无效的</p>
+</li>
+<li><p><code>box-sizing: content box;</code> width不包含滚动条</p>
+</li>
+<li><p>正则表达式加变量，可以通过<code>new RegExp(&#39;/&#39;+val+&#39;/&#39;)</code>的方式实现</p>
+</li>
+<li><p>对于没有指定时间的日期，有补零的默认会是八点钟</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;2018-8-22&apos;);</span><br><span class="line">Wed Aug 22 2018 00:00:00 GMT+0800 (中国标准时间)</span><br><span class="line">new Date(&apos;2018-08-22&apos;);</span><br><span class="line">Wed Aug 22 2018 08:00:00 GMT+0800 (中国标准时间)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#CSS" >
+    <span class="tag-code">CSS</span>
+  </a>
+
+  <a href="/tags#JS" >
+    <span class="tag-code">JS</span>
+  </a>
+
+  <a href="/tags#HTML" >
+    <span class="tag-code">HTML</span>
+  </a>
+
+  <a href="/tags#兼容性" >
+    <span class="tag-code">兼容性</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/28/VsCode配置/">
+        <span class="nav-arrow">← </span>
+        
+          VsCode配置
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2020/02/09/CSS动画/">
+        
+          CSS动画
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HTTP-关于缓存的头部信息"><span class="toc-nav-text">HTTP 关于缓存的头部信息</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Expires"><span class="toc-nav-text">Expires</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Last-modified"><span class="toc-nav-text">Last-modified</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ETag"><span class="toc-nav-text">ETag</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cache-control"><span class="toc-nav-text">cache-control</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#前端知识点整理"><span class="toc-nav-text">前端知识点整理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#H5C3新特性"><span class="toc-nav-text">H5C3新特性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CSS3新特性"><span class="toc-nav-text">CSS3新特性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HTML"><span class="toc-nav-text">HTML</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#标签与属性"><span class="toc-nav-text">标签与属性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一些接触到的CSS-标签的使用"><span class="toc-nav-text">一些接触到的CSS @标签的使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#回流与重绘"><span class="toc-nav-text">回流与重绘</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#理论知识"><span class="toc-nav-text">理论知识 </span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JavaScript"><span class="toc-nav-text">JavaScript </span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一些概念"><span class="toc-nav-text">一些概念</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一些函数"><span class="toc-nav-text">一些函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一些Ajax"><span class="toc-nav-text">一些Ajax</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#兼容性"><span class="toc-nav-text">兼容性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#适配性"><span class="toc-nav-text">适配性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一些需要注意的坑"><span class="toc-nav-text">一些需要注意的坑</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    //var url = 'localhost:4000/2020/02/09/HTML-CSS基础笔记/';
+    //var banner = ''
+    //console.log(banner)
+    // if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+    //   $('#article-banner').css({
+    //     'background-image': 'url(' + banner + ')'
+    //   })
+    // } else {
+    //   $('#article-banner').geopattern(url)
+    // }
+    //let test= window.btoa('hellp');
+    //console.log(test)
+
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    // var qr = new QRious({
+    //   element: document.getElementById('share-qrcode'),
+    //   value: document.location.href
+    // });
+
+    // gitment
+    // var gitmentConfig = "yanm1ng";
+    // if (gitmentConfig !== 'undefined') {
+    //   var gitment = new Gitment({
+    //     id: "HTML/CSS基础笔记",
+    //     owner: "yanm1ng",
+    //     repo: "yanm1ng.github.io",
+    //     oauth: {
+    //       client_id: "0f87e490e00ee3fd87ef",
+    //       client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+    //     },
+    //     theme: {
+    //       render(state, instance) {
+    //         const container = document.createElement('div')
+    //         container.lang = "en-US"
+    //         container.className = 'gitment-container gitment-root-container'
+    //         container.appendChild(instance.renderHeader(state, instance))
+    //         container.appendChild(instance.renderEditor(state, instance))
+    //         container.appendChild(instance.renderComments(state, instance))
+    //         container.appendChild(instance.renderFooter(state, instance))
+    //         return container;
+    //       }
+    //     }
+    //   })
+    //   gitment.render(document.getElementById('comments'))
+    // }
+  })();
+</script>
+
+    <canvas></canvas>
+    </div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    
+<div class="sidebar" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/第三方库使用记录/" class="archive-title">第三方库使用记录</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“杂项笔记”/" class="archive-title">杂项笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“drupal笔记”/" class="archive-title">drupal随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/Vue-js随记/" class="archive-title">Vue.js随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/POSTMAN测试开发/" class="archive-title">POSTMAN测试开发</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/JS精粹/" class="archive-title">JS精粹</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/HTML-CSS基础笔记/" class="archive-title">HTML/CSS基础笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS动画/" class="archive-title">CSS动画</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS世界-笔记/" class="archive-title">CSS世界-笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/11/28/VsCode配置/" class="archive-title">VsCode配置</a>
+        <p class="archive-date">11-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/12/ES6/" class="archive-title">ES6</a>
+        <p class="archive-date">09-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/08/27/SSH代理/" class="archive-title">SSH代理</a>
+        <p class="archive-date">08-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/30/hexo随记/" class="archive-title">hexo随记</a>
+        <p class="archive-date">07-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/系统使用随记/" class="archive-title">Deepin系统使用随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/symfony随记/" class="archive-title">symfony随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/sublime环境配置/" class="archive-title">sublime环境配置</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“node-js笔记”/" class="archive-title">“node.js实战”随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“编码规范”/" class="archive-title">编码规范</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+  <a id="sidebar-arrows">
+    <div class="sidebar-arrow-outer"></div>
+    <div class="sidebar-arrow-inner"></div>
+  </a>
+</div>
+
+<div id="animate_background" style="position: absolute; top: 0; left: 0; z-index: 2;">
+  <canvas id=></canvas>
+</div>
+<div id="animate_mouse_cursor">
+  <div class="animate_mouse_rect-1">
+    <div class="animate_mouse_rect-2"></div>
+  </div>
+</div>
+
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank">yanm1ng</a><br>
+    Patched by <a href="https://github.com/xuxiantao" target="_blank">XXT</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+<script src="/js/animate_mouse.js"></script>
+
+
+  </body>
+  
+</html>

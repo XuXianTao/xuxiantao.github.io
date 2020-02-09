@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Mr.桃&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      “node.js实战”随记 | Mr.Tao&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/asset/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <div id="main_body">
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Mr.Tao's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>“node.js实战”随记</h2>
+  <p class="post-date">2018-07-29</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<script>
+  $('#article-banner').geopattern();
+</script>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><ul>
+<li>插件安装用<code>npm install --save xxxx</code>保证了单个项目的安装<br>否则直接Install也有可能导致变成安装全局插件</li>
+</ul>
+<h1 id="connect"><a href="#connect" class="headerlink" title="connect"></a>connect</h1><p>//server=connect();<br>//<code>server.use(function(req,res,next){.....;next();res.end(&#39;&#39;);})</code><br>//static 在connect2.x.x版本才支持，新的3.x.x需要独立另外的static插件<br>//<code>server.use(&#39;/my-images&#39;,connect.static(&#39;/path/to/images&#39;));</code>URL和本地文件挂载<br>//connect.static—默认挂载静态网页<br>//connect.static—maxAge资源在客户端缓存的时间/hidden托管.开头的隐藏文件<br>//connect.static—hidden 托管.隐藏文件</p>
+<hr>
+<p>//query中间件—获取URL参数 <code>server.use(connect.query())</code>;<br>//<code>server.use(connect.logger(&#39;dev&#39;))</code>;</p>
+<hr>
+<p>//使用connect.bodyParser获取文件信息的时候要在文件的input标签加name否则没有输出<br>//而且只能使用body.files去获取文件信息</p>
+<hr>
+<p>//COOKIES放在头部信息中 key=value<br>//server.use(connect.cookieParser())自动处理cookies数据返回，方便访问，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//.use(function(req,res,next)&#123;</span><br><span class="line">    //req.cookies.secret1</span><br><span class="line">//&#125;)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>//session会话也可以使用Connect方便访问<br>//使用connect的session中间件，同样需要使用<code>connect.cookieParser()</code><br>//为了安全性，需要使用<code>.use(connect.session({secret:&#39;my app secret&#39;}))</code>的secret选项<br>//session的永久化，可以使用redis机制永久存储session信息</p>
+<hr>
+<p>//使用connect的basicAuth中间件要注意单独用一个use函数才能生效</p>
+<hr>
+<p>//POST的内容可以通过req.body.name之类获得<br>//var string=JSON.stringify(json)<br>//var json=JSON.parse(string)</p>
+<hr>
+<h1 id="superagent"><a href="#superagent" class="headerlink" title="superagent"></a>superagent</h1><p>superagent的.end(function(err,res){})注意函数参数</p>
+<hr>
+<h1 id="express"><a href="#express" class="headerlink" title="express"></a>express</h1><p>// req.body获取post的参数;–要用body-parser()中间件<br>// req.params获取url的参数<br>构建于connect之上，也有中间件的概念<br>var app=express.createServer();<br>app.set(‘view engine’,’ejs’);//视图模板<br>app.set(‘views’,__dirname+’/views’);//视图路径<br>app.set(‘view options’,{layout:false});//渲染视图时候传递到每个模板中<br>//配置缓存，不必每次修改重开服务器,这里是在生产模式下的配置<br>app.configure(‘production’,function(){<br>    app.enable(‘view cache’);<br>});<br>app.configure(‘development’,function(){<br>    app.enable(‘view cache’);<br>});<br>//等价app.set(‘view cache’,true)<br>//app.enabled(‘view cache’) app.disabled可以返回是否设置了对应配置项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//res.render(&apos;index&apos;,function(err,html)&#123;</span><br><span class="line">        res.send(&quot;&lt;script&gt;alert(&apos;hhhh&apos;);&lt;/script&gt;&quot;+html);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>//<code>res.render(&#39;login&#39;,{key:value})</code>渲染视图同时传参数到视图上<br>//res.redirect(‘///‘)—-res.writeHead(302,{‘Location’:’////‘});<br>(默认302暂时移除只是暂时的重定向，搜索引擎会抓取新的内容而保留旧的地址，因为服务器返回302，所以，搜索搜索引擎认为新的网址是暂时的，常被用来访问非用户所需页面，浏览器不友好；<br>301永久移除常用于域名跳转)<br>//res.redirect(‘///‘,301)<br>//res.sendfile(‘sss.jpg’)<br>//路由支持变量设置app.get(‘/post/:name’,function(req,res,next){req.params.name==访问的url的name变量})<br>//app.get(‘/post/:name?’)表示变量可选<br>//app.get(/^\/post\/([a-z\d-])*)/,function(req,res,next){<br>    return next();<br>})支持正则表达式RegExp对象<br>//在路由中间件中使用next(‘route’)会跳过当前路由，然后去检查其他路由</p>
+<hr>
+<p>//app.use(express.static(__dirname+’/images’));自动托管静态文件，不必自己写访问请求的处理代码<br>//app.use(express.cookieParser());使用cookie<br>//app.use(express.session());使用session(之前一定要有cookieParser)</p>
+<hr>
+<p>现在EvemtEmitter都是var EventEmitter=require(‘events’);不再使用process.EventEmitter;</p>
+<hr>
+<h1 id="websocket-io"><a href="#websocket-io" class="headerlink" title="websocket.io"></a>websocket.io</h1><p>express.bodyParser现在已经不用，需要单独引入插件body-parser<br>使用attach的话，一定要先把对应的服务器用串联语句一句话写完然后listen()<br>服务器端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var wsio=require(&apos;websocket.io&apos;)</span><br><span class="line">var app=express().use.listen(3000);</span><br><span class="line">var ws=wsio.attach(app);</span><br><span class="line">ws.on(&apos;connection&apos;,function(socket)&#123;</span><br><span class="line">    socket.send(//msg);</span><br><span class="line">    socket.on(&apos;message&apos;,function(msg)&#123;&#125;);</span><br><span class="line">    socket.on(&apos;close&apos;,function()&#123;&#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>客户端var ws=new WebSocket(‘ws://localhost:3000’);<br>ws.onopen=function(){}<br>ws.onmessage=function(){}</p>
+<hr>
+<h1 id="socket-io"><a href="#socket-io" class="headerlink" title="socket.io"></a>socket.io</h1><p>消息传递基于传输并非完全依靠websocket<br>没有数据返回的时连接还会持续打开20-50秒<br>解决了websocket被代理或防火墙禁止的问题<br>默认断开重连</p>
+<hr>
+<p>此外允许单个连接中利用命名空间来将消息彼此分开来<br>DEBUG=socket.io* node myapp可以看到调试信息<br>服务器端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var express=require(&apos;express&apos;);</span><br><span class="line">var sio=require(&apos;socket.io&apos;);</span><br><span class="line">var app=express()</span><br><span class="line">    .use(express.static(&apos;public&apos;))</span><br><span class="line">    .listen(3000);</span><br><span class="line">var io=sio.listen(app);</span><br><span class="line">io.sockets.on(&apos;connection&apos;,function(socket)&#123;</span><br><span class="line">    console.log(&apos;Someone connected&apos;);</span><br><span class="line">    socket.broadcast.emit(&apos;sad&apos;,argvs[]..);</span><br><span class="line">&#125;);</span><br><span class="line">io.sockets.emit(&apos;sad&apos;,sadasd...)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>客户端<br>一定要有    <code>&lt;script src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;</code>否则JS无法识别io对象<br>var socket=io.connect();//没有参数默认连接页面所在。。use主机<br>socket.on(‘position’,function(){})<br>socket.on(‘remove’,function(){})<br>//不同的socket.io连接对象如果是同域下的命名空间，实际使用的是同个传输通道io<br>//回调函数部分看项目socket-io</p>
+<hr>
+<h1 id="jade"><a href="#jade" class="headerlink" title="jade"></a>jade</h1><p>p<br>  span Hello world<br>特殊关键字block允许嵌入其他视图文件<br>controller暴露给HTML的变量即locals<br>属性写法a(href#,another=attribute,dynamic=someVariable) My link<br>使用#{}来嵌入变量p Welcome back, #{user.name}<br>缩进的注意事项放在了note-html</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#nodeJs" >
+    <span class="tag-code">nodeJs</span>
+  </a>
+
+  <a href="/tags#npm" >
+    <span class="tag-code">npm</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/07/29/“编码规范”/">
+        <span class="nav-arrow">← </span>
+        
+          编码规范
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/07/29/sublime环境配置/">
+        
+          sublime环境配置
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#connect"><span class="toc-nav-text">connect</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#superagent"><span class="toc-nav-text">superagent</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#express"><span class="toc-nav-text">express</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#websocket-io"><span class="toc-nav-text">websocket.io</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#socket-io"><span class="toc-nav-text">socket.io</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#jade"><span class="toc-nav-text">jade</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    //var url = 'localhost:4000/2018/07/29/“node-js笔记”/';
+    //var banner = ''
+    //console.log(banner)
+    // if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+    //   $('#article-banner').css({
+    //     'background-image': 'url(' + banner + ')'
+    //   })
+    // } else {
+    //   $('#article-banner').geopattern(url)
+    // }
+    //let test= window.btoa('hellp');
+    //console.log(test)
+
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    // var qr = new QRious({
+    //   element: document.getElementById('share-qrcode'),
+    //   value: document.location.href
+    // });
+
+    // gitment
+    // var gitmentConfig = "yanm1ng";
+    // if (gitmentConfig !== 'undefined') {
+    //   var gitment = new Gitment({
+    //     id: "“node.js实战”随记",
+    //     owner: "yanm1ng",
+    //     repo: "yanm1ng.github.io",
+    //     oauth: {
+    //       client_id: "0f87e490e00ee3fd87ef",
+    //       client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+    //     },
+    //     theme: {
+    //       render(state, instance) {
+    //         const container = document.createElement('div')
+    //         container.lang = "en-US"
+    //         container.className = 'gitment-container gitment-root-container'
+    //         container.appendChild(instance.renderHeader(state, instance))
+    //         container.appendChild(instance.renderEditor(state, instance))
+    //         container.appendChild(instance.renderComments(state, instance))
+    //         container.appendChild(instance.renderFooter(state, instance))
+    //         return container;
+    //       }
+    //     }
+    //   })
+    //   gitment.render(document.getElementById('comments'))
+    // }
+  })();
+</script>
+
+    <canvas></canvas>
+    </div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    
+<div class="sidebar" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/第三方库使用记录/" class="archive-title">第三方库使用记录</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“杂项笔记”/" class="archive-title">杂项笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“drupal笔记”/" class="archive-title">drupal随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/Vue-js随记/" class="archive-title">Vue.js随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/POSTMAN测试开发/" class="archive-title">POSTMAN测试开发</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/JS精粹/" class="archive-title">JS精粹</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/HTML-CSS基础笔记/" class="archive-title">HTML/CSS基础笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS动画/" class="archive-title">CSS动画</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS世界-笔记/" class="archive-title">CSS世界-笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/11/28/VsCode配置/" class="archive-title">VsCode配置</a>
+        <p class="archive-date">11-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/12/ES6/" class="archive-title">ES6</a>
+        <p class="archive-date">09-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/08/27/SSH代理/" class="archive-title">SSH代理</a>
+        <p class="archive-date">08-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/30/hexo随记/" class="archive-title">hexo随记</a>
+        <p class="archive-date">07-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/系统使用随记/" class="archive-title">Deepin系统使用随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/symfony随记/" class="archive-title">symfony随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/sublime环境配置/" class="archive-title">sublime环境配置</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“node-js笔记”/" class="archive-title">“node.js实战”随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“编码规范”/" class="archive-title">编码规范</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+  <a id="sidebar-arrows">
+    <div class="sidebar-arrow-outer"></div>
+    <div class="sidebar-arrow-inner"></div>
+  </a>
+</div>
+
+<div id="animate_background" style="position: absolute; top: 0; left: 0; z-index: 2;">
+  <canvas id=></canvas>
+</div>
+<div id="animate_mouse_cursor">
+  <div class="animate_mouse_rect-1">
+    <div class="animate_mouse_rect-2"></div>
+  </div>
+</div>
+
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank">yanm1ng</a><br>
+    Patched by <a href="https://github.com/xuxiantao" target="_blank">XXT</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+<script src="/js/animate_mouse.js"></script>
+
+
+  </body>
+  
+</html>

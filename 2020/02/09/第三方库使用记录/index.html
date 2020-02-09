@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Mr.桃&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      第三方库使用记录 | Mr.Tao&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/asset/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <div id="main_body">
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Mr.Tao's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>第三方库使用记录</h2>
+  <p class="post-date">2020-02-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<script>
+  $('#article-banner').geopattern();
+</script>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>npm 库： <a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a><br>composer 库： <a href="https://packagist.org/" target="_blank" rel="noopener">https://packagist.org/</a></p>
+<h3 id="注：本笔记中的-工具-一般指通过命令行来起到作用的一些开发环境的辅助工具"><a href="#注：本笔记中的-工具-一般指通过命令行来起到作用的一些开发环境的辅助工具" class="headerlink" title="注：本笔记中的[工具]一般指通过命令行来起到作用的一些开发环境的辅助工具"></a>注：本笔记中的<code>[工具]</code>一般指通过命令行来起到作用的一些开发环境的辅助工具</h3><h1 id="swiper–滑动幻灯片效果插件"><a href="#swiper–滑动幻灯片效果插件" class="headerlink" title="swiper–滑动幻灯片效果插件"></a>swiper–滑动幻灯片效果插件</h1><p><a href="https://www.swiper.com.cn/usage/index.html" target="_blank" rel="noopener">https://www.swiper.com.cn/usage/index.html</a></p>
+<h1 id="bootstrap–响应式页面布局"><a href="#bootstrap–响应式页面布局" class="headerlink" title="bootstrap–响应式页面布局"></a>bootstrap–响应式页面布局</h1><p><a href="http://wiki.jikexueyuan.com/project/bootstrap4/getting-started/browsers-devices/" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/bootstrap4/getting-started/browsers-devices/</a></p>
+<h1 id="font-awesome–图标"><a href="#font-awesome–图标" class="headerlink" title="font-awesome–图标"></a>font-awesome–图标</h1><p><a href="http://fontawesome.dashgame.com/" target="_blank" rel="noopener">http://fontawesome.dashgame.com/</a></p>
+<h1 id="gulp-工具-–代码自动构建，自动化项目，命令行工具"><a href="#gulp-工具-–代码自动构建，自动化项目，命令行工具" class="headerlink" title="gulp[工具]–代码自动构建，自动化项目，命令行工具"></a>gulp<sup>[工具]</sup>–代码自动构建，自动化项目，命令行工具</h1><ul>
+<li><p>cd到gulpfile.js所在目录，直接执行gulp指令，会自动执行default动作</p>
+</li>
+<li><p><code>gulp-less</code> 预处理css语言编译</p>
+</li>
+<li><p><code>autoprefixer</code> 自动管理CSS浏览器前缀</p>
+</li>
+<li><p><code>cssnano</code>  css压缩</p>
+</li>
+</ul>
+<hr>
+<h1 id="geopattern–js动态生成漂亮的随机背景图"><a href="#geopattern–js动态生成漂亮的随机背景图" class="headerlink" title="geopattern–js动态生成漂亮的随机背景图"></a>geopattern–js动态生成漂亮的随机背景图</h1><p><a href="https://www.bootcdn.cn/geopattern/" target="_blank" rel="noopener">https://www.bootcdn.cn/geopattern/</a><br><a href="https://www.bootcdn.cn/geopattern/readme/" target="_blank" rel="noopener">https://www.bootcdn.cn/geopattern/readme/</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Use the global...</span></span><br><span class="line"><span class="keyword">var</span> pattern = GeoPattern.generate(<span class="string">'GitHub'</span>);</span><br><span class="line">$(<span class="string">'#geopattern'</span>).css(<span class="string">'background-image'</span>, pattern.toDataUrl());<span class="comment">// url("data:image/svg+xml;...</span></span><br><span class="line">GeoPattern.generate(<span class="string">'GitHub'</span>).color <span class="comment">// =&gt; "#455e8a"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ...or the plugin</span></span><br><span class="line">$(<span class="string">'#geopattern'</span>).geopattern(<span class="string">'GitHub'</span>);</span><br></pre></td></tr></table></figure><br>  参数’GitHub’可以为任意值，如果没有参数则可以每次都随机产生背景图</p>
+<hr>
+<h1 id="NProgess–简单的页面头部进度条"><a href="#NProgess–简单的页面头部进度条" class="headerlink" title="NProgess–简单的页面头部进度条"></a>NProgess–简单的页面头部进度条</h1><p><a href="http://ricostacruz.com/nprogress/" target="_blank" rel="noopener">http://ricostacruz.com/nprogress/</a><br> NProgress.start() — shows the progress bar</p>
+<p> NProgress.set(0.4) — sets a percentage</p>
+<p> NProgress.inc() — increments by a little</p>
+<p> NProgress.done() — completes the progress<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#nprogress .bar&apos;).css(&#123;</span><br><span class="line">  &apos;background&apos;: &apos;#42b983&apos;</span><br><span class="line">&#125;)</span><br><span class="line">$(&apos;#nprogress .spinner&apos;).hide()</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="Browserify-工具-–让前端js也可以使用npm库"><a href="#Browserify-工具-–让前端js也可以使用npm库" class="headerlink" title="Browserify[工具]–让前端js也可以使用npm库"></a>Browserify[工具]–让前端js也可以使用npm库</h1><p><a href="http://browserify.org/" target="_blank" rel="noopener">http://browserify.org/</a><br><a href="https://baike.baidu.com/item/browserify/16823990?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/browserify/16823990?fr=aladdin</a></p>
+<hr>
+<h1 id="PACE-可以美化的进度工具"><a href="#PACE-可以美化的进度工具" class="headerlink" title="PACE 可以美化的进度工具"></a>PACE 可以美化的进度工具</h1></section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#npm" >
+    <span class="tag-code">npm</span>
+  </a>
+
+  <a href="/tags#bootstrap" >
+    <span class="tag-code">bootstrap</span>
+  </a>
+
+  <a href="/tags#gulp" >
+    <span class="tag-code">gulp</span>
+  </a>
+
+  <a href="/tags#composer" >
+    <span class="tag-code">composer</span>
+  </a>
+
+  <a href="/tags#swiper" >
+    <span class="tag-code">swiper</span>
+  </a>
+
+  <a href="/tags#fontawesome" >
+    <span class="tag-code">fontawesome</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2020/02/09/JS精粹/">
+        <span class="nav-arrow">← </span>
+        
+          JS精粹
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2020/02/09/“杂项笔记”/">
+        
+          杂项笔记
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#注：本笔记中的-工具-一般指通过命令行来起到作用的一些开发环境的辅助工具"><span class="toc-nav-text">注：本笔记中的[工具]一般指通过命令行来起到作用的一些开发环境的辅助工具</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#swiper–滑动幻灯片效果插件"><span class="toc-nav-text">swiper–滑动幻灯片效果插件</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#bootstrap–响应式页面布局"><span class="toc-nav-text">bootstrap–响应式页面布局</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#font-awesome–图标"><span class="toc-nav-text">font-awesome–图标</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#gulp-工具-–代码自动构建，自动化项目，命令行工具"><span class="toc-nav-text">gulp[工具]–代码自动构建，自动化项目，命令行工具</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#geopattern–js动态生成漂亮的随机背景图"><span class="toc-nav-text">geopattern–js动态生成漂亮的随机背景图</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#NProgess–简单的页面头部进度条"><span class="toc-nav-text">NProgess–简单的页面头部进度条</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Browserify-工具-–让前端js也可以使用npm库"><span class="toc-nav-text">Browserify[工具]–让前端js也可以使用npm库</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#PACE-可以美化的进度工具"><span class="toc-nav-text">PACE 可以美化的进度工具</span></a>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    //var url = 'localhost:4000/2020/02/09/第三方库使用记录/';
+    //var banner = ''
+    //console.log(banner)
+    // if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+    //   $('#article-banner').css({
+    //     'background-image': 'url(' + banner + ')'
+    //   })
+    // } else {
+    //   $('#article-banner').geopattern(url)
+    // }
+    //let test= window.btoa('hellp');
+    //console.log(test)
+
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    // var qr = new QRious({
+    //   element: document.getElementById('share-qrcode'),
+    //   value: document.location.href
+    // });
+
+    // gitment
+    // var gitmentConfig = "yanm1ng";
+    // if (gitmentConfig !== 'undefined') {
+    //   var gitment = new Gitment({
+    //     id: "第三方库使用记录",
+    //     owner: "yanm1ng",
+    //     repo: "yanm1ng.github.io",
+    //     oauth: {
+    //       client_id: "0f87e490e00ee3fd87ef",
+    //       client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+    //     },
+    //     theme: {
+    //       render(state, instance) {
+    //         const container = document.createElement('div')
+    //         container.lang = "en-US"
+    //         container.className = 'gitment-container gitment-root-container'
+    //         container.appendChild(instance.renderHeader(state, instance))
+    //         container.appendChild(instance.renderEditor(state, instance))
+    //         container.appendChild(instance.renderComments(state, instance))
+    //         container.appendChild(instance.renderFooter(state, instance))
+    //         return container;
+    //       }
+    //     }
+    //   })
+    //   gitment.render(document.getElementById('comments'))
+    // }
+  })();
+</script>
+
+    <canvas></canvas>
+    </div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    
+<div class="sidebar" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/第三方库使用记录/" class="archive-title">第三方库使用记录</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“杂项笔记”/" class="archive-title">杂项笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“drupal笔记”/" class="archive-title">drupal随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/Vue-js随记/" class="archive-title">Vue.js随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/POSTMAN测试开发/" class="archive-title">POSTMAN测试开发</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/JS精粹/" class="archive-title">JS精粹</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/HTML-CSS基础笔记/" class="archive-title">HTML/CSS基础笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS动画/" class="archive-title">CSS动画</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS世界-笔记/" class="archive-title">CSS世界-笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/11/28/VsCode配置/" class="archive-title">VsCode配置</a>
+        <p class="archive-date">11-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/12/ES6/" class="archive-title">ES6</a>
+        <p class="archive-date">09-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/08/27/SSH代理/" class="archive-title">SSH代理</a>
+        <p class="archive-date">08-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/30/hexo随记/" class="archive-title">hexo随记</a>
+        <p class="archive-date">07-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/系统使用随记/" class="archive-title">Deepin系统使用随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/symfony随记/" class="archive-title">symfony随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/sublime环境配置/" class="archive-title">sublime环境配置</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“node-js笔记”/" class="archive-title">“node.js实战”随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“编码规范”/" class="archive-title">编码规范</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+  <a id="sidebar-arrows">
+    <div class="sidebar-arrow-outer"></div>
+    <div class="sidebar-arrow-inner"></div>
+  </a>
+</div>
+
+<div id="animate_background" style="position: absolute; top: 0; left: 0; z-index: 2;">
+  <canvas id=></canvas>
+</div>
+<div id="animate_mouse_cursor">
+  <div class="animate_mouse_rect-1">
+    <div class="animate_mouse_rect-2"></div>
+  </div>
+</div>
+
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank">yanm1ng</a><br>
+    Patched by <a href="https://github.com/xuxiantao" target="_blank">XXT</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+<script src="/js/animate_mouse.js"></script>
+
+
+  </body>
+  
+</html>

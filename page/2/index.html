@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Mr.桃&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Mr.Tao&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/asset/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <div id="main_body">
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Mr.Tao's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <main class="app-body">
+  <article class="article-card">
+      <h2 class="article-head">
+        <div class="article-head__wrapper"></div>
+        <a href="/2018/09/12/ES6/">ES6</a>
+      </h2>
+      <p class="article-date">2018年9月12日</p>
+      
+      <div class="article-summary">
+        
+          数组拓展
+类数组对象转换为数组
+
+通过拓展运算符[...arguments]实现，但是该方法仅对有遍历器(iterator)的对象有效果，对于{a:1, b:2}的object对象是不行的
+
+使用数组原型的slice方式转换，对于object也有效果[].slice.call()
+
+使用Ar ...
+        
+      </div>
+      <a class="more" href="/2018/09/12/ES6/">Read more</a>
+    </article><article class="article-card">
+      <h2 class="article-head">
+        <div class="article-head__wrapper"></div>
+        <a href="/2018/08/27/SSH代理/">SSH代理</a>
+      </h2>
+      <p class="article-date">2018年8月27日</p>
+      
+      <div class="article-summary">
+        
+          crontab -essh -N -f -R 8860:localhost:22 -o ServerAliveInterval=30 robbin@114.115.163.201
+
+        
+      </div>
+      <a class="more" href="/2018/08/27/SSH代理/">Read more</a>
+    </article><article class="article-card">
+      <h2 class="article-head">
+        <div class="article-head__wrapper"></div>
+        <a href="/2018/07/30/hexo随记/">hexo随记</a>
+      </h2>
+      <p class="article-date">2018年7月30日</p>
+      
+        
+  <a href="/tags#hexo" >
+    <span class="tag-code">hexo</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+发现多余的tags，使用hexo clean后发现tags还在，通常是因为开着server所以缓存没有清理干净，关闭server之后在进行clean
+
+
+        
+      </div>
+      <a class="more" href="/2018/07/30/hexo随记/">Read more</a>
+    </article><article class="article-card">
+      <h2 class="article-head">
+        <div class="article-head__wrapper"></div>
+        <a href="/2018/07/29/系统使用随记/">Deepin系统使用随记</a>
+      </h2>
+      <p class="article-date">2018年7月29日</p>
+      
+        
+  <a href="/tags#deepin" >
+    <span class="tag-code">deepin</span>
+  </a>
+
+  <a href="/tags#apache" >
+    <span class="tag-code">apache</span>
+  </a>
+
+  <a href="/tags#phpmyadmin" >
+    <span class="tag-code">phpmyadmin</span>
+  </a>
+
+  <a href="/tags#mysql" >
+    <span class="tag-code">mysql</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          systemctl list-units  显示所有已安装服务ststemctl status apache2systemctl start mysqlapacha 项目目录/var/www/htmlapache2 debian路由sudo a2enmod rewrite服务器重启 syst ...
+        
+      </div>
+      <a class="more" href="/2018/07/29/系统使用随记/">Read more</a>
+    </article><article class="article-card">
+      <h2 class="article-head">
+        <div class="article-head__wrapper"></div>
+        <a href="/2018/07/29/symfony随记/">symfony随记</a>
+      </h2>
+      <p class="article-date">2018年7月29日</p>
+      
+        
+  <a href="/tags#php" >
+    <span class="tag-code">php</span>
+  </a>
+
+  <a href="/tags#symfony" >
+    <span class="tag-code">symfony</span>
+  </a>
+
+  <a href="/tags#symfony4" >
+    <span class="tag-code">symfony4</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          symfony4.1.1
+composer create-project
+首次按照官方手册进行安装，无法通过installer安装(提示与4.x版本不兼容),可以换用composer安装
+发现命令php bin/console server:run（后面可以加自定义ip:port）无法运行， ...
+        
+      </div>
+      <a class="more" href="/2018/07/29/symfony随记/">Read more</a>
+    </article><article class="article-card">
+      <h2 class="article-head">
+        <div class="article-head__wrapper"></div>
+        <a href="/2018/07/29/sublime环境配置/">sublime环境配置</a>
+      </h2>
+      <p class="article-date">2018年7月29日</p>
+      
+        
+  <a href="/tags#sublime" >
+    <span class="tag-code">sublime</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+HTML/CSS/JS PrettifyCTRL+SHIFT+H格式化html,css,js文件，自动处理缩进
+Emmethtml标签的简化写法，可以通过选择器写法减少自己的代码工作量
+
+&quot;trim_trailing_white_space_on_save&quot;: true ...
+        
+      </div>
+      <a class="more" href="/2018/07/29/sublime环境配置/">Read more</a>
+    </article><article class="article-card">
+      <h2 class="article-head">
+        <div class="article-head__wrapper"></div>
+        <a href="/2018/07/29/“node-js笔记”/">“node.js实战”随记</a>
+      </h2>
+      <p class="article-date">2018年7月29日</p>
+      
+        
+  <a href="/tags#nodeJs" >
+    <span class="tag-code">nodeJs</span>
+  </a>
+
+  <a href="/tags#npm" >
+    <span class="tag-code">npm</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+插件安装用npm install --save xxxx保证了单个项目的安装否则直接Install也有可能导致变成安装全局插件
+
+connect//server=connect();//server.use(function(req,res,next){.....;next();res.e ...
+        
+      </div>
+      <a class="more" href="/2018/07/29/“node-js笔记”/">Read more</a>
+    </article><article class="article-card">
+      <h2 class="article-head">
+        <div class="article-head__wrapper"></div>
+        <a href="/2018/07/29/“编码规范”/">编码规范</a>
+      </h2>
+      <p class="article-date">2018年7月29日</p>
+      
+        
+  <a href="/tags#CSS" >
+    <span class="tag-code">CSS</span>
+  </a>
+
+  <a href="/tags#HTML" >
+    <span class="tag-code">HTML</span>
+  </a>
+
+  <a href="/tags#规范" >
+    <span class="tag-code">规范</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          编码规范—转载自@mdo
+HTML
+
+用两个空格来代替制表符（tab） – 这是唯一能保证在所有环境下获得一致展现的方法。
+对于属性的定义，确保全部使用双引号，绝不要使用单引号。
+强烈建议为 html 根元素指定 lang 属性，从而为文档设置正确的语言。这将有助于语音合成工具确定其所应该采 ...
+        
+      </div>
+      <a class="more" href="/2018/07/29/“编码规范”/">Read more</a>
+    </article>
+
+  
+    <div class="guide-pager">
+  
+    <a href="/"><span class="page-arrow">← </span>Prev</a>
+  
+  
+    <a class="unvisible" href="/">Next <span class="page-arrow">→</span></a>
+  
+</div>
+  
+</main>
+
+
+    <canvas></canvas>
+    </div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    
+<div class="sidebar" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/第三方库使用记录/" class="archive-title">第三方库使用记录</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“杂项笔记”/" class="archive-title">杂项笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“drupal笔记”/" class="archive-title">drupal随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/Vue-js随记/" class="archive-title">Vue.js随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/POSTMAN测试开发/" class="archive-title">POSTMAN测试开发</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/JS精粹/" class="archive-title">JS精粹</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/HTML-CSS基础笔记/" class="archive-title">HTML/CSS基础笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS动画/" class="archive-title">CSS动画</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS世界-笔记/" class="archive-title">CSS世界-笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/11/28/VsCode配置/" class="archive-title">VsCode配置</a>
+        <p class="archive-date">11-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/12/ES6/" class="archive-title">ES6</a>
+        <p class="archive-date">09-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/08/27/SSH代理/" class="archive-title">SSH代理</a>
+        <p class="archive-date">08-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/30/hexo随记/" class="archive-title">hexo随记</a>
+        <p class="archive-date">07-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/系统使用随记/" class="archive-title">Deepin系统使用随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/symfony随记/" class="archive-title">symfony随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/sublime环境配置/" class="archive-title">sublime环境配置</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“node-js笔记”/" class="archive-title">“node.js实战”随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“编码规范”/" class="archive-title">编码规范</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+  <a id="sidebar-arrows">
+    <div class="sidebar-arrow-outer"></div>
+    <div class="sidebar-arrow-inner"></div>
+  </a>
+</div>
+
+<div id="animate_background" style="position: absolute; top: 0; left: 0; z-index: 2;">
+  <canvas id=></canvas>
+</div>
+<div id="animate_mouse_cursor">
+  <div class="animate_mouse_rect-1">
+    <div class="animate_mouse_rect-2"></div>
+  </div>
+</div>
+
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank">yanm1ng</a><br>
+    Patched by <a href="https://github.com/xuxiantao" target="_blank">XXT</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+<script src="/js/animate_mouse.js"></script>
+
+
+  </body>
+  
+</html>

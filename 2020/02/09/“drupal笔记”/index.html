@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Mr.桃&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      drupal随记 | Mr.Tao&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/asset/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <div id="main_body">
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Mr.Tao's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>drupal随记</h2>
+  <p class="post-date">2020-02-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<script>
+  $('#article-banner').geopattern();
+</script>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>搜索引擎推荐<a href="http://google.com" target="_blank" rel="noopener">google</a>或者<a href="http://cn.bing.com" target="_blank" rel="noopener">微软bing必应</a></p>
+<ul>
+<li><a href="https://www.drupal.org/docs/8/api/database-api/database-configuration" target="_blank" rel="noopener">数据库需要支持pdo操作</a>，记得手动在setting最后的数据库配置添加如下：<br>‘pdo’ =&gt; array(PDO::ATTR_TIMEOUT =&gt; 2.0, PDO::MYSQL_ATTR_COMPRESS =&gt; 1),</li>
+</ul>
+<hr>
+<h2 id="学习样例下载"><a href="#学习样例下载" class="headerlink" title="学习样例下载"></a>学习样例<a href="https://www.drupal.org/project/examples/" target="_blank" rel="noopener">下载</a></h2><ul>
+<li>将examples文件夹作为模块放到项目的<code>/modules</code>文件夹或<code>/sites/all/modules</code>文件夹下，之后进入UI安装</li>
+</ul>
+<hr>
+<h1 id="开发的小细节"><a href="#开发的小细节" class="headerlink" title="开发的小细节"></a>开发的小细节</h1><ul>
+<li>通过网页UI安装的drupal 插件会直接放在modules下</li>
+<li>通过composer 安装的drupal 插件会放在modules/contri</li>
+</ul>
+<hr>
+<ul>
+<li>命令行工具drupal-launcher的安装<a href="https://docs.drupalconsole.com/en/getting/launcher.html" target="_blank" rel="noopener">参考</a></li>
+<li>命令行drush-launcher的安装<a href="https://github.com/drush-ops/drush-launcher" target="_blank" rel="noopener">参考</a></li>
+<li><p>项目的命令行插件<code>drush/drush</code>、<code>drupaldrupal/console</code></p>
+</li>
+<li><p>需要通过composer安装一些模块的时候在项目目录下<code>composer requrie drupal/xxx</code>，其中xxx插件名可以在drupal官方模块的网站的url中看到，如admin_toolbar</p>
+<img src="/2020/02/09/“drupal笔记”/composer_module.png"></li>
+<li>drupal的变量输出可以使用dpm <code>composer require drupal/devel</code>, 注意安装在drupal站点启用插件即可用dpm($var) dd($var) 来输出变量,之后修改变量输出的形式，在<code>配置&gt;开发&gt;开发设置</code>下(<code>/admin/config/development/devel</code>)修改variables dumper为symfony var-dumper,然后在代码中用dpm输出变量即可</li>
+<li>开发可以在<code>配置&gt;Development</code>下去掉<code>合并CSS文件`</code>合并JavaScript`的勾，就不必每次都cr（cache rebuild）</li>
+<li>可以通过<code>开发&gt;Execute PHP</code> 直接运行php，帮助进行代码的debug<img src="/2020/02/09/“drupal笔记”/drupal_debug_php.png"></li>
+<li>想要引用某些模块的内置函数的时候，可以参考对应模块在drupal后台显示的时候调用的函数代码</li>
+<li>本地开发有时候忘记密码，可以通过<code>drupal user:password:reset</code> <code>drupal upr</code>重置密码，不过要求站点预先安装了drupal/oauth2</li>
+<li>迁移的时候可以清空<code>watchdog</code> <code>cache page</code>数据表的内容(不是删除)，这个表是用来存放系统日志记录\页面缓存的</li>
+<li>一些模块有自定义的命令(通过hook实现的)，可以通过drush查看</li>
+<li>如果发现一些模块有部分功能失效，可以查看插件的依赖情况，是否有未安装的插件</li>
+<li>使用composer 创建drupal项目可以<a href="https://www.drupal.org/node/2718229" target="_blank" rel="noopener">参考</a></li>
+<li>如果忘记密码，可以通过drush进行账号密码的重置<code>drush upwd admin 123456</code></li>
+<li>站点迁移之后记得清理缓存，查看网站文件的tmp目录是否有o+w权限，以及<code>composer install</code> </li>
+<li>如果使用composer create-project 进行drupal项目的创立，可能会遇到<code>../config/sync</code>无法创建的error，这是一个临时的安装文件夹，需要给整个项目的文件夹添加写权限<code>chmod o+w dp</code>，具体可以<a href="https://www.drupal.org/node/2790323" target="_blank" rel="noopener">参考</a><img src="/2020/02/09/“drupal笔记”/drupal_composer.png"></li>
+<li><p>安装的时候可能会遇到<code>clean url</code>的设置问题，具体修改apache2的配置实现，<code>cd /etc/apache2/mods-available</code> <code>a2enmod rewrite</code>, 之后再到<code>/etc/apache2/apache2.conf</code>中对应的项目路径的AllowRewrite 改成All</p>
+</li>
+<li><p>可以利用devel模块下的配置导出功能，将一些<strong>手动操作</strong>的结果导出到一个模块中，或者查看其对应的配置文件内容</p>
+<img src="/2020/02/09/“drupal笔记”/devel_config_export.png"></li>
+<li><p>通过模块features可以看到配置文件的引用情况和进行一些导出的设置,在模块开发的时候可以就可以将自己通过UI界面进行的相关配置导出然后整合到自己的模块中</p>
+</li>
+<li><p>如果出现卸载模块失败的情况，在保证没有任何内容使用模块的内容之后，可以尝试运行一下cron任务试试</p>
+</li>
+</ul>
+<hr>
+<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><ul>
+<li><p>自定义的entity可以单独使用一个表存储</p>
+</li>
+<li><p>entity中的bundle是content的一种子类，是一种继承关系，在原有entity基础上多出自己的字段，entity_type是原entity的id<br><code>Node::load(1)-&gt;bundle()</code>获取id为1的node，可以是<code>article</code>等内容分类</p>
+</li>
+<li><p>ConfigEntityType的字段数据统一存储在config数据表中不同于普通的ContentEntity可以有自己专门的数据表来存放</p>
+</li>
+<li><p>创建一个entity的时候，在注释代码中定义的字段一般称之为“属性”<code>basefield</code>，而通过UI界面自己添加的字段才叫做“字段”</p>
+</li>
+<li><p>module中的一个单独field type被添加后会单独新建一个表，可能有性能方面的问题，不如在.module文件中<a href="https://www.curveagency.com/blog/using-hooks" target="_blank" rel="noopener">hook</a>直接添加新的字段</p>
+</li>
+<li><p>generate:module<br>generate:entity:content<br>数据结构：<br>  修改Entity的php文件，在baseFieldDefinitions中定义自定义的字段内容，并提供接口外用<br>显示：<br>  修改ListBuilder下的buildHeader和buildRow函数，可以调整显示的表格</p>
+</li>
+<li><p>links 中canonical指前端普通用户看到的界面，collection则是管理员用户看到的表格<br>路由的定义方式有多种，可以通过routing,yml+links(右侧写路由名)，也可以通过RouteProvider+links(右侧写路径)方式实现</p>
+</li>
+<li><p>为了实现bundle，需要ConfigEntity和ContentEntity联合使用，其中bundle的字段是在ContentEntity的数据表之外独立，而ConfigEntity的字段则都以二进制的形式存放在config表中(有UI需求的则需要定义字段内容)</p>
+</li>
+<li><p>常见的filedtype,可以参考<a href="https://www.drupal.org/docs/8/api/entity-api/fieldtypes-fieldwidgets-and-fieldformatters" target="_blank" rel="noopener">drupal文档</a></p>
+</li>
+<li><p>字符串变量替换的形式可以参考如下代码(通过@变量替换)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$items[] = t(&quot;@id (calories: @calories, description: @description )&quot;, [</span><br><span class="line">        &apos;@id&apos; =&gt; $sandwich_plugin_definition[&apos;id&apos;],</span><br><span class="line">        &apos;@calories&apos; =&gt; $sandwich_plugin_definition[&apos;calories&apos;],</span><br><span class="line">        &apos;@description&apos; =&gt; $sandwich_plugin_definition[&apos;description&apos;],</span><br><span class="line">      ]);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一些字段的<code>value</code>可以直接通过<code>-&gt;value</code>来获得</p>
+</li>
+<li><p>可以通过drupal自带request的getContent来获取post的参数内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$input = \Drupal::request()-&gt;getContent();</span><br><span class="line">$data = \GuzzleHttp\json_decode($input, true);</span><br></pre></td></tr></table></figure></li>
+<li><p>通过request()的query获取get参数内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$params = \Drupal::request()-&gt;query;</span><br><span class="line">$limit = $params-&gt;get(&apos;limit&apos;, 10);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取storage对象<code>\Drupal::entityTypeManager()-&gt;getStorage(&#39;webform&#39;);</code>通过storage对象可以进行条件查询</p>
+</li>
+<li><p><code>module_load_include(&#39;inc&#39;, &#39;captcha&#39;);</code> 可以引入inc文件使用其中的函数</p>
+<img src="/2020/02/09/“drupal笔记”/module_load.png">
+</li>
+<li><p><code>$modules_list = \Drupal::moduleHandler()-&gt;getImplementations(&#39;captcha&#39;);</code>可以获取实现了hook_captcha的module前缀名数组</p>
+</li>
+<li><p>直接调用模块的module函数之后，会自动调用其相关的hook函数</p>
+</li>
+<li><p>路由匹配不一定需要在函数的括号中写参数，可以通过<code>$request-&gt;get(&#39;session_id&#39;);</code>的方式获取</p>
+</li>
+<li><p><code>defined(&#39;MAINTENANCE_MODE&#39;)</code>判断站点是否处于维护状态</p>
+</li>
+<li><p>form元素构建a标签<br>&lt;%codeblock%&gt;</p>
+<pre><code>&apos;more_examples&apos; =&gt; [
+  &apos;#markup&apos; =&gt; Link::fromTextAndUrl($this-&gt;t(&apos;10 more examples of this challenge.&apos;), Url::fromRoute(&apos;captcha_examples&apos;, [
+    &apos;module&apos; =&gt; $module,
+    &apos;challenge&apos; =&gt; $challenge,
+  ]))-&gt;toString(),
+]
+</code></pre><p>&lt;%endcodeblock%&gt;</p>
+</li>
+<li><p>获取uuid<a href="https://drupal.stackexchange.com/questions/153871/how-can-i-use-the-uuid-api" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight plain"><figcaption><span>core/lib/Drupal/Component/uuid</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$uuid = \Drupal::service(&apos;uuid&apos;);</span><br><span class="line">$uuid-&gt;generate();</span><br><span class="line">$uuid-&gt;isValid($uuid_to_validate);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在项目下的<code>config</code>文件夹下的install和optional的区别在于install下的配置文件一旦发生冲突安装就会直接提示失败，但是optional下的配置发生冲突后会跳过冲突内容安装直接进行下去</p>
+</li>
+<li><p>如果接口需要返回文件类型的Response，可以使用<code>BinaryFileResponse</code></p>
+</li>
+<li><p>如果接口需要直接返回某个url下的数据内容，可以通过函数<code>file_get_contents()</code>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$img_data = file_get_contents($img_url);</span><br><span class="line">$response = new HtmlResponse($img_data, 200, [&apos;content-type&apos; =&gt; &apos;image/jpg&apos;]);</span><br><span class="line">//如果错误可以直接换用Response</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加内容字段的时候，如果是参考类型，则默认不会显示，可以在管理显示选项卡下设置显示，其他的自带类型字段都默认显示</p>
+</li>
+<li><p>需要扩展某些模块的时候，可以查看模块下的.api.php文件提供的函数</p>
+</li>
+<li><p>获取某个字段的URL，比如图片，可以通过<code>file_create_url($node-&gt;get(&#39;field_image&#39;)-&gt;entity-&gt;uri-&gt;value)</code>的方式构建url</p>
+</li>
+<li><p>添加一个reference的字段，以添加分类字段为例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$fields[&apos;taxonomy&apos;] = BaseFieldDefinition::create(&apos;entity_reference&apos;)</span><br><span class="line">    -&gt;setLabel(t(&apos;分类&apos;))</span><br><span class="line">    -&gt;setDescription(t(&apos;The taxonomy that the entity belongs to.&apos;))</span><br><span class="line">    -&gt;setSetting(&apos;target_type&apos;, &apos;taxonomy_term&apos;)</span><br><span class="line">    -&gt;setSetting(&apos;handler_settings&apos;, [&apos;target_bundles&apos; =&gt; [&apos;taxonomy_term&apos; =&gt; &apos;ziyuanmoban&apos;]])</span><br><span class="line">    -&gt;setDisplayOptions(&apos;form&apos;, [</span><br><span class="line">        &apos;type&apos; =&gt; &apos;options_select&apos;,</span><br><span class="line">        &apos;weight&apos; =&gt; 4</span><br><span class="line">    ])</span><br><span class="line">    -&gt;setDisplayConfigurable(&apos;form&apos;, TRUE);</span><br><span class="line">    //其中target_type指定要依赖的entityid, handler_settings指定vocabulary</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对应使用配置新建的content type, 可以通过添加<code>dependencies: enforced: module</code>实现<br><a href="https://drupal.stackexchange.com/questions/195173/how-to-delete-a-content-type-programmatically" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dependencies:</span><br><span class="line">  enforced:</span><br><span class="line">    module:</span><br><span class="line">      - book</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意在Entity中定义的BaseFieldDefinition，设置form的display的时候，其中的type类型是widget type，具体有那些type可以通过<code>devel</code>模块下的Field Info 查看</p>
+</li>
+<li><p>进行路由配置，可以参考<a href="https://www.drupal.org/docs/8/api/routing-system/using-parameters-in-routes" target="_blank" rel="noopener">文档</a></p>
+</li>
+<li><p>对于指定路由，如果需要同时传递参数，可以<a href="https://www.drupal.org/node/2647996" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">route_name: node.add</span><br><span class="line">route_parameters:</span><br><span class="line">  node_type: &apos;course&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>rest plugin</code>中，<code>patch</code>与<code>get</code> <code>delete</code>使用的是一样的url</p>
+</li>
+</ul>
+<hr>
+<h1 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h1><ul>
+<li><p><code>drupal/admin_toolbar</code> 菜单工具</p>
+</li>
+<li><p><code>drupal/restui</code> 配置rest的ui界面</p>
+</li>
+<li><p><code>drupal/jsonapi</code> 接口</p>
+</li>
+<li><code>drupal/jsonapi_extras</code> 管理jsonapi的ui界面</li>
+<li><code>drupal/devel</code> 开发工具</li>
+<li><code>drupal/views_bulk_operations</code> 在view视图界面添加批量处理操作</li>
+</ul>
+<hr>
+<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><p><a href="https://www.drupal.org/docs/8/api/database-api/instantiating-a-connection-object" target="_blank" rel="noopener">https://www.drupal.org/docs/8/api/database-api/instantiating-a-connection-object</a></p>
+<ul>
+<li>动态命令<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$connection = \Drupal::database();</span><br><span class="line">$query = $connection-&gt;select(<span class="string">'Full database name'</span>, <span class="string">'Fdn'</span>)</span><br><span class="line">-&gt;fields(<span class="string">''</span>,[])<span class="comment">//写完整</span></span><br></pre></td></tr></table></figure></li>
+<li><p>静态</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$query = $db_query(<span class="string">"SELECT * FROM &#123;Full name&#125;"</span>);</span><br><span class="line">$query = $query-&gt;fetchAll();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：条件语句不可以链式调用，只能单独使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//错误的</span><br><span class="line">$query-&gt;leftJoin(&apos;webform&apos;, &apos;wb&apos;, &apos;n.id = wb.id&apos;)</span><br><span class="line">  -&gt;condition(&apos;&apos;,&apos;&apos;);</span><br><span class="line">//正确的</span><br><span class="line">$query-&gt;leftJoin(&apos;webform&apos;, &apos;wb&apos;, &apos;n.id = wb.id&apos;);</span><br><span class="line">$query-&gt;condition(&apos;&apos;,&apos;&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果是select最后execute的结果回事statement，需要再进行<code>fetchCol()</code>获取结果</p>
+</li>
+<li>通过field API 会在数据库中新建以entity为首，以两个下划线为分割的数据表，比如</li>
+</ul>
+<hr>
+<h5 id=""><a href="#" class="headerlink" title=""></a><a href="https://www.drupal.org/docs/8/api/configuration-api/configuration-schemametadata" target="_blank" rel="noopener">YML文件配置命名</a></h5><hr>
+<h5 id="-1"><a href="#-1" class="headerlink" title=""></a><a href="https://www.drupal.org/docs/8/creating-custom-modules/a-practical-guide-to-building-basic-drupal-8-modules" target="_blank" rel="noopener">模块基本配置</a></h5><figure class="highlight plain"><figcaption><span>模块文件结构</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">modules-xxx</span><br><span class="line">xxx.info.yml(模块基本信息)</span><br><span class="line">xxx.routing.yml(路由信息)</span><br><span class="line">xxx.links.menu.yml(菜单)</span><br><span class="line">xxx.permissions.yml(权限)</span><br><span class="line">xxx.libraries.yml(css/js引用)</span><br><span class="line">####注意文件名字不要多了一个点。会导致部分信息无法读入造成问题</span><br><span class="line">/src</span><br><span class="line">    /Controller (控制器，写处理函数=&gt;*.routing.yml)</span><br><span class="line">        xxxController.php (...)</span><br><span class="line">    /Form (表单，可以是配置的表单 =&gt;*.routing.yml，也可以是区块的表单)</span><br><span class="line">        xxxForm.php (getFormId buildForm validateForm submitForm getEditableConfigNames) =&gt;修改设置的界面</span><br><span class="line">    /Plugin</span><br><span class="line">        /Block (区块 不必配置yml)</span><br><span class="line">            xxxBlock.php  (build blockForm blockSubmit defaultConfiguration) =&gt;单个模块实例的配置界面，可以使用Form中的blockform来配置</span><br><span class="line">    /Tests</span><br><span class="line">        xxxTests.php  (setUp testxxxPageExists testConfigForm...)=&gt;测试文件</span><br><span class="line">/config</span><br><span class="line">    /install</span><br><span class="line">        .settings.yml</span><br><span class="line">        node.type.xxx_mytype.yml</span><br><span class="line">/templates</span><br><span class="line">    xxx.html.twig (模板)</span><br></pre></td></tr></table></figure>
+<h5 id="xxx-install-数据库信息"><a href="#xxx-install-数据库信息" class="headerlink" title="xxx.install(数据库信息)"></a>xxx.install(数据库信息)</h5><pre><code>function xxx_schema() -&gt;4个表{$[&apos;xxx&apos;],$[&apos;xxx_revision&apos;],$[&apos;xxx_field_data&apos;],$[&apos;xxx_field_revision&apos;]};
+function xxx_install() {
+    entity_create(&apos;xxx_type&apos;, array(
+        &apos;label&apos; =&gt;&apos;Generic xxx type&apos;,
+        &apos;type&apos; =&gt; &apos;generic&apos;,
+        &apos;description&apos; =&gt; &apos;A very informative text goes here&apos;,
+        &apos;settings&apos; =&gt;array(&apos;published&apos;=&gt;0)
+        ))-&gt;save();
+}
+$[&apos;xxx&apos;]=array(
+   &apos;description&apos; =&gt; &apos;xxxx&apos;,
+   &apos;fields&apos; =&gt; array(
+        &apos;entity_id&apos; =&gt; array (
+            &apos;description&apos; =&gt; &apos;xxx&apos;,
+            &apos;type&apos; =&gt; &apos;varchar&apos;/serial,
+            &apos;length&apos; =&gt; 60,
+            &apos;not null&apos; =&gt; TRUE,
+            &apos;unsigned&apos; =&gt; TRUE
+            ),
+        &apos;uuid&apos; =&gt; array(...),
+        &apos;revision_id&apos; =&gt; ...,
+        &apos;bundle&apos; =&gt; ...
+    ),
+    &apos;primary key&apos; =&gt; array(&apos;entity_id&apos;),
+    &apos;unique keys&apos; =&gt; array(
+        &apos;uuid&apos; =&gt; array(&apos;uuid&apos;),
+        &apos;revision_id&apos; =&gt; array(&apos;revision_id&apos;)
+    )
+</code></pre><p>同时也可以用来进行一些判断防止安装之后出现问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function webform_node_requirements($phase) &#123;</span><br><span class="line">  $requirements = [];</span><br><span class="line">  // Throw error if Webform (webform) content type is already exists which will</span><br><span class="line">  // happen during a D7 to D8 content migration.</span><br><span class="line">  // @see https://www.drupal.org/node/2856599</span><br><span class="line">  if ($phase == &apos;install&apos;) &#123;</span><br><span class="line">    $manager = \Drupal::entityTypeManager();</span><br><span class="line">    if ($manager-&gt;hasDefinition(&apos;node_type&apos;) &amp;&amp; ($node_type = $manager-&gt;getStorage(&apos;node_type&apos;)-&gt;load(&apos;webform&apos;))) &#123;</span><br><span class="line">      $requirements[&apos;webform_node&apos;] = [</span><br><span class="line">        &apos;title&apos; =&gt; t(&apos;Webform Node&apos;),</span><br><span class="line">        &apos;description&apos; =&gt; t(&apos;%title content type already exists, please delete the %title content type before installing the Webform node module.&apos;, [&apos;%title&apos; =&gt; $node_type-&gt;label()]),</span><br><span class="line">        &apos;severity&apos; =&gt; REQUIREMENT_ERROR,</span><br><span class="line">      ];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  return $requirements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="xxx-module-hook很多配置"><a href="#xxx-module-hook很多配置" class="headerlink" title="xxx.module(hook很多配置)"></a>xxx.module(hook很多配置)</h5><pre><code>function xxx_help($route_name, RouteMatchInterface $route_match)
+function xxx_theme($existing, $type, $theme, $path)
+functino template_preprocess_xxx(&amp;$variables)
+</code></pre><hr>
+<ul>
+<li>entity 的定义实现，旧版本的时候drupal generate:entity:content 会自动生成.routing.yml，新版本之后路由的定义都改在Entity当中；<br>在自定义的Entity类中的注释，数据库的字段（drupal已经定义的字段=&gt;数据库自定义字段）目的是为了帮drupal实现字段映射，有助于查询；</li>
+</ul>
+<hr>
+<ul>
+<li><p>node load(load) 和node view(format 有存储默认值)存储内容不同，可以通过hook jsonapi的函数塞入默认值，jsonApi获取的是node load，获取的内容没有默认值</p>
+</li>
+<li><p>修改entity的数据表名的时候<code>drupal upe</code>可能无效，可以使用<code>drush entup</code></p>
+</li>
+<li><p>已经启用的模块需要先禁用再去删除文件，不然会出错，如果已经误删，可以尝试重新generate一下</p>
+</li>
+<li><p>通过代码新建各类entity <a href="https://docs.acquia.com/tutorials/fast-track-drupal-8-coding/create-terms-programmatically/" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li>form表单的type类型<a href="https://api.drupal.org/api/drupal/elements/" target="_blank" rel="noopener">参考</a></li>
+<li>获取entity信息， 以taxonomy_vocabulary为例：<code>$form_state-&gt;getStorage()[&#39;taxonomy&#39;][&#39;vocabulary&#39;]-&gt;id()</code></li>
+<li><p>修改.module文件已有函数的时候不必drupal upe</p>
+</li>
+<li><p>添加一个自定义的过滤条件<a href="https://www.webomelette.com/creating-custom-views-filter-drupal-8" target="_blank" rel="noopener">参考</a></p>
+<ul>
+<li>hook_views_data_alter(&amp;$data) 中的$data下第一个下标是数据表名</li>
+<li>filter类型<a href="https://api.drupal.org/api/drupal/core%21modules%21views%21src%21Plugin%21views%21filter%21FilterPluginBase.php/group/views_filter_handlers/8.5.x" target="_blank" rel="noopener">参考</a></li>
+</ul>
+</li>
+<li>.views.inc 下的hook函数需要upe及时生效，不像.module文件下的函数是需要时才被调用</li>
+</ul>
+<hr>
+<h2 id="关于plugin-api"><a href="#关于plugin-api" class="headerlink" title="关于plugin api"></a>关于plugin api</h2><p><a href="https://www.drupal.org/docs/8/api/plugin-api/plugin-api-overview" target="_blank" rel="noopener">https://www.drupal.org/docs/8/api/plugin-api/plugin-api-overview</a><br><blockquote><p>The plugin system has three base elements:</p>
+<ol>
+<li><p>Plugin Types<br>The plugin type is the central controlling class that defines how the plugins of this type will be discovered and instantiated. The type will describe the central purpose of all plugins of that type; e.g. cache backends, image actions, blocks, etc.</p>
+</li>
+<li><p>Plugin Discovery<br>Plugin Discovery is the process of finding plugins within the available code base that qualify for use within this particular plugin type’s use case.</p>
+</li>
+<li><p>Plugin Factory<br>The Factory is responsible for instantiating the specific plugin(s) chosen for a given use case.</p>
+</li>
+</ol>
+</blockquote></p>
+<p>一种plugin type 可以有多个执行相同功能的 Plugins</p>
+<blockquote>
+<p>Plugins are small pieces of functionality that are swappable. Plugins that perform similar functionality are of the same plugin type.</p>
+</blockquote>
+<ul>
+<li>在src/Annotation/文件夹下，通过@Annotation并extends Plugin定义插件要注释定义的内容</li>
+<li>在src文件夹下定义Plugin被调用的接口类xxInterface，再通过基类xxBase.php<code>extends PluginBase implements xxInterface</code>作为要定义的Plugin的基础类，实现共有函数</li>
+<li>然后在src文件夹下定义xxPluginManager<code>extends DefaultPluginManager</code>为服务提供调用类，确定定义的Plugin的文件路径和命名空间，钩子行为等</li>
+<li><p>最后可以在src下Plugin/xx/文件夹下定义具体的Plugin，比如/src/Plugin/Sandwich/ExampleHamSandwich.php <code>class ExampleHamSandwich extends SandwichBase</code>,记得在头部添加注释信息<code>@Sandwich({id=&quot;ham_sandwich&quot;, des...})</code></p>
+</li>
+<li><p>当然也可以是直接去使用已经定义了Annotation的元素标签(可能需要include)</p>
+</li>
+<li>然后在控制器调用的时候利用_construct函数直接调用服务接口<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public function __construct(SandwichPluginManager $sandwich_manager) &#123;</span><br><span class="line">  $this-&gt;sandwichManager = $sandwich_manager;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+之后在函数中就可以使用了，通过<code>getDefinitions</code>可以获得这个Plugin下的全部信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sandwich_plugin_definitions = $this-&gt;sandwichManager-&gt;getDefinitions();</span><br></pre></td></tr></table></figure>
+<img src="/2020/02/09/“drupal笔记”/plugintype_definitions.png">
+也可以通过<code>$this-&gt;sandwichManager-&gt;getDefinition(&#39;meatball_sandwich&#39;);</code>获取指定id的plugin信息</li>
+<li>通过<code>$plugin = $this-&gt;sandwichManager-&gt;createInstance($plugin_id, [&#39;of&#39; =&gt; &#39;configuration values&#39;]);</code>便可以新建一个Plugin实例(调用对应的类_construct函数)</li>
+</ul>
+<h2 id="Field-API"><a href="#Field-API" class="headerlink" title="Field API"></a>Field API</h2><ul>
+<li>在field api中，有三种文件，一个是FieldType-决定字段内容的存储形式，一个是FieldWidget-决定字段在添加、编辑内容的时候的显示，一个是FieldFormatter-决定在用户界面看到这个字段的形式</li>
+</ul>
+<h2 id="HOOK"><a href="#HOOK" class="headerlink" title="HOOK"></a>HOOK</h2><ul>
+<li><p>自定义hook的时候可以通过在想要实现hook的位置插入相应的代码段来实现，在D7(面向过程)中是通过循环得到所有模块名然后拼凑对应的hook函数名运行来实现（对于alter的hook操作则要使用函数call_user_func..）；<br>在D8（面向对象）中，则可以使用已经封装的函数直接进行调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class WebformSourceEntityManager extends DefaultPluginManager implements WebformSourceEntityManagerInterface &#123;</span><br><span class="line">  protected function alterDefinitions(&amp;$definitions) &#123;</span><br><span class="line">      parent::alterDefinitions($definitions);</span><br><span class="line"></span><br><span class="line">      // Additionally sort by weight so we always have them sorted in proper</span><br><span class="line">      // order.</span><br><span class="line">      uasort($definitions, [SortArray::class, &apos;sortByWeightElement&apos;]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class WebformHandlerManager extends DefaultPluginManager implements WebformHandlerManagerInterface &#123;</span><br><span class="line">    protected function alterDefinitions(&amp;$definitions) &#123;</span><br><span class="line">        $this-&gt;alterInfo(&apos;webform_handler_info&apos;);</span><br><span class="line">      if ($this-&gt;alterHook) &#123;</span><br><span class="line">        $this-&gt;moduleHandler-&gt;alter($this-&gt;alterHook, $definitions);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//其中function alterInfo(), alterDefinitions(), $moduleHandler是类DefaultPluginManager(D8核心类)的函数、变量</span><br><span class="line">//alterHook是指定的hook函数名(没有模块名与前面的下划线)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意一些hook可能是在中途执行的，不一定能够获取到最后的执行结果，比如webform_third_party_settings_form_alter获取不到webform设置页面(General)最后的submit按钮，要修改最后的结果还是使用drupal自带的hook函数，比如hook_form_alter或者hook_form_FORM_ID_alter</p>
+</li>
+<li><p>要修改submit按钮的触发函数可以通过handler实现，带了两个冒号的代表是类内的函数方法<code>::save</code>，在module文件中的函数则可以直接讲函数名赋值到handler中，注意函数定义的时候参数需要和默认方法一致</p>
+</li>
+<li><p>注意在hook函数的参数一定记得加上引用符号，不然修改会失效</p>
+</li>
+</ul>
+<hr>
+<h1 id="模块fd-taxonomy的实现中遇到的问题"><a href="#模块fd-taxonomy的实现中遇到的问题" class="headerlink" title="模块fd_taxonomy的实现中遇到的问题"></a>模块fd_taxonomy的实现中遇到的问题</h1><ul>
+<li>hook 函数是在基础函数执行之后才执行的</li>
+<li>buildForm 表单的ajax处理<br>处理流程是<code>ajax--(click)--&gt;value-&gt;buildForm(rebuild)-&gt;callback-&gt;html</code></li>
+<li>注意’select’类型的options下的key值为getValue能得到的value值，而options右侧的value值为显示的value</li>
+<li>对于某个表单内某个字段如果要加<code>id</code>只能加一个，不能是数组形式</li>
+<li><p>对于form的ajax渲染对象是通过id确定的，一种是直接在callback函数中用如下$response制定渲染id</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$response = new AjaxResponse();</span><br><span class="line">    $response-&gt;addCommand(new ReplaceCommand(&apos;#fd_taxonomy-terms-list&apos;, $form));</span><br><span class="line">    return $response;</span><br></pre></td></tr></table></figure>
+<p>另一种则是直接通过’#ajax’下的’wrapper’制定渲染对象的id，然后在callback函数中直接return $form[‘’]要输出到渲染对象的内容</p>
+</li>
+<li>operations 的生成，由于在hook中不能访问<code>$form_state-&gt;getFormObject</code>的listbuilder,所以可以通过<code>$list_builder = EntityListBuilder::createInstance(\Drupal::getContainer(), $term-&gt;getEntityType())  $list_builder-&gt;getoPerations($term)</code>的方式来获取operations操作按钮组</li>
+<li>在类型中带井号的字段，比如’#value’，一般都有指定类型，不能随便写，比如<code>#value</code>只能string而不能array</li>
+<li>给元素制定id的时候，用#prefix和#suffix能完全包起内容，不会漏了结束标签导致渲染出问题，比[‘#attributes’][‘id’]好一点</li>
+<li>通用完整字段可以<a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21RenderElement.php/class/RenderElement/8.5.x" target="_blank" rel="noopener">参考</a> </li>
+<li><p>表单中的字段对象都是渲染(Render)对象，可以通过\Drupal::service(‘renderer’)-&gt;render($elem);得到对应HTML的字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$elem = [</span><br><span class="line">    &apos;#type&apos; =&gt; &apos;textfield&apos;,</span><br><span class="line">    &apos;#size&apos; =&gt; &apos;60&apos;,</span><br><span class="line">    &apos;#disabled&apos; =&gt; TRUE,</span><br><span class="line">    &apos;#value&apos; =&gt; &apos;Hello, &apos; . $form_state-&gt;getValue(&apos;input&apos;) . &apos;!&apos;,</span><br><span class="line">    &apos;#attributes&apos; =&gt; [</span><br><span class="line">      &apos;id&apos; =&gt; [&apos;edit-output&apos;],</span><br><span class="line">    ],</span><br><span class="line">  ];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于callback函数，如果<code>$response-&gt;addCommand(new AppendCommand(&#39;#block-system-main .content&#39;, $form));</code>中$form预先经过渲染<code>\Drupal:service(&#39;renderer&#39;)-&gt;render($form)</code> 可能会导致ajax失效</p>
+</li>
+<li><code>$form_state</code> 是触发ajax的瞬间的表格状态，可以通过<code>getValue(&#39;&#39;)</code>获取各个字段的值，$form则是当前要重新渲染的表格内容</li>
+<li>callback函数采用直接return $form 的方式能够及时看到调试用的dpm()函数结果</li>
+<li><font color="red">由于taxonomy form自带的buildform中有判断Userinfo,所以对于不同组下的分类显示会有影响,如果分类一多，一页里显示的$form[‘terms’]可能是不完全的，所以，最好的方案还是要自己全部重构</font>
+</li>
+<li><p>$container 可以通过<code>\Drupal::getContainer</code> 得到</p>
+</li>
+<li><p>过滤并选取需要的Entity,以获取Term为例 (注：还可以通过\Drupal::entityQuery)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$entityQuery = \Drupal::getContainer()-&gt;get(&apos;entity.query&apos;);</span><br><span class="line">    $results = $entityQuery-&gt;get(&apos;taxonomy_term&apos;)</span><br><span class="line">        -&gt;condition(&apos;vid&apos;, FD_TAX)</span><br><span class="line">        -&gt;execute();</span><br><span class="line">    $term = $this-&gt;entityManager()</span><br><span class="line">        -&gt;getStorage(&apos;taxonomy_term&apos;)</span><br><span class="line">        -&gt;loadMultiple($results);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过#ajax访问控制器函数时候没有实例化，不能使用$this对象</p>
+</li>
+<li>路由设置为开头为<code>/admin/config</code>的routing之后，页面的默认模板与设置界面相同</li>
+<li>数据表条目数量过多的时候分页，导致重新加载的buildForm()中<code>$form[&#39;terms&#39;]</code>数量不全(有分页过滤)，所以自己的提交到了overviewterms中的userinfo的order中merge之后空的term会merge导致$current_page会出现数字项(序号)，总的来说就是hook的函数先进行处理导致了自己写的函数得到的数据不完全，无法得到理想效果，所以<font color="red">对于这类核心拓展功能还是自己写界面或是通过一些已有插件改写来实现比较好，毕竟核心代码逻辑都相对复杂会对自己要实现的目标功能有所影响</font></li>
+<li>taxonomy_term的storage  loadTree最后一个字段如果没有设置则可以通过-&gt;group_id方式直接获取字段值，如果设置为TRUE则需要通过<code>$term_gid = $term-&gt;getTypedData()-&gt;getProperties()[&#39;group_id&#39;]-&gt;getString();</code>函数方式来获取(相应的能够调用一些复杂函数自动构建一些数据)</li>
+</ul>
+<hr>
+<h1 id="模块fd-taxonomy-manager-patch"><a href="#模块fd-taxonomy-manager-patch" class="headerlink" title="模块fd_taxonomy_manager_patch"></a>模块fd_taxonomy_manager_patch</h1><ul>
+<li>对于term对象，获取数据的方式是<code>$term-&gt;getTypedData()-&gt;getProperties()[&#39;group_id&#39;]-&gt;getString();</code></li>
+<li>渲染对象添加js，可以通过<code>[&#39;#attached&#39;][&#39;library&#39;][]=&#39;taxonomy_manager/tree&#39;</code>指定在.libraries.yml中的依赖库，可以包含css和文件,然后<code>[&#39;#attached&#39;][&#39;drupalSettings&#39;][&#39;taxonomy_manager&#39;][&#39;tree&#39;][]</code>指定要传送到js的变量<figure class="highlight yml"><figcaption><span>.libraries.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tree:</span></span><br><span class="line"><span class="attr">  version:</span> <span class="number">1.</span><span class="string">x</span></span><br><span class="line"><span class="attr">  css:</span></span><br><span class="line"><span class="attr">      component:</span></span><br><span class="line">        <span class="string">css/taxonomy_manager.fancytree.css:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  js:</span></span><br><span class="line">    <span class="string">js/tree.js:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  dependencies:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">taxonomy_manager/fancytree</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">core/drupalSettings</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><figcaption><span>xx.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$element[<span class="string">'#attached'</span>][<span class="string">'library'</span>][] = <span class="string">'taxonomy_manager/tree'</span>;</span><br><span class="line">$element[<span class="string">'#attached'</span>][<span class="string">'drupalSettings'</span>][<span class="string">'taxonomy_manager'</span>][<span class="string">'tree'</span>][] = [</span><br><span class="line">  <span class="string">'id'</span> =&gt; $element[<span class="string">'#id'</span>],</span><br><span class="line">  <span class="string">'name'</span> =&gt; $element[<span class="string">'#name'</span>],</span><br><span class="line">  <span class="string">'source'</span> =&gt; $list,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>xx.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Drupal.behaviors.TaxonomyManagerTree = &#123;</span><br><span class="line">    attach: <span class="function"><span class="keyword">function</span> (<span class="params">context, settings</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> treeSettings = settings.taxonomy_manager.tree || [];</span><br><span class="line">      <span class="keyword">if</span> (treeSettings <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; treeSettings.length; i++) &#123;</span><br><span class="line">          $(<span class="string">'#'</span> + treeSettings[i].id).once(<span class="string">'taxonomy-manager-tree'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.chidren(<span class="string">'li'</span>).remove();</span><br><span class="line">            <span class="keyword">new</span> Drupal.TaxonomyManagerFancyTree(treeSettings[i].id, treeSettings[i].name, treeSettings[i].source);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="comment">//Drupal.TaxonomyManagerFancyTree是又一个自己定义的函数</span></span><br></pre></td></tr></table></figure></li>
+<li><p>值得注意的是这里的drupal 传给js 变量(数组)如果发生改变，若改变后的值比之前少，那么原本多出来的数值可能会遗留在数值中，需要处理,js的错误可能在循环中，所以不会报错——-&gt;可能原因是Drupalsetting下的merge被修改为true,改为false即可?<img src="/2020/02/09/“drupal笔记”/drupal_setting_merge.png">修改源码为false后发现彻底不刷新，其他原因有待探查，目前直接js辅助处理) </p>
+</li>
+<li><p>Taxonomy Manager通过自定义Element的方式来调用js并生成分类表</p>
+</li>
+<li><p>可以通过[‘#attached’]使用drupal自带插件实现drupal的一些自带效果</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$del_form = \Drupal::formBuilder()-&gt;getForm($class_name, $taxonomy_vocabulary, $selected_terms);</span><br><span class="line">$del_form[<span class="string">'#attached'</span>][<span class="string">'library'</span>][] = <span class="string">'core/drupal.dialog.ajax'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Change the form action url form the current site to the add form.</span></span><br><span class="line">$del_form[<span class="string">'#action'</span>] = <span class="keyword">$this</span>-&gt;url($route_name, [<span class="string">'taxonomy_vocabulary'</span> =&gt; $taxonomy_vocabulary-&gt;id()]);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="WebForm-随记"><a href="#WebForm-随记" class="headerlink" title="WebForm 随记"></a>WebForm 随记</h2><ul>
+<li><p><code>webform</code> 是表单的字段信息，<code>webform submission</code> 是用户提交的信息</p>
+</li>
+<li><p>通过<code>webform</code>的exporter可以输出用户填写的表单信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/** @var Webform $webform */</span><br><span class="line">$webform = $node-&gt;webform-&gt;entity;</span><br><span class="line">/** @var \Drupal\webform\WebformSubmissionExporterInterface $exporter */</span><br><span class="line">$exporter = \Drupal::service(&apos;webform_submission.exporter&apos;);</span><br><span class="line"></span><br><span class="line">$exporter-&gt;setWebform($webform);</span><br><span class="line">$exporter-&gt;setSourceEntity($node);</span><br><span class="line"></span><br><span class="line">$export_options = $this-&gt;exportOptions() + $exporter-&gt;getWebformOptions();</span><br><span class="line">$exporter-&gt;setExporter($export_options);</span><br><span class="line">$exporter-&gt;generate();</span><br><span class="line"></span><br><span class="line">$file_path = $exporter-&gt;getExportFilePath();</span><br><span class="line">$file_name = $node-&gt;label() . &apos;_&apos; . date(&apos;YmdHi&apos;) . &apos;.xls&apos;;</span><br><span class="line"></span><br><span class="line">$response = new BinaryFileResponse($file_path, 200, [], FALSE);</span><br><span class="line">$response-&gt;setContentDisposition(&apos;attachment&apos;, $file_name);</span><br><span class="line">$response-&gt;deleteFileAfterSend(TRUE);</span><br><span class="line">return $response;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>使用<code>composer require drupal/webform</code>安装webform插件后，记得开启webform ui方便通过UI界面管理</p>
+</li>
+<li><p><code>$webform = Webform::load(&#39;webform_test&#39;);</code>其中load($id)中的id是通过webform新建的form的机器名</p>
+<img src="/2020/02/09/“drupal笔记”/webform_id.png">
+</li>
+<li><p><code>$elements = $webform-&gt;getElementsDecodedAndFlattened()</code> 可以得到form的表单渲染数组</p>
+<img src="/2020/02/09/“drupal笔记”/webform_element.png">
+</li>
+<li><p>通过<code>$webform-&gt;setElementProperties($key, $properties);    $webform-&gt;save();</code>可以新增以<code>$key</code>字符串命名的渲染数组到webform中</p>
+</li>
+<li><p>通过<code>$webform-&gt;setElements($rand)-&gt;save();</code>可以直接重置整个webform的渲染数组</p>
+</li>
+<li><p>通过<code>$webform_submission_storage = \Drupal::entityTypeManager()-&gt;getStorage(&#39;webform_submission&#39;);</code>获取用户已经提交的表单信息的存储对象；然后根据已知的webform对象来获取对应的已经提交的表单信息<code>$results = $webform_submission_storage-&gt;loadByEntities($webform);</code>（此时获取的$results是WebFormSubmission对象）</p>
+<img src="/2020/02/09/“drupal笔记”/webform_submission.png">
+<p>可以通过逐个<code>-&gt;toArray()</code>转化获得数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foreach ($results as $result) &#123;</span><br><span class="line">  $elements[] = $result-&gt;toArray();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2020/02/09/“drupal笔记”/webform_submission_change.png">
+</li>
+<li><p>获取某个node的webform类型字段对应的webform实体，可以通过<code>Node::load($id)-&gt;field_webform-&gt;entity</code>来获得</p>
+</li>
+<li><p>获取字段信息<code>getElementsDecodedAndFlattened</code>得到的是全部的字段信息，没有父子集关系</p>
+</li>
+<li><p>推荐的container字段是使用<code>细节</code></p>
+<img src="/2020/02/09/“drupal笔记”/webform_detailconfig.png"><img src="/2020/02/09/“drupal笔记”/webform_detailshow.png">
+</li>
+<li><p>通过<code>Webform::loadMultiple()</code> 可以获取全部webform信息，其中key值为webform对应的id</p>
+<img src="/2020/02/09/“drupal笔记”/webform_multiload.png">
+</li>
+<li><p>通过<code>$this-&gt;storage = \Drupal::entityTypeManager()-&gt;getStorage(&#39;webform_submission&#39;);</code>可以得到webform_submission的storage对象</p>
+</li>
+<li><p>使用<code>$this-&gt;storage-&gt;loadByEntities($webform)</code>可以得到某个webform下的所有webform_submisstion基础属性值</p>
+</li>
+<li><p>发现ckeditor无法使用的时候，可以通过drush命令重新安装依赖</p>
+<img src="/2020/02/09/“drupal笔记”/webform_console.png">
+</li>
+<li><p>类型的输入验证是在前端实现的，valiade在element的定义中作为类函数实现</p>
+</li>
+<li><p>获取webform的某个字段信息的时候，注意是<code>$webform-&gt;getElement(&#39;captcha&#39;)</code>而不是-&gt;get();</p>
+</li>
+<li><p>获取webform node 对应的webform对象可以使用<code>$webform = $node-&gt;webform-&gt;entity;</code></p>
+</li>
+</ul>
+<hr>
+<h1 id="模块gwebform-修改随记"><a href="#模块gwebform-修改随记" class="headerlink" title="模块gwebform 修改随记"></a>模块gwebform 修改随记</h1><ul>
+<li><p>可以通过定义Plugin 来新建rest访问的资源，类内再定义get/patch/delete/post函数分别实现对应的rest路由函数</p>
+<figure class="highlight plain"><figcaption><span>src/Plugin/rest/resourse/xxxResource.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Provides a resource to get view modes by entity and bundle.</span><br><span class="line"> *</span><br><span class="line"> * @RestResource(</span><br><span class="line"> *   id = &quot;group_webform&quot;,</span><br><span class="line"> *   label = @Translation(&quot;Group webform&quot;),</span><br><span class="line"> *   uri_paths = &#123;</span><br><span class="line"> *     &quot;canonical&quot; = &quot;/api/gwebform/&#123;id&#125;&quot;,</span><br><span class="line"> *     &quot;https://www.drupal.org/link-relations/create&quot; = &quot;/api/gwebform&quot;</span><br><span class="line"> *   &#125;</span><br><span class="line"> * )</span><br><span class="line"> */</span><br><span class="line">class GroupWebformResource extends ResourceBase&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装自己的rest resource 模块之后，在<code>配置&gt;WEB服务&gt;REST</code>开启对应的rest资源，之后再在权限中给对应的rest资源配置匿名权限</p>
+</li>
+<li><p>使用Capture模块添加的验证码字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">namespace Drupal\webform_rest_resource\Controller;</span><br><span class="line"></span><br><span class="line">use Drupal;</span><br><span class="line">use Drupal\Core\Url;</span><br><span class="line">use Symfony\Component\HttpFoundation\Response;</span><br><span class="line"></span><br><span class="line">class CaptchaController</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public static function generate($is_response = true, $webform_id)</span><br><span class="line">    &#123;</span><br><span class="line">        module_load_include(&apos;inc&apos;, &apos;captcha&apos;);</span><br><span class="line">        //---------------------------------- Generate a CAPTCHA code.</span><br><span class="line">        $config = \Drupal::config(&apos;image_captcha.settings&apos;);</span><br><span class="line">        $allowed_chars = _image_captcha_utf8_split($config-&gt;get(&apos;image_captcha_image_allowed_chars&apos;));</span><br><span class="line">        $code_length = (int)$config-&gt;get(&apos;image_captcha_code_length&apos;);</span><br><span class="line">        $solution = &apos;&apos;;</span><br><span class="line">        for ($i = 0; $i &lt; $code_length; $i++) &#123;</span><br><span class="line">            $solution .= $allowed_chars[array_rand($allowed_chars)];</span><br><span class="line">        &#125;</span><br><span class="line">        // Build the result to return.</span><br><span class="line">        $_SESSION[&apos;drupal&apos;][&apos;captcha_solution&apos;] = $solution;</span><br><span class="line">        $result = [];</span><br><span class="line">        $result[&apos;solution&apos;] = $solution;</span><br><span class="line">        //--------------------------------------</span><br><span class="line">        // 就是第一次访问</span><br><span class="line">        if (empty($_SESSION[&apos;drupal&apos;][&apos;captcha_sid&apos;])) &#123;</span><br><span class="line">            $user = \Drupal::currentUser();</span><br><span class="line">            // Insert an entry and thankfully receive the value</span><br><span class="line">            // of the autoincrement field &apos;csid&apos;.</span><br><span class="line">            $captcha_sid = db_insert(&apos;captcha_sessions&apos;)</span><br><span class="line">                -&gt;fields([</span><br><span class="line">                    &apos;uid&apos; =&gt; $user-&gt;id(),</span><br><span class="line">                    &apos;sid&apos; =&gt; session_id(),</span><br><span class="line">                    &apos;ip_address&apos; =&gt; Drupal::request()-&gt;getClientIp(),</span><br><span class="line">                    &apos;timestamp&apos; =&gt; REQUEST_TIME,</span><br><span class="line">                    &apos;form_id&apos; =&gt; $webform_id,</span><br><span class="line">                    &apos;solution&apos; =&gt; $solution,</span><br><span class="line">                    &apos;status&apos; =&gt; CAPTCHA_STATUS_UNSOLVED,</span><br><span class="line">                    &apos;attempts&apos; =&gt; 0,</span><br><span class="line">                ])</span><br><span class="line">                -&gt;execute();</span><br><span class="line">            $_SESSION[&apos;drupal&apos;][&apos;captcha_sid&apos;] = $captcha_sid;</span><br><span class="line">            $captcha_token = md5(mt_rand());</span><br><span class="line">            db_update(&apos;captcha_sessions&apos;)</span><br><span class="line">                -&gt;fields([&apos;token&apos; =&gt; $captcha_token])</span><br><span class="line">                -&gt;condition(&apos;csid&apos;, $captcha_sid)</span><br><span class="line">                -&gt;execute();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            _captcha_update_captcha_session($_SESSION[&apos;drupal&apos;][&apos;captcha_sid&apos;], $solution);</span><br><span class="line">            $captcha_sid = $_SESSION[&apos;drupal&apos;][&apos;captcha_sid&apos;];</span><br><span class="line">        &#125;</span><br><span class="line">        if (!$is_response) &#123;</span><br><span class="line">            return Url::fromRoute(&apos;image_captcha.generator&apos;, [</span><br><span class="line">                &apos;session_id&apos; =&gt; $captcha_sid,</span><br><span class="line">                &apos;timestamp&apos; =&gt; REQUEST_TIME</span><br><span class="line">            ])-&gt;toString();</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            return new Response(Url::fromRoute(&apos;image_captcha.generator&apos;, [</span><br><span class="line">                &apos;session_id&apos; =&gt; $captcha_sid,</span><br><span class="line">                &apos;timestamp&apos; =&gt; REQUEST_TIME</span><br><span class="line">            ])-&gt;toString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static function check($captcha)</span><br><span class="line">    &#123;</span><br><span class="line">        if (strtolower($captcha) != strtolower($_SESSION[&apos;drupal&apos;][&apos;captcha_solution&apos;])) return false;</span><br><span class="line">        else return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#php" >
+    <span class="tag-code">php</span>
+  </a>
+
+  <a href="/tags#drupal" >
+    <span class="tag-code">drupal</span>
+  </a>
+
+  <a href="/tags#drupal8" >
+    <span class="tag-code">drupal8</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2020/02/09/“杂项笔记”/">
+        <span class="nav-arrow">← </span>
+        
+          杂项笔记
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2020/02/09/Vue-js随记/">
+        
+          Vue.js随记
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#学习样例下载"><span class="toc-nav-text">学习样例下载</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#开发的小细节"><span class="toc-nav-text">开发的小细节</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#一些概念"><span class="toc-nav-text">一些概念</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#常用插件"><span class="toc-nav-text">常用插件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数据库操作"><span class="toc-nav-text">数据库操作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">YML文件配置命名</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#-1"><span class="toc-nav-text">模块基本配置</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#xxx-install-数据库信息"><span class="toc-nav-text">xxx.install(数据库信息)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#xxx-module-hook很多配置"><span class="toc-nav-text">xxx.module(hook很多配置)</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#关于plugin-api"><span class="toc-nav-text">关于plugin api</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Field-API"><span class="toc-nav-text">Field API</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HOOK"><span class="toc-nav-text">HOOK</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#模块fd-taxonomy的实现中遇到的问题"><span class="toc-nav-text">模块fd_taxonomy的实现中遇到的问题</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#模块fd-taxonomy-manager-patch"><span class="toc-nav-text">模块fd_taxonomy_manager_patch</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#WebForm-随记"><span class="toc-nav-text">WebForm 随记</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#模块gwebform-修改随记"><span class="toc-nav-text">模块gwebform 修改随记</span></a>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    //var url = 'localhost:4000/2020/02/09/“drupal笔记”/';
+    //var banner = ''
+    //console.log(banner)
+    // if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+    //   $('#article-banner').css({
+    //     'background-image': 'url(' + banner + ')'
+    //   })
+    // } else {
+    //   $('#article-banner').geopattern(url)
+    // }
+    //let test= window.btoa('hellp');
+    //console.log(test)
+
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    // var qr = new QRious({
+    //   element: document.getElementById('share-qrcode'),
+    //   value: document.location.href
+    // });
+
+    // gitment
+    // var gitmentConfig = "yanm1ng";
+    // if (gitmentConfig !== 'undefined') {
+    //   var gitment = new Gitment({
+    //     id: "drupal随记",
+    //     owner: "yanm1ng",
+    //     repo: "yanm1ng.github.io",
+    //     oauth: {
+    //       client_id: "0f87e490e00ee3fd87ef",
+    //       client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+    //     },
+    //     theme: {
+    //       render(state, instance) {
+    //         const container = document.createElement('div')
+    //         container.lang = "en-US"
+    //         container.className = 'gitment-container gitment-root-container'
+    //         container.appendChild(instance.renderHeader(state, instance))
+    //         container.appendChild(instance.renderEditor(state, instance))
+    //         container.appendChild(instance.renderComments(state, instance))
+    //         container.appendChild(instance.renderFooter(state, instance))
+    //         return container;
+    //       }
+    //     }
+    //   })
+    //   gitment.render(document.getElementById('comments'))
+    // }
+  })();
+</script>
+
+    <canvas></canvas>
+    </div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    
+<div class="sidebar" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/第三方库使用记录/" class="archive-title">第三方库使用记录</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“杂项笔记”/" class="archive-title">杂项笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/“drupal笔记”/" class="archive-title">drupal随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/Vue-js随记/" class="archive-title">Vue.js随记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/POSTMAN测试开发/" class="archive-title">POSTMAN测试开发</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/JS精粹/" class="archive-title">JS精粹</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/HTML-CSS基础笔记/" class="archive-title">HTML/CSS基础笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS动画/" class="archive-title">CSS动画</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2020/02/09/CSS世界-笔记/" class="archive-title">CSS世界-笔记</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/11/28/VsCode配置/" class="archive-title">VsCode配置</a>
+        <p class="archive-date">11-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/12/ES6/" class="archive-title">ES6</a>
+        <p class="archive-date">09-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/08/27/SSH代理/" class="archive-title">SSH代理</a>
+        <p class="archive-date">08-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/30/hexo随记/" class="archive-title">hexo随记</a>
+        <p class="archive-date">07-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/系统使用随记/" class="archive-title">Deepin系统使用随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/symfony随记/" class="archive-title">symfony随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/sublime环境配置/" class="archive-title">sublime环境配置</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“node-js笔记”/" class="archive-title">“node.js实战”随记</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/07/29/“编码规范”/" class="archive-title">编码规范</a>
+        <p class="archive-date">07-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+  <a id="sidebar-arrows">
+    <div class="sidebar-arrow-outer"></div>
+    <div class="sidebar-arrow-inner"></div>
+  </a>
+</div>
+
+<div id="animate_background" style="position: absolute; top: 0; left: 0; z-index: 2;">
+  <canvas id=></canvas>
+</div>
+<div id="animate_mouse_cursor">
+  <div class="animate_mouse_rect-1">
+    <div class="animate_mouse_rect-2"></div>
+  </div>
+</div>
+
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank">yanm1ng</a><br>
+    Patched by <a href="https://github.com/xuxiantao" target="_blank">XXT</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+<script src="/js/animate_mouse.js"></script>
+
+
+  </body>
+  
+</html>
